@@ -183,3 +183,107 @@ object {
     }
   }
 }
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  @media not all and (min-resolution: 0.001dpcm) {
+    object {
+      display: flex;
+    }
+    img {
+      display: none;
+    }
+    #background-mobile {
+      display: none;
+    }
+    #background-tablet {
+      display: none;
+    }
+    #background-desktop {
+      display: none;
+    }
+    #background-TV {
+      display: none;
+    }
+    #background-landscape {
+      display: flex;
+    }
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1024px) and (orientation: portrait) {
+  @media not all and (min-resolution: 0.001dpcm) {
+    object {
+      display: flex;
+    }
+    img {
+      display: none;
+    }
+    #background-mobile {
+      display: none;
+    }
+    #background-tablet {
+      display: flex;
+    }
+    #background-desktop {
+      display: none;
+    }
+    #background-TV {
+      display: none;
+    }
+    #background-landscape {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1600px) {
+  @media not all and (min-resolution: 0.001dpcm) {
+    object {
+      display: flex;
+    }
+    img {
+      display: none;
+    }
+    #background-mobile {
+      display: none;
+    }
+    #background-tablet {
+      display: none;
+    }
+    #background-desktop {
+      display: flex;
+    }
+    #background-TV {
+      display: none;
+    }
+    #background-landscape {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1601px) and (max-width: 3040px) {
+  @media not all and (min-resolution: 0.001dpcm) {
+    object {
+      display: flex;
+    }
+    img {
+      display: none;
+    }
+    #background-mobile {
+      display: none;
+    }
+    #background-tablet {
+      display: none;
+    }
+    #background-desktop {
+      display: none;
+    }
+    #background-TV {
+      display: flex;
+    }
+    #background-landscape {
+      display: none;
+    }
+  }
+}
