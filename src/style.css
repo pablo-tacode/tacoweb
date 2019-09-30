@@ -5,14 +5,18 @@
 
 .home {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
 }
 
 .background-img {
   height: 100%;
   width: 100%;
-  display: flex;
+}
+
+img {
+  height: 100%;
+  width: 100%;
 }
 
 object {
@@ -20,10 +24,130 @@ object {
   width: 100%;
 }
 
-@media not all and (min-resolution: 0.001dpcm) {
+@media (min-width: 200px) and (max-width: 700px) and (orientation: portrait) {
+  #background-mobile {
+    display: flex;
+  }
+  #background-tablet {
+    display: none;
+  }
+  #background-desktop {
+    display: none;
+  }
+  #background-TV {
+    display: none;
+  }
+  #background-landscape {
+    display: none;
+  }
+  object {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  #background-mobile {
+    display: none;
+  }
+  #background-tablet {
+    display: none;
+  }
+  #background-desktop {
+    display: none;
+  }
+  #background-TV {
+    display: none;
+  }
+  #background-landscape {
+    display: flex;
+  }
+  object {
+    display: none;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1024px) and (orientation: portrait) {
+  #background-mobile {
+    display: none;
+  }
+  #background-tablet {
+    display: flex;
+  }
+  #background-desktop {
+    display: none;
+  }
+  #background-TV {
+    display: none;
+  }
+  #background-landscape {
+    display: none;
+  }
+  object {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1600px) {
+  #background-mobile {
+    display: none;
+  }
+  #background-tablet {
+    display: none;
+  }
+  #background-desktop {
+    display: flex;
+  }
+  #background-TV {
+    display: none;
+  }
+  #background-landscape {
+    display: none;
+  }
+  object {
+    display: none;
+  }
+}
+
+@media (min-width: 1601px) and (max-width: 3040px) {
+  #background-mobile {
+    display: none;
+  }
+  #background-tablet {
+    display: none;
+  }
+  #background-desktop {
+    display: none;
+  }
+  #background-TV {
+    display: flex;
+  }
+  #background-landscape {
+    display: none;
+  }
+  object {
+    display: none;
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) and(max-width: 700px) and (orientation: portrait) {
   @supports (-webkit-appearance: none) {
-    .example {
-      letter-spacing: 0.024em;
+    #background-mobile {
+      display: flex;
     }
+    #background-tablet {
+      display: none;
+    }
+    #background-desktop {
+      display: none;
+    }
+    #background-TV {
+      display: none;
+    }
+    #background-landscape {
+      display: none;
+    }
+  }
+  img {
+    display: none;
   }
 }
