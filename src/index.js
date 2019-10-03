@@ -2,7 +2,8 @@
  const backgroundImg = document.getElementById("background-img");
 
 
-bttnChange.addEventListener("click", ()=>{
+const checkBackground = 
+function () {
     if(backgroundImg.classList.contains("dark1")){
         backgroundImg.classList.remove("dark1")
         backgroundImg.classList.add("dark2")
@@ -16,6 +17,7 @@ bttnChange.addEventListener("click", ()=>{
         backgroundImg.classList.remove("dark4")
         backgroundImg.classList.add("dark1")
     }
-})
+}
 
+bttnChange.addEventListener("click", checkBackground)
 
