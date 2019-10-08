@@ -1,0 +1,94 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.taco-one {
+  display: inline-block;
+  width: 174px;
+  height: 212px;
+  background: transparent url("../Assets/AriC\ Listo.png") no-repeat 0 0;
+}
+
+.taco-one:hover,
+.taco-one:focus {
+  background-position: 0;
+  background: transparent url("../Assets/AriF\ Listo.png") no-repeat 0 0;
+}
+
+.taco-two {
+  display: inline-block;
+  width: 174px;
+  height: 205px;
+  background: transparent url("../Assets/IvanC\ Listo.png") no-repeat 0 0;
+}
+
+.taco-two:hover,
+.taco-two:focus {
+  background-position: 0;
+  background: transparent url("../Assets/IvanF\ Listo.png") no-repeat 0 0;
+}
+
+.taco-three {
+  display: inline-block;
+  width: 174px;
+  height: 200px;
+  background: transparent url("../Assets/KarenC\ Listo.png") no-repeat 0 0;
+}
+
+.taco-three:hover,
+.taco-three:focus {
+  background-position: 0;
+  background: transparent url("../Assets/KarenF\ Listo.png") no-repeat 0 0;
+}
+
+.taco-four {
+  display: inline-block;
+  width: 174px;
+  height: 210px;
+  background: transparent url("../Assets/MimiC\ Listo.png") no-repeat 0 0;
+}
+
+.taco-four:hover,
+.taco-four:focus {
+  background-position: 0;
+  background: transparent url("../Assets/MimiF\ Listo.png") no-repeat 0 0;
+}
+
+.taco-five {
+  display: inline-block;
+  width: 174px;
+  height: 193px;
+  background: transparent url("../Assets/OlgaC\ Listo.png") no-repeat 0 0;
+}
+
+.taco-five:hover,
+.taco-five:focus {
+  background-position: 0;
+  background: transparent url("../Assets/OlgaF\ Listo.png") no-repeat 0 0;
+}
+
+.taco-six {
+  display: inline-block;
+  width: 174px;
+  height: 210px;
+  background: transparent url("../Assets/PabloC\ Listo.png") no-repeat 0 0;
+}
+
+.taco-six:hover,
+.taco-six:focus {
+  background-position: 0;
+  background: transparent url("../Assets/PabloF\ Listo.png") no-repeat 0 0;
+}

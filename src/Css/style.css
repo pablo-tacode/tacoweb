@@ -1,0 +1,1150 @@
+/* -----------------------------General----------------------------- */
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    cursor: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' width='30' height='30'%3e%3cstyle type='text/css'%3e %23c %7banimation: x 5s alternate infinite;%7d %40keyframes x %7b from %7b fill: gold;%7d to %7b fill: purple%7d %7d %3c/style%3e%3ccircle id='c' cx='20' cy='20' r='20' fill='gold'/%3e%3c!-- works in chrome ... not in IE and others --%3e%3c/svg%3e"), auto;
+}
+
+main {
+    width: 100vw;
+}
+
+.section-title {
+    font-family: AvenirNextBold;
+    font-size: 2em;
+    margin: 15px 0 0 0;
+}
+
+@font-face {
+    font-family: AvenirNext;
+    src: url('../Font/AvenirNextLTPro-Regular.otf');
+}
+
+@font-face {
+    font-family: AvenirNextBold;
+    src: url('../Font/AvenirNextLTPro-Bold.otf');
+}
+
+@font-face {
+    font-family: AvenirNextUL;
+    src: url('../Font/AvenirNextLTPro-UltLt.otf');
+}
+
+@font-face {
+    font-family: AvenirNextMed;
+    src: url('../Font/AvenirNextLTPro-MediumCn.otf');
+}
+
+/* -----------------------------Header----------------------------- */
+header {
+    width: 100%;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-items: center;
+    background: white;
+    margin: 0;
+    padding-top: 10px;
+    font-family: AvenirNext;
+    font-size: 1em;
+}
+
+header a {
+    text-decoration: none;
+    color: #000000;
+}
+
+#header-circle {
+    grid-column: 1/2;
+    margin-top: 10px;
+}
+
+#header-ball {
+    grid-column: 1/2;
+    margin-top: 10px;
+}
+
+
+#title-container {
+    grid-column: 2/3;
+    width: 100%;
+    text-align: left;
+}
+
+#call-us {
+    grid-column: 3/4;
+    justify-self: right;
+}
+
+#svg-phone {
+    display: block;
+}
+
+#span-phone {
+    display: none;
+}
+
+.header-language {
+    display: none;
+}
+
+#language button {
+    outline: none;
+    border: none;
+    font-family: AvenirNext;
+    background: none;
+    font-size: 1em;
+}
+
+.hide {
+    display: none;
+}
+
+#nav-container {
+    grid-column: 4/5;
+}
+
+/* -----------------------------Home----------------------------- */
+
+#home {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 0.5fr 5fr 0.5fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.logo {
+    grid-column: 2/3;
+}
+
+.logo svg {
+    width: 100%;
+}
+
+#slogan {
+    font-family: AvenirNextUL;
+}
+
+.black-letters {
+    animation: dash 11s ease forwards, fillBlack 0.5s ease forwards 2.3s;
+  }
+  
+  .purple-letters {
+    animation: dash 11s ease forwards, fillPurple 0.5s ease forwards 2.3s;
+  }
+  .yellow-letters {
+    animation: dash 11s ease forwards, fillYellow 0.5s ease forwards 2.3s;
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes fillBlack {
+    from {
+      fill: transparent;
+    }
+  
+    to {
+      fill: black;
+    }
+  }
+  
+  @keyframes fillPurple {
+    from {
+      fill: transparent;
+    }
+  
+    to {
+      fill: #8b1f8e;
+    }
+  }
+  
+  @keyframes fillYellow {
+    from {
+      fill: transparent;
+    }
+  
+    to {
+      fill: #FCB424;
+    }
+  }
+
+/* -----------------------------About----------------------------- */
+#about {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#about-span {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    font-family: AvenirNext;
+}
+
+#body-about {
+    grid-column: 1/2;
+    margin: 5em 0.5em 1em 0.5em;
+    text-align: center;
+    font-family: AvenirNextBold;
+    font-size: 20px;
+    letter-spacing: 0;
+}
+
+#ders {
+    font-family: AvenirNextBold;
+}
+
+#tacoders-container {
+    grid-column: 1/2;
+    grid-row-start: 4;
+    height: auto;
+    pointer-events: auto;
+}
+
+.tacoders {
+    text-align: center;
+    height: 100%;
+}
+
+.us-name {
+    margin: 0;
+    font-family: AvenirNextBold;
+    font-size: 18px;
+}
+
+.us-role {
+    color: #76007B;
+    font-family: AvenirNextUL;
+    font-size: 19px;
+}
+
+/* -----------------------------Services----------------------------- */
+#services {
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+}
+
+#services-span {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 12% 12% 76%;
+    justify-items: center;
+    align-items: center;
+    font-family: AvenirNext;
+}
+
+#services-title {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+#our {
+    color: #76007B;
+    font-family: AvenirNextUL;
+    font-size: 1.3em;
+}
+
+#steps {
+    font-family: AvenirNextBold;
+    font-size: 1.3em;
+}
+
+#services-diagram {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 0.5fr repeat(4, 1fr) 0.5fr;
+    grid-template-rows: 25% 45% 30%;
+    justify-items: center;
+    align-items: center;
+}
+
+#services-stroke {
+    display: none;
+}
+
+.services-style {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+#stroke-mobile-one {
+    height: 100%;
+    width: 100%;
+    grid-column: 2/4;
+    grid-row: 1/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#stroke-mobile-two {
+    height: 100%;
+    width: 100%;
+    grid-column: 4/6;
+    grid-row: 1/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#web-circle {
+    grid-column: 2/4;
+    grid-row: 1/2;
+    height: 100%;
+    width: 100%;
+}
+
+#web-circle-text {
+    grid-column: 2/4;
+    grid-row: 1/2;
+    font-family: AvenirNextMed;
+    font-size: 35px;
+    margin: 0;
+}
+
+#services-circle {
+    grid-column: 2/6;
+    grid-row: 2/4;
+    width: 100%;
+    height: 100%;
+}
+
+#services-circle-text {
+    grid-column: 1/7;
+    grid-row: 2/4;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+#services-circle-text ul {
+    grid-column: 2/4;
+    grid-row: 2/4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: calc(0.6em + 0.5vw);
+    text-align: center;
+    list-style: none;
+    line-height: 1.5em;
+    padding: 0;
+    margin: 0;
+}
+
+
+#ios-circle {
+    grid-column: 4/6;
+    grid-row: 1/2;
+    height: 100%;
+    width: 100%;
+}
+
+#ios-circle-text {
+    grid-column: 4/6;
+    grid-row: 1/2;
+    font-family: AvenirNextMed;
+    font-size: 35px;
+}
+
+/* -----------------------------Contact----------------------------- */
+
+#contact {
+    pointer-events: none;
+}
+
+.active-pointer {
+    pointer-events: auto;
+}
+
+#contact-span {
+
+    height: 200vh;
+    width: 100vw;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 10% 80% 5% 5%;
+    grid-template-rows: 10% 30% 10% 10% 30% 10%;
+    font-family: AvenirNext;
+}
+
+#contactForm {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+form {
+    height: 15%;
+    width: 80%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input {
+    outline: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    border-bottom: 2px solid rgb(252, 180, 36);
+    background: none;
+    border-radius: 0;
+    color: black;
+}
+
+input::-webkit-input-placeholder {
+    font-family: AvenirNext;
+}
+
+textarea {
+    font-size: 12px;
+    font-family: inherit;
+}
+
+textarea::-webkit-input-placeholder {
+    font-size: 12px;
+    padding-top: 5px;
+    font-family: inherit;
+}
+
+#idea {
+    width: 100%;
+    height: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid rgb(252, 180, 36);
+}
+
+.send {
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#sending {
+    font-family: AvenirNext;
+    background: none !important;
+    border: none;
+    font-weight: bold;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.22em;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    display: none;
+    margin-top: 0;
+}
+
+.onhover:hover~hr {
+    display: block;
+    border: 3px solid #76007B;
+    width: 30px;
+}
+
+.direct-contact {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.contact-name {
+    color: #76007B;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.contact-data {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#line {
+    display: none;
+}
+
+#mobile-line {
+    display: block;
+    height: 100%;
+    width: 100%;
+    justify-self: left;
+    grid-column: 1/4;
+    grid-row: 5/6;
+}
+
+#mobile-line svg {
+    width: 100%;
+    height: 100%;
+}
+
+.map {
+    grid-column: 2/3;
+    grid-row: 5/6;
+    height: 300px;
+    width: 100%;
+}
+
+.map-container {
+
+
+    overflow: hidden;
+    border-radius: 160px;
+    width: 300px;
+    overflow: hidden;
+    border-right: 1px solid #ddd;
+    box-shadow: 10px 0px 5px 1px #eaeaea;
+
+}
+
+#map.idx {
+    z-index: -1;
+}
+
+#line.idx {
+    z-index: -1;
+}
+
+#mobile-line.idx {
+    z-index: -1;
+}
+
+.map-safari {
+    transform: translateZ(0px);
+}
+
+.dis {
+    display: "block"
+}
+
+.map-iframe {
+    border: 0;
+    margin-top: -150px;
+    height: 600px;
+}
+
+.direction-map {
+    grid-column: 2/3;
+    grid-row: 6/7;
+    height: 100%;
+    display: flex;
+}
+
+.direction-map p {
+    margin: 5px;
+    align-self: center;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* -----------------------------Breakpoints----------------------------- */
+
+@media only screen and (min-width: 300px) and (max-width: 900px) and (orientation: landscape) {
+
+    #header-circle {
+        grid-column: 1/2;
+        margin-top: 3px;
+    }
+
+    #header-ball {
+        grid-column: 1/2;
+        margin-top: 3px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    #services-span {
+        grid-template-rows: 10% 10% 10% 70%;
+    }
+
+    #services-title {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        font-size: 10px;
+    }
+
+    #services-diagram {
+        grid-row: 4/5;
+        grid-template-columns: 0.2fr 1fr 1fr 3fr 1fr 1fr 0.2fr;
+        grid-template-rows: 10% 45% 15% 25% 5%;
+    }
+
+    #services-stroke {
+        display: block;
+        grid-column: 3/6;
+        grid-row: 3/5;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    #services-stroke svg {
+        align-self: flex-start;
+        width: 100%;
+        height: 100%;
+    }
+
+    #stroke-mobile-one {
+
+        display: none;
+    }
+
+    #stroke-mobile-two {
+
+        display: none;
+    }
+
+    #web-circle {
+        grid-column: 2/4;
+        grid-row: 2/4;
+    }
+
+    #web-circle-text {
+        grid-column: 2/4;
+        grid-row: 2/4;
+        font-size: 40px;
+        margin: 0;
+    }
+
+    #services-circle {
+        grid-column: 4/5;
+        grid-row: 1/4;
+    }
+
+    #services-circle-text {
+        grid-column: 4/5;
+        grid-row: 1/4;
+        grid-template-columns: repeat(4, 2fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    #services-circle-text ul {
+        font-size: 8px;
+    }
+
+    #ios-circle {
+        grid-column: 5/7;
+        grid-row: 2/4;
+    }
+
+    #ios-circle-text {
+        grid-column: 5/7;
+        grid-row: 2/4;
+        font-size: 40px;
+    }
+
+    .map-div {
+        width: 100%;
+        overflow: hidden;
+        height: 225px;
+        border-radius: 120px;
+        width: 225px;
+        overflow: hidden;
+        border-right: 1px solid #ddd;
+        box-shadow: 10px 0px 5px 1px #eaeaea;
+    }
+
+    .map-frame {
+        border: 0;
+        margin-top: -150px;
+        height: 550px;
+    }
+
+    #contact-span {
+        grid-template-rows: 10% 30% 10% 10% 35% 5%;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 322px) {
+    .map-div {
+        width: 100%;
+        overflow: hidden;
+        height: 220px;
+        border-radius: 130px;
+        width: 220px;
+        overflow: hidden;
+        border-right: 1px solid #ddd;
+        box-shadow: 10px 0px 5px 1px #eaeaea;
+    }
+
+    .map-frame {
+        border: 0;
+        margin-top: -150px;
+        height: 550px;
+    }
+
+}
+
+@media screen and (min-width: 567px) and (max-width: 569px) {
+    .map-div {
+        width: 100%;
+        overflow: hidden;
+        height: 220px !important;
+        border-radius: 130px;
+        width: 220px !important;
+        overflow: hidden;
+        border-right: 1px solid #ddd;
+        box-shadow: 10px 0px 5px 1px #eaeaea;
+    }
+
+    .map-frame {
+        border: 0;
+        margin-top: -150px;
+        height: 550px;
+    }
+
+}
+
+
+@media screen and (min-width: 340px) and (max-width: 700px) {
+    .map-div {
+        width: 100%;
+        overflow: hidden;
+        height: 250px;
+        border-radius: 130px;
+        width: 250px;
+        overflow: hidden;
+        border-right: 1px solid #ddd;
+        box-shadow: 10px 0px 5px 1px #eaeaea;
+    }
+
+    .map-frame {
+        border: 0;
+        margin-top: -150px;
+        height: 550px;
+    }
+
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+    #body-about {
+        font-size: 2em;
+    }
+
+    #our {
+        color: #76007B;
+        font-family: AvenirNextUL;
+        font-size: 1.3em;
+    }
+
+    #steps {
+        font-family: AvenirNextBold;
+        font-size: 1.3em;
+    }
+
+    #services-diagram {
+        grid-template-columns: 0.5fr repeat(4, 1fr) 0.5fr;
+        grid-template-rows: 25% 45% 20% 10%;
+    }
+
+    #services-circle {
+        grid-column: 1/7;
+        grid-row: 2/4;
+    }
+
+    #services-circle-text {
+        grid-column: 2/6;
+        grid-row: 2/4;
+    }
+
+    #services-circle-text ul {
+        grid-column: 1/5;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    textarea {
+        font-size: 16px;
+    }
+
+    textarea::-webkit-input-placeholder {
+        font-size: 16px;
+    }
+
+    #contact-span {
+        grid-template-columns: 22.5% 55% 1% 21.5%;
+        grid-template-rows: 10% 30% 10% 10% 30% 10%;
+    }
+
+    .map {
+        justify-self: left;
+    }
+
+    form {
+        height: 15%;
+        width: 80%;
+    }
+
+    textarea::-webkit-input-placeholder {
+        padding-top: 30px;
+    }
+
+    #mobile-line {
+        grid-column: 1/4;
+        grid-row: 5/6;
+    }
+
+    .contact-name {
+        font-size: 1.5em;
+    }
+
+    .contact-data {
+        font-size: 1.5em;
+    }
+
+    .direction-map p {
+        font-size: 20px;
+    }
+
+
+
+}
+
+@media only screen and (min-width: 901px) and (orientation: landscape) {
+
+    #services-diagram {
+        grid-template-columns: 2fr repeat(4, 1fr) 2fr;
+        grid-template-rows: 25% 45% 20% 10%;
+    }
+
+    #services-circle {
+        grid-column: 1/7;
+        grid-row: 2/4;
+    }
+
+    #services-circle-text {
+        grid-column: 2/6;
+        grid-row: 2/4;
+    }
+
+    #services-circle-text ul {
+        grid-column: 1/5;
+    }
+}
+
+@media (min-width: 1100px) {
+
+    .section-title {
+        margin: 20px;
+    }
+
+    header {
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    #title-container {
+        grid-column: 2/3;
+    }
+
+    #call-us {
+        grid-column: 6/7;
+    }
+
+    #svg-phone {
+        display: none;
+    }
+
+    #span-phone {
+        display: block;
+    }
+
+    .header-language {
+        display: block;
+        grid-column: 7/8;
+        grid-row: 1/2;
+    }
+
+    #nav-container {
+        grid-column: 8/9;
+    }
+
+    /* -----------------------------About----------------------------- */
+
+    #about-span {
+        height: 100vh;
+        grid-template-columns: 0.2fr repeat(6, 2fr) 0.2fr;
+        grid-template-rows: 1fr repeat(3, 1fr) 3fr 0.5fr;
+    }
+
+    #body-about {
+        grid-column: 3/7;
+        grid-row: 2/4;
+        margin: 0;
+    }
+
+    #meet-us {
+        grid-column: 4/6;
+        grid-row: 4/5;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .meet-us-logo {
+        width: 80%;
+        height: 80%;
+    }
+
+    #ders {
+        font-family: AvenirNextBold;
+    }
+
+    #tacoders-container {
+        grid-column: 2/8;
+        grid-row: 5/6;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .tacoders {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 80% repeat(2, 10%);
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* -----------------------------Services----------------------------- */
+
+    #services-span {
+        grid-template-rows: 10% 10% 80%;
+    }
+
+    #services-title {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    #services-diagram {
+        grid-template-columns: 0.2fr 1fr 1fr 3fr 1fr 1fr 0.2fr;
+        grid-template-rows: 10% 50% 15% 15% 10%;
+    }
+
+    #services-stroke {
+        display: block;
+        grid-column: 3/6;
+        grid-row: 3/5;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    #services-stroke svg {
+        align-self: flex-start;
+        width: 100%;
+        height: 100%;
+    }
+
+    #stroke-mobile-one {
+
+        display: none;
+    }
+
+    #stroke-mobile-two {
+        display: none;
+
+    }
+
+    #web-circle {
+        grid-column: 2/4;
+        grid-row: 2/4;
+    }
+
+    #web-circle-text {
+        grid-column: 2/4;
+        grid-row: 2/4;
+        font-size: 80px;
+        margin: 0;
+    }
+
+    #services-circle {
+        grid-column: 4/5;
+        grid-row: 2/4;
+    }
+
+    #services-circle-text {
+        grid-column: 4/5;
+        grid-row: 2/4;
+        grid-template-columns: repeat(4, 2fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    #ios-circle {
+        grid-column: 5/7;
+        grid-row: 2/4;
+    }
+
+    #ios-circle-text {
+        grid-column: 5/7;
+        grid-row: 2/4;
+        font-size: 80px;
+    }
+
+    /* -----------------------------Contact----------------------------- */
+
+    #contact-span {
+        height: 100vh;
+        width: 100vw;
+        grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
+        grid-template-rows: 1fr repeat(4, 2fr) 1fr;
+    }
+
+    .map {
+        grid-column: 2/4;
+        grid-row: 3/5;
+        justify-self: left;
+        align-self: flex-end;
+    }
+
+    .direction-map {
+        grid-column: 2/3;
+        grid-row: 5/6;
+    }
+
+    .direction-map p {
+        width: 100%;
+    }
+
+    #line {
+        display: block;
+        justify-self: baseline;
+        width: 100%;
+        grid-column: 1/5;
+        grid-row: 4/7;
+    }
+
+    #mobile-line {
+        display: none;
+    }
+
+    #contactForm {
+        grid-column: 3/5;
+        grid-row: 3/5;
+        display: flex;
+        justify-content: center;
+    }
+
+    form {
+        height: 15%;
+        width: 60%;
+    }
+
+    textarea::-webkit-input-placeholder {
+        padding-top: 20px;
+    }
+
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    .direct-contact {
+        grid-column: 3/5;
+        grid-row: 4/6;
+    }
+
+    .contact-name {
+        font-size: 1.17em;
+    }
+
+    .contact-data {
+        font-size: 1.5em;
+    }
+
+}
+
+@media (min-width: 1400px) {
+    #services-diagram {
+        grid-template-columns: 1fr 1fr 1fr 3fr 1fr 1fr 1fr;
+        grid-template-rows: 10% 50% 15% 15% 10%;
+    }
+}
+
+@media (min-width: 1500px) {
+    #about-span {
+        grid-template-columns: 1fr repeat(6, 2fr) 1fr;
+        grid-template-rows: 1fr repeat(3, 1fr) 3fr 0.5fr;
+    }
+
+    #contact-span {
+        grid-template-columns: 2fr 3fr 2fr 3fr 3fr 2fr;
+    }
+
+    #line {
+        grid-column: 1/6;
+    }
+
+    #contactForm {
+        grid-column: 4/6;
+    }
+
+    .direct-contact {
+        grid-column: 4/6;
+    }
+}
+
+@media (min-width: 1700px) {
+    #services-diagram {
+        grid-template-columns: 2fr 1fr 1fr 3fr 1fr 1fr 2fr;
+        grid-template-rows: 10% 50% 15% 15% 10%;
+    }
+}
