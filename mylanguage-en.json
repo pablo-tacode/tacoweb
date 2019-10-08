@@ -1,0 +1,55 @@
+{
+    
+    "menu": {
+        "home": "Home",
+        "squad": "Squad",
+        "services": "Services",
+        "contact": "Contact"
+    },
+    "navbar": {
+        "call": "Call Us"
+    },
+    "home": {
+        "slogan": "Idea to App"
+    },
+
+    "about": {
+        "we": "We are a startup user-centered ",
+        "commited":"committed",
+        "design":" with the design and development of",
+        "user":" user-centered",
+        "products":"digital products and services."
+    },
+
+    "squad": {
+        "software":"Software engineer",
+        "ceo":"Founder & CEO",
+        "full":"Fullstack Developer",
+        "ux":" UX / UI designer"
+    },
+    
+    "services": {
+        "our":"Our",
+        "steps":" Process",
+        "initial":"Initial meeting",
+        "strategy":"Strategy planning",
+        "concept":"Concept exploration",
+        "design":"Design",
+        "development":"Development",
+        "testing":"Testing",
+        "distribution":"Distribution",
+        "support":"Support and maintenance"
+    },
+
+    "contact": {
+        "name":"Name",
+        "phone":"Phone",
+        "phones":"phone:",
+        "email":"Email",
+        "idea":"Write us....",
+        "submit":"Submit",
+        "direction":"Gral. Salvador Alvarado 72, Escandon 1 Secc, 11800 Mexico City, CDMX. "
+    },
+
+    "content": "This is content in web page"
+}

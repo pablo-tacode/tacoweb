@@ -1,0 +1,55 @@
+{
+    
+    "menu": {
+        "home": "Inicio",
+        "squad": "Nosotros",
+        "services": "Servicios",
+        "contact": "Contacto"
+    },
+    "navbar": {
+        "call": "Llámanos"
+    },
+    "home": {
+        "slogan": "Una idea... una app"
+    },
+
+    "about": {
+        "we": "Somos una startup ",
+        "commited":"comprometida ",
+        "design":"con el desarrollo de productos y servicios digitales",
+        "user":" innovadores",
+        "products":"centrados en el usuario."
+    },
+
+    "squad": {
+        "software":"Ingeniero de Software",
+        "ceo":"Founder & CEO",
+        "full":"Desarrolladora Fullstack",
+        "ux":"Diseñadora UX"
+    },
+
+    "services": {
+        "our":"Nuestro",
+        "steps":" Proceso",
+        "initial":"Consulta Presencial",
+        "strategy":"Planeación de estrategia",
+        "concept":"Exploración del concepto",
+        "design":"Diseño",
+        "development":"Desarrollo",
+        "testing":"Testeo",
+        "distribution":"Distribución",
+        "support":"Soporte y Mantenimiento"
+    },
+
+
+    "contact": {
+        "name":"Nombre",
+        "phone":"Teléfono",
+        "phones":"teléfono:",
+        "idea":" Escríbenos....",
+        "submit":"Enviar",
+        "direction":"Gral. Salvador Alvarado 72, Escandon 1 Secc, 11800 Ciudad de Mexico, CDMX. "
+    },
+
+    "content": "Esto es contenido en la página web"
+}

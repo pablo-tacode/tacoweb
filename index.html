@@ -1,56 +1,372 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./src/style.css" />
-    <title>Tacoweb</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="./src/Css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./src/Css/style_menu.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./src/Css/style_us.css">
+    <title>TACODE 4.2</title>
 </head>
 
 <body>
-    <article class="section" id="home">
-        <div class="background-img" id="background-mobile">
-            <img src="./src/assets/background-mobile.svg" alt="background-mobile" />
-            <object data="./src/assets/background-mobile.svg" type="image/svg+xml"></object>
+    <header>
+
+        <a id="header-circle" href="#home"><svg width="2.5em" height="2.5em" viewBox="0 0 48 48" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-27.000000, -26.000000)" fill="#FCB424">
+                        <path
+                            d="M75,49.8101 C75,62.8601 64.421,73.4401 51.37,73.4401 C38.32,73.4401 27.74,62.8601 27.74,49.8101 C27.74,36.7601 38.32,26.1801 51.37,26.1801 C64.421,26.1801 75,36.7601 75,49.8101">
+                        </path>
+                    </g>
+                </g>
+            </svg></a>
+
+        <a id="header-ball" class="hide" href="#home"><svg width="2.5em" height="2.5em" viewBox="0 0 48 48"
+                version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-27.000000, -26.000000)" fill="#FCB424">
+                        <path
+                            d="M75,49.8101 C75,62.8601 64.421,73.4401 51.37,73.4401 C38.32,73.4401 27.74,62.8601 27.74,49.8101 C27.74,36.7601 38.32,26.1801 51.37,26.1801 C64.421,26.1801 75,36.7601 75,49.8101">
+                        </path>
+                    </g>
+                </g>
+            </svg></a>
+        <div id="title-container"></div>
+        <div id="call-us" itemscope itemtype="http://schema.org/LocalBusiness">
+            <a id="svg-phone" href="tel:5586622253"><svg width="26" height="29" viewBox="0 0 26 29" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0)">
+                        <path
+                            d="M0.19812 7.11738C0.277388 6.76372 0.317023 6.41006 0.396291 6.10061C0.752998 4.55335 1.54568 3.31555 2.4969 2.21036C2.85361 1.8567 3.17068 1.50305 3.52739 1.10518C4.47861 0.0442045 5.70727 -0.0884174 6.81702 0.839936C7.57007 1.45884 8.20422 2.21036 8.7591 3.09451C9.31397 3.97866 9.86885 4.8628 10.3445 5.79116C10.6219 6.27744 10.7012 6.89634 10.4634 7.47103C10.3445 7.78048 10.1463 8.08994 9.90849 8.35518C9.47251 8.84146 8.91763 9.23933 8.52129 9.76981C7.72861 10.7866 7.68897 11.8476 8.44202 12.8643C8.48166 12.9085 8.48166 12.9085 8.52129 12.9527C10.4634 15.1189 12.4054 17.3293 14.3871 19.4954C15.2987 20.5122 16.4481 20.4238 17.3993 19.3628C17.7957 18.9207 18.1524 18.3902 18.5091 17.904C18.9847 17.2851 19.7378 17.0198 20.5701 17.3735C21.125 17.6387 21.6006 17.9924 22.1158 18.346C23.1859 19.1418 24.1768 19.9817 25.0091 21.0869C25.6036 21.8826 25.9603 22.7226 25.7225 23.7835C25.6432 24.093 25.5243 24.4909 25.3262 24.7119C24.4542 25.7729 23.5426 26.878 22.4329 27.6738C21.5609 28.2927 20.6097 28.6905 19.5396 28.779C19.5 28.779 19.4207 28.8232 19.381 28.8232C19.1036 28.8232 18.8262 28.8232 18.5487 28.8232C18.0335 28.6905 17.5579 28.6463 17.0426 28.4695C15.1798 27.8506 13.5548 26.657 12.1676 25.154C9.39324 22.1479 6.65849 19.0976 3.96336 16.0473C3.28958 15.2957 2.73471 14.5 2.14019 13.6601C1.42678 12.5991 0.832267 11.4055 0.515193 10.0793C0.356657 9.50457 0.277388 8.92987 0.19812 8.35518C0.19812 7.91311 0.19812 7.51524 0.19812 7.11738Z"
+                            stroke="#76007B" stroke-miterlimit="10" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0">
+                            <rect width="26" height="29" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg></a>
+
+            <span class="onhover" id="span-phone" itemprop="telephone">
+                <a data-localize="navbar.call" href="tel:5586622253">
+                    Llámanos
+                </a>
+            </span>
+            <hr>
         </div>
-        <div class="background-img" id="background-tablet">
-            <img src="./src/assets/background-tablet.svg" alt="background-tablet" />
-            <object data="./src/assets/background-tablet.svg" type=""></object>
+        <span class="header-language" id="language">
+            <button class="onhover hide" id="es">ES</button>
+            <button class="onhover" id="en">EN</button>
+            <hr>
+        </span>
+
+        <div id="nav-container">
+            <nav id="nav-fullscreen">
+                <ul id="menu-list">
+                    <li><a data-localize="menu.home" class="nav-link" href="#home">Inicio</a></li>
+                    <li><a data-localize="menu.squad" class="nav-link" id="Nosotros" href="#about">Nosotros</a></li>
+                    <li><a data-localize="menu.services" class="nav-link" id="Servicios" href="#services">Servicios</a>
+                    </li>
+                    <li><a data-localize="menu.contact" class="nav-link" id="Contacto" href="#contact">Contacto</a></li>
+                </ul>
+                <div id=menu-img>
+                    <img src="./src/Assets/menu_img.png" alt="menu">
+                </div>
+                <div id="menu-phone">
+                    <a href="tel:5586622253"><svg width="26" height="29" viewBox="0 0 26 29" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0)">
+                                <path
+                                    d="M0.19812 7.11738C0.277388 6.76372 0.317023 6.41006 0.396291 6.10061C0.752998 4.55335 1.54568 3.31555 2.4969 2.21036C2.85361 1.8567 3.17068 1.50305 3.52739 1.10518C4.47861 0.0442045 5.70727 -0.0884174 6.81702 0.839936C7.57007 1.45884 8.20422 2.21036 8.7591 3.09451C9.31397 3.97866 9.86885 4.8628 10.3445 5.79116C10.6219 6.27744 10.7012 6.89634 10.4634 7.47103C10.3445 7.78048 10.1463 8.08994 9.90849 8.35518C9.47251 8.84146 8.91763 9.23933 8.52129 9.76981C7.72861 10.7866 7.68897 11.8476 8.44202 12.8643C8.48166 12.9085 8.48166 12.9085 8.52129 12.9527C10.4634 15.1189 12.4054 17.3293 14.3871 19.4954C15.2987 20.5122 16.4481 20.4238 17.3993 19.3628C17.7957 18.9207 18.1524 18.3902 18.5091 17.904C18.9847 17.2851 19.7378 17.0198 20.5701 17.3735C21.125 17.6387 21.6006 17.9924 22.1158 18.346C23.1859 19.1418 24.1768 19.9817 25.0091 21.0869C25.6036 21.8826 25.9603 22.7226 25.7225 23.7835C25.6432 24.093 25.5243 24.4909 25.3262 24.7119C24.4542 25.7729 23.5426 26.878 22.4329 27.6738C21.5609 28.2927 20.6097 28.6905 19.5396 28.779C19.5 28.779 19.4207 28.8232 19.381 28.8232C19.1036 28.8232 18.8262 28.8232 18.5487 28.8232C18.0335 28.6905 17.5579 28.6463 17.0426 28.4695C15.1798 27.8506 13.5548 26.657 12.1676 25.154C9.39324 22.1479 6.65849 19.0976 3.96336 16.0473C3.28958 15.2957 2.73471 14.5 2.14019 13.6601C1.42678 12.5991 0.832267 11.4055 0.515193 10.0793C0.356657 9.50457 0.277388 8.92987 0.19812 8.35518C0.19812 7.91311 0.19812 7.51524 0.19812 7.11738Z"
+                                    stroke="#76007B" stroke-miterlimit="10" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip">
+                                    <rect width="26" height="29" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg></a>
+                </div>
+                <span id="language-mobile">
+                    <button class="hide" id="es-mobile">ES</button>
+                    <button id="en-mobile">EN</button>
+                </span>
+            </nav>
+            <a id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
         </div>
-        <div class="background-img" id="background-desktop">
-            <img src="./src/assets/background-desktop.svg" alt="background-desktop" />
-            <object data="./src/assets/background-desktop.svg" type=""></object>
-        </div>
-        <div class="background-img" id="background-TV">
-            <img src="./src/assets/background-TV.svg" alt="background-TV" />
-            <object data="./src/assets/background-TV.svg" type=""></object>
-        </div>
-        <div class="background-img" id="background-landscape">
-            <img src="./src/assets/background-landscape.svg" alt="background-landscape" />
-            <object data="./src/assets/background-landscape.svg" type=""></object>
-        </div>
-    </article>
-    <article class="section" id="two">
-        <div class="background-img" id="background-mobile">
-            <img src="./src/assets/background2-mobile.svg" alt="background-mobile">
-        </div>
-        <div class="background-img" id="background-tablet">
-            <img src="./src/assets/background2-tablet.svg" alt="background-tablet">
-        </div>
-        <div class="background-img" id="background-desktop">
-            <img src="./src/assets/background2-desktop.svg" alt="background-desktop">
-        </div>
-        <div class="background-img" id="background-TV">
-            <img src="./src/assets/background2-TV.svg" alt="background-TV">
-        </div>
-        <div class="background-img" id="background-landscape">
-            <img src="./src/assets/background2-landscape.svg" alt="background-landscape">
-        </div>
-    </article>
-    <button class="bttn" id="bttn-change">Cambiar fondo</button>
-    <script src="./src/index.js"></script>
+    </header>
+
+    <main>
+        <article class="section" id="home">
+            <div id="logo-container" class="logo">
+                <svg width="428px" height="138px" viewBox="0 0 428 138" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Artboard-1" transform="translate(-226.000000, -198.000000)">
+                            <g id="Group" transform="translate(226.780960, 198.630868)">
+                                <path class="black-letters"
+                                    d="M204.553673,64.4610522 C201.34256,68.1504154 197.37997,71.0711175 192.665784,73.2232461 C187.951598,75.3753747 182.520117,76.4514228 176.371178,76.4514228 C170.768811,76.4514228 165.593532,75.5290958 160.845185,73.6844142 C156.096838,71.8397326 151.980527,69.2264728 148.496128,65.8445565 C145.01173,62.4626402 142.278909,58.4146496 140.297584,53.7004632 C138.316259,48.9862768 137.325612,43.7939176 137.325612,38.1232296 C137.325612,32.3158986 138.33334,27.0552188 140.348825,22.3410324 C142.364311,17.626846 145.148372,13.6130157 148.701092,10.2994209 C152.253812,6.98582613 156.421363,4.44088688 161.203871,2.6645268 C165.986379,0.888166718 171.144578,-8.52651283e-14 176.678623,-8.52651283e-14 C181.802739,-8.52651283e-14 186.841377,0.905246847 191.794689,2.7157677 C196.748,4.52628855 200.761831,7.17370858 203.8363,10.6581072 L191.948411,22.545996 C190.308694,20.2913851 188.156598,18.6175325 185.492058,17.5243878 C182.827518,16.4312431 180.094697,15.884679 177.293514,15.884679 C174.219045,15.884679 171.400823,16.4483233 168.838766,17.5756287 C166.276708,18.7029341 164.073371,20.2572259 162.228689,22.2385506 C160.384008,24.2198753 158.949277,26.559853 157.924454,29.2585539 C156.899631,31.9572548 156.387227,34.9121171 156.387227,38.1232296 C156.387227,41.4026636 156.899631,44.4087663 157.924454,47.141628 C158.949277,49.8744897 160.366928,52.2144674 162.177449,54.1616313 C163.987969,56.1087952 166.157146,57.6289267 168.685043,58.7220714 C171.21294,59.8152161 173.979921,60.3617802 176.986069,60.3617802 C180.470467,60.3617802 183.51073,59.678575 186.106949,58.3121442 C188.703167,56.9457134 190.786943,55.1693799 192.358339,52.9830906 L204.553673,64.4610522 Z"
+                                    stroke="black" fill="none" stroke-dashoffset="1000" stroke-dasharray="1000"></path>
+                                <path class="yellow-letters"
+                                    d="M285.266849,37.918266 C285.266849,43.6572755 284.276202,48.9008752 282.294877,53.6492223 C280.313552,58.3975694 277.563652,62.4626402 274.045092,65.8445565 C270.526533,69.2264728 266.341901,71.8397326 261.491072,73.6844142 C256.640242,75.5290958 251.379563,76.4514228 245.708875,76.4514228 C240.038187,76.4514228 234.794587,75.5290958 229.977918,73.6844142 C225.16125,71.8397326 220.993698,69.2264728 217.475139,65.8445565 C213.956579,62.4626402 211.206679,58.3975694 209.225354,53.6492223 C207.244029,48.9008752 206.253382,43.6572755 206.253382,37.918266 C206.253382,32.110935 207.244029,26.8673353 209.225354,22.1873097 C211.206679,17.5072841 213.956579,13.527614 217.475139,10.24818 C220.993698,6.968746 225.16125,4.44088688 229.977918,2.6645268 C234.794587,0.888166718 240.038187,-8.52651283e-14 245.708875,-8.52651283e-14 C251.379563,-8.52651283e-14 256.640242,0.888166718 261.491072,2.6645268 C266.341901,4.44088688 270.526533,6.968746 274.045092,10.24818 C277.563652,13.527614 280.313552,17.5072841 282.294877,22.1873097 C284.276202,26.8673353 285.266849,32.110935 285.266849,37.918266 Z"
+                                    stroke="#FCB424" fill="none" stroke-dashoffset="1000" stroke-dasharray="1000">
+                                </path>
+                                <g id="Group-3" transform="translate(296.907293, 1.947154)">
+                                    <path class="black-letters"
+                                        d="M67.7404698,36.0735936 C67.7404698,42.427497 66.5619409,47.9102184 64.2048477,52.5219225 C61.8477545,57.1336266 58.739171,60.9254152 54.8790039,63.8974023 C51.0188368,66.8693894 46.6634039,69.0556459 41.8125744,70.4562375 C36.9617449,71.8568291 32.0426677,72.5571144 27.0551952,72.5571144 L0,72.5571144 L0,2.84217094e-14 L26.2353408,2.84217094e-14 C31.3594564,2.84217094e-14 36.4151747,0.597804522 41.4026472,1.7934315 C46.3901197,2.98905848 50.8309533,4.97035346 54.7252812,7.7373759 C58.6196091,10.5043983 61.7623528,14.2107864 64.1536068,18.8566512 C66.5448608,23.502516 67.7404698,29.2414394 67.7404698,36.0735936 Z"
+                                        stroke="black" fill="none" stroke-dashoffset="1000" stroke-dasharray="1000">
+                                    </path>
+                                    <path
+                                        d="M49.4987094,36.0735936 C49.4987094,31.9743011 48.8325844,28.5753554 47.5003143,25.8766545 C46.1680442,23.1779536 44.3917108,21.0258573 42.1712607,19.4203011 C39.9508106,17.8147449 37.4229515,16.6703762 34.5876075,15.9871608 C31.7522635,15.3039454 28.8315614,14.9623428 25.8254136,14.9623428 L17.1144606,14.9623428 L17.1144606,57.389808 L25.4154864,57.389808 C28.5582773,57.389808 31.5814602,57.0311253 34.4851257,56.3137491 C37.3887912,55.5963729 39.9508106,54.417844 42.1712607,52.778127 C44.3917108,51.13841 46.1680442,48.9521535 47.5003143,46.2192918 C48.8325844,43.4864301 49.4987094,40.1045646 49.4987094,36.0735936 Z"
+                                        stroke="black" fill="#FFFFFF" stroke-dashoffset="1000" stroke-dasharray="1000">
+                                        <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="11s"
+                                            begin="0" calcMode="spline" keyTimes="0;1" keySplines="0.25 0.1 0.25 1" />
+                                    </path>
+                                </g>
+                                <polygon class="black-letters"
+                                    points="376.288206 74.5042686 376.288206 1.9471542 425.069543 1.9471542 425.069543 16.8070152 393.197703 16.8070152 393.197703 30.4370946 423.327352 30.4370946 423.327352 44.4771012 393.197703 44.4771012 393.197703 59.5419258 426.914215 59.5419258 426.914215 74.5042686"
+                                    stroke="black" fill="none" stroke-dashoffset="1000" stroke-dasharray="1000">
+                                </polygon>
+                                <polygon class="purple-letters"
+                                    points="31.6668762 74.5042686 24.2881866 74.5042686 24.2881866 8.5059894 8.52651283e-14 8.5059894 8.52651283e-14 1.9471542 55.9550628 1.9471542 55.9550628 8.5059894 31.6668762 8.5059894"
+                                    stroke="#8B1F8E" fill="none" stroke-dashoffset="1000" stroke-dasharray="1000">
+                                </polygon>
+                                <g id="Group-2" transform="translate(52.060754, 1.947154)">
+                                    <polygon class="purple-letters"
+                                        points="8.0960622 72.5571144 -5.68434189e-14 72.5571144 31.3594308 2.84217094e-14 38.5331568 2.84217094e-14 69.687624 72.5571144 61.48908 72.5571144 53.4954996 53.4954996 15.9871608 53.4954996"
+                                        stroke="#8B1F8E" fill="none" stroke-dashoffset="1000" stroke-dasharray="1000">
+                                    </polygon>
+                                    <polygon points="18.7541694 46.7317008 50.728491 46.7317008 34.7413302 8.198544"
+                                        stroke="#8B1F8E" fill="#FFFFFF" stroke-dashoffset="1000"
+                                        stroke-dasharray="1000">
+                                        <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="11s"
+                                            begin="0" calcMode="spline" keyTimes="0;1" keySplines="0.25 0.1 0.25 1" />
+                                    </polygon>
+                                </g>
+                                <text id="slogan" font-size="30" font-weight="100" letter-spacing="-0.10"
+                                    fill="#000000">
+                                    <tspan data-localize="home.slogan" x="19.03444" y="115">Una idea... una app</tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </article>
+        <article class="section" id="about" title="Nosotros"><span id="about-span" title="">
+                <h3 id="body-about">
+                    <span data-localize="about.we"> Somos una startup</span> <span data-localize="about.commited"
+                        style="color:#76007B"> comprometida </span><span data-localize="about.design"> con el desarrollo
+                        de
+                        productos y servicios digitales </span> <span data-localize="about.user" style="color:#76007B">
+                        innovadores </span> <span data-localize="about.products"> centrados en el usuario. </span>
+                </h3>
+                <div id="meet-us">
+                    <svg class="meet-us-logo" width="206px" height="72px" viewBox="0 0 206 72" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g transform="translate(-376.000000, -477.000000)">
+                                <g transform="translate(376.256300, 464.254134)">
+                                    <text id="Tacoders" font-size="50" font-weight="normal" letter-spacing="-4.796">
+                                        <tspan x="0" y="50" fill="#8B1F8E">T</tspan>
+                                        <tspan x="18.904" y="50" letter-spacing="0.004" fill="#8B1F8E">aco</tspan>
+                                        <tspan id="ders" x="101.166" y="50" class="bold" letter-spacing="0.004"
+                                            fill="#000000">
+                                            ders
+                                        </tspan>
+                                    </text>
+
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div id="tacoders-container">
+                </div>
+            </span>
+        </article>
+        <article class="section" id="services" title="Servicios"><span id="services-span" title="">
+                <div id="services-title">
+                    <h2 class="services-style"><span data-localize="services.our" id="our"> Nuestro </span><span
+                            data-localize="services.steps" id="steps"> Proceso </span></h2>
+                </div>
+                <div id="services-diagram">
+                    <div id="services-stroke">
+                        <svg width="943" height="213" viewBox="0 0 943 213" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 0V106V212H462.255V54.4H484.743V133.2V212H942V0" stroke="black" />
+                        </svg>
+                    </div>
+                    <div id="stroke-mobile-one">
+                        <svg width="12" height="201" viewBox="0 0 12 201" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 0V194.212L10.4737 200L11 8.36013" stroke="#B7B7B7" />
+                        </svg>
+                    </div>
+                    <div id="stroke-mobile-two">
+                        <svg width="12" height="201" viewBox="0 0 12 201" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 0V194.212L10.4737 200L11 8.36013" stroke="#B7B7B7" />
+                        </svg>
+                    </div>
+                    <div id="web-circle">
+                        <svg class="services-style" width="345" height="345" viewBox="0 0 345 345" fill="white"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M172.446 328.197C258.286 328.197 327.874 258.61 327.874 172.769C327.874 86.9289 258.286 17.3416 172.446 17.3416C86.6057 17.3416 17.0183 86.9289 17.0183 172.769C17.0183 258.61 86.6057 328.197 172.446 328.197Z"
+                                stroke="#B3B3B3" stroke-width="4" stroke-miterlimit="10" />
+                            <path d="M18.8496 172.554C18.8496 87.6773 87.6773 18.8496 172.554 18.8496" stroke="#76007B"
+                                stroke-width="35" stroke-miterlimit="10" />
+                            <path d="M326.151 172.554C326.151 257.431 257.323 326.258 172.446 326.258" stroke="#76007B"
+                                stroke-width="35" stroke-miterlimit="10" />
+                            <path
+                                d="M172.015 303.962C244.59 303.962 303.423 245.128 303.423 172.554C303.423 99.9791 244.59 41.1458 172.015 41.1458C99.4406 41.1458 40.6072 99.9791 40.6072 172.554C40.6072 245.128 99.4406 303.962 172.015 303.962Z"
+                                stroke="#76007B" stroke-miterlimit="10" />
+                        </svg>
+                    </div>
+                    <h2 id="web-circle-text">WEB</h2>
+                    <div id="services-circle">
+                        <svg class="services-style" width="465" height="466" viewBox="0 0 465 466" fill="white"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M232.148 450.297C352.076 450.297 449.297 353.076 449.297 233.148C449.297 113.221 352.076 16 232.148 16C112.221 16 15 113.221 15 233.148C15 353.076 112.221 450.297 232.148 450.297Z"
+                                stroke="#B3B3B3" stroke-width="4" stroke-miterlimit="10" />
+                            <path d="M17.5581 232.847C17.5581 114.266 113.717 18.1067 232.299 18.1067" stroke="#76007B"
+                                stroke-width="35" stroke-miterlimit="10" />
+                            <path d="M446.889 232.847C446.889 351.429 350.73 447.588 232.148 447.588" stroke="#FCB424"
+                                stroke-width="35" stroke-miterlimit="10" />
+                            <path
+                                d="M231.546 416.438C332.941 416.438 415.137 334.241 415.137 232.847C415.137 131.453 332.941 49.2568 231.546 49.2568C130.152 49.2568 47.9561 131.453 47.9561 232.847C47.9561 334.241 130.152 416.438 231.546 416.438Z"
+                                stroke="#FCB424" stroke-miterlimit="10" />
+                        </svg>
+                    </div>
+                    <div id="services-circle-text">
+                        <ul>
+                            <li data-localize="services.initial">Consulta presencial</li>
+                            <li data-localize="services.strategy">Planeación de estrategia</li>
+                            <li data-localize="services.concept">Exploración del concepto</li>
+                            <li data-localize="services.design">Diseño</li>
+                            <li data-localize="services.development">Desarrollo</li>
+                            <li data-localize="services.testing">Testeo</li>
+                            <li data-localize="services.distribution">Distribución</li>
+                            <li data-localize="services.support">Soporte y Mantenimiento</li>
+                        </ul>
+                    </div>
+                    <div id="ios-circle">
+                        <svg class="services-style" width="345" height="345" viewBox="0 0 345 345" fill="white"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M172.446 328.197C258.286 328.197 327.874 258.61 327.874 172.769C327.874 86.9289 258.286 17.3416 172.446 17.3416C86.6057 17.3416 17.0183 86.9289 17.0183 172.769C17.0183 258.61 86.6057 328.197 172.446 328.197Z"
+                                stroke="#B3B3B3" stroke-width="4" stroke-miterlimit="10" />
+                            <path d="M18.8496 172.554C18.8496 87.6773 87.6773 18.8496 172.554 18.8496" stroke="#FCB424"
+                                stroke-width="35" stroke-miterlimit="10" />
+                            <path d="M326.151 172.554C326.151 257.431 257.323 326.258 172.446 326.258" stroke="#FCB424"
+                                stroke-width="35" stroke-miterlimit="10" />
+                            <path
+                                d="M172.015 303.962C244.59 303.962 303.423 245.128 303.423 172.554C303.423 99.9791 244.59 41.1458 172.015 41.1458C99.4406 41.1458 40.6072 99.9791 40.6072 172.554C40.6072 245.128 99.4406 303.962 172.015 303.962Z"
+                                stroke="#FCB424" stroke-miterlimit="10" />
+                        </svg>
+                    </div>
+                    <h2 id="ios-circle-text">iOS</h2>
+                </div>
+            </span>
+        </article>
+        <article class="section" id="contact" title="Contacto"><span id="contact-span" title="">
+                <svg id="line" width="1814px" height="233px" viewBox="0 0 1814 233" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Artboard-6" transform="translate(0.000000, -164.000000)">
+                            <g transform="translate(-313.000000, 166.000000)">
+                                <polyline id="Stroke-128" stroke="#76007B" stroke-width="3"
+                                    points="0 0 1114.50994 0 1114.50994 207 2092 207"></polyline>
+                                <path
+                                    d="M2126.26,206.63 C2126.26,219.68 2115.681,230.26 2102.63,230.26 C2089.58,230.26 2079,219.68 2079,206.63 C2079,193.58 2089.58,183 2102.63,183 C2115.681,183 2126.26,193.58 2126.26,206.63"
+                                    fill="#FCB424"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <div id="mobile-line">
+                    <svg width="1100" height="243" viewBox="0 0 386 243" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 1H187.063V222H351.127" stroke="#76007B" stroke-width="2" stroke-miterlimit="10" />
+                        <path
+                            d="M361.88 242.778C374.684 242.778 385.064 233.052 385.064 221.056C385.064 209.059 374.684 199.333 361.88 199.333C349.075 199.333 338.695 209.059 338.695 221.056C338.695 233.052 349.075 242.778 361.88 242.778Z"
+                            fill="#FCB424" />
+                    </svg>
+                </div>
+
+                <div id="map" class="map map-div map-container map-safari dis">
+                    <div class="active-pointer">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.182892761772!2d-99.18201408509375!3d19.40450218690032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff663325880f%3A0x6a28b0ae4755f260!2sGral.+Salvador+Alvarado+72%2C+Escand%C3%B3n+I+Secc%2C+11800+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses-419!2smx!4v1565017471574!5m2!1ses-419!2smx"
+                            class="map-frame map-iframe">
+                        </iframe>
+                    </div>
+
+                    <div class="direction-map">
+                        <p data-localize="contact.direction">Gral. Salvador Alvarado 72, Escandon 1 Secc, 11800 Ciudad
+                            de
+                            Mexico, CDMX.</p>
+                    </div>
+                </div>
+                <div id="contactForm" class="form ">
+                    <form class="active-pointer">
+
+                        <input id="name" data-localize="contact.name" type="text" placeholder="Nombre" name="name"
+                            required><br>
+                        <input id="email" data-localize="contact.email" type="email" placeholder="Email" name="email"
+                            required> <br>
+                        <input id="phone" data-localize="contact.phone" type="number" placeholder="Teléfono"
+                            name="phone" required><br>
+                        <input id="idea" data-localize="contact.idea" type="text" placeholder="Escríbenos...."
+                            name="idea" required><br>
+                        <div class="send active-pointer"><button id="sending" class="onhover" type="submit"
+                                data-localize="contact.submit">Enviar</button>
+                            <hr>
+                        </div>
+                    </form>
+                </div>
+                <div class="direct-contact">
+                    <p>
+                        <span data-localize="contact.phones" class="contact-name">télefono:</span>
+                        <span class="contact-data">55 8662 2253 ext.205</span>
+                    </p>
+                    <p>
+                        <span class="contact-name">email:</span>
+                        <span class="contact-data">hey@tacode.mx</span>
+                    </p>
+                </div>
+                <div class="direction-map">
+                    <p data-localize="contact.direction">Gral. Salvador Alvarado 72, Escandon 1 Secc, 11800 Ciudad
+                        de
+                        Mexico, CDMX.</p>
+                </div>
+            </span>
+        </article>
+
+    </main>
+
+    <footer>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+    <script src="./src/Js/firebase.js"></script>
+    <script src="./src/Js/contact.js"></script>
+    <script src="./src/Js/menu.js"></script>
+    <script src="./src/Js/random_render.js"></script>
+    <script src="./jquery.js"></script>
+    <script src="./jquery.localize.js"></script>
+    <script src="./language.js"> </script>
+    <script src="src/Js/title.js"></script>
 </body>
 
 </html>
