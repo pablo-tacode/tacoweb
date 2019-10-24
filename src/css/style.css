@@ -113,8 +113,8 @@ main {
 .home-elements>.img-container:nth-child(2) {
     z-index: 1;
     grid-column: 1/2;
-    grid-row: 4/11;
-    background: url("../assets/images/cities_this.png") no-repeat bottom center;
+    grid-row: 5/11;
+    background: url("../assets/images/cities_this.png") no-repeat center bottom;
     background-size: contain;
 }
 
@@ -201,12 +201,44 @@ main {
     width: 100%;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 1024px) and (orientation: portrait) {
     nav>ul {
         grid-template-columns: 17% 17% 32% 17% 17%;
     }
 
     .icons {
         margin-left: 4%;
+    }
+
+    /* .home-elements>.img-container:nth-child(1) {
+        grid-row: 4/11;
+        height: 90%;
+        align-self: flex-end;
+    }    
+
+    .home-elements>.img-container:nth-child(2) {
+        grid-row: 6/11;
+        background: url("../assets/images/cities.png") no-repeat bottom center;
+        background-size: contain;
+    }
+
+    .home-elements>h1 {
+        grid-row: 5/7;
+    } */
+
+    .home-elements>.img-container:nth-child(2) {
+        grid-row: 6/11;
+        background: url("../assets/images/cities.png") no-repeat 40% bottom;
+        background-size: cover;
+    }
+
+    .home-elements>.img-container:nth-child(1) {
+        grid-row: 3/11;
+        height: 90%;
+        align-self: flex-end;
+    }
+
+    .home-elements>h1 {
+        grid-row: 4/6;
     }
 }
