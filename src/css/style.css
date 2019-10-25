@@ -258,6 +258,10 @@ main {
         align-items: center;
         justify-content: center;
     }
+
+    .toggle-menu-icon {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
