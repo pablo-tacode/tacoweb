@@ -273,7 +273,7 @@ main {
 
     .toggle-menu-icon {
         align-self: flex-end;
-        display: flex;
+        display: block;
         background: transparent;
         border: none;
         height: 40px;
