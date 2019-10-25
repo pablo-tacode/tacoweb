@@ -274,10 +274,8 @@ main {
     .toggle-menu-icon {
         align-self: flex-end;
         display: block;
-        background: transparent;
-        border: none;
-        height: 40px;
-        width: 40px;
+        height: 30px;
+        width: 30px;
         margin: 10px;
     }
 
