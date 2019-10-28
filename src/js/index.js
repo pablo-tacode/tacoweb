@@ -26,7 +26,7 @@ toggleBtnn.addEventListener('click', toggleOpen)
 
 function zeppelinFloating() {
     TweenMax.to(zeppelin, 2, {
-        y: "-=20px",
+        y: "-=10px",
         yoyo: true,
         repeat: -1,
         ease: Power2.easeInOut
