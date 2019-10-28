@@ -63,6 +63,11 @@ nav>ul>li,
     font-size: 2vw;
 }
 
+.logo-link {
+    align-self: center;
+    width: 30%;
+}
+
 .logo {
     height: 60%;
     width: 100%;
@@ -91,6 +96,7 @@ main {
     display: flex;
     align-items: flex-end;
     position: fixed;
+    flex-direction: column;
 }
 
 .home-elements {
@@ -298,7 +304,7 @@ main {
     }
 
     #path1.close {
-        animation: 0.7s  path1Animationreverse ease-out forwards;
+        animation: 0.7s path1Animationreverse ease-out forwards;
     }
 
     #path2.close {
@@ -347,6 +353,45 @@ main {
     .li-logo {
         display: none;
     }
+    
+    .logo-link{
+        height: 40%;
+    }
+
+    .logo {
+        height: 40%;
+        width: 60%;
+    }
+
+    .home-elements {
+        height: 60%;
+    }
+
+    .home-elements>.img-container:nth-child(1) {
+        grid-row: 1/11;
+        height: 100%;
+        align-self: flex-end;
+    }
+
+    .home-elements>.img-container:nth-child(2) {
+        grid-row: 4/11;
+        background: url(../assets/images/cities.png) no-repeat 40% bottom;
+        background-size: cover;
+    }
+
+    .home-elements>h1 {
+        grid-row: 2/4;
+        height: 60%;
+        width: 60%;
+    }
+
+    .zeppelin {
+        grid-row: 5/8;
+    }
+
+    .zeppelin>img {
+        height: 60%;
+    }
 
     @keyframes menuAppearance {
         0% {
@@ -383,15 +428,32 @@ main {
             transform-origin: 25% 50%;
         }
     }
+
     @keyframes path1Animationreverse {
-        0% {transform: rotate(45deg) translateY(-44px) translateX(5px);}
-  30% {transform: translateY(-10px);}
-  100% {transform: translateY(0px);}
+        0% {
+            transform: rotate(45deg) translateY(-44px) translateX(5px);
+        }
+
+        30% {
+            transform: translateY(-10px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
     }
 
     @keyframes path2Animationreverse {
-        0% {transform: rotate(-45deg) translateY(44px) translateX(5px);}
-  30% {transform: translateY(10px);}
-  100% {transform: translateY(0px);}
+        0% {
+            transform: rotate(-45deg) translateY(44px) translateX(5px);
+        }
+
+        30% {
+            transform: translateY(10px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
     }
 }
