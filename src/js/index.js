@@ -2,7 +2,25 @@ const zeppelin = document.getElementById('zeppelin');
 const toggleBtnn = document.getElementById('toggle-bttn');
 const menu = document.querySelector('.menu');
 const headerNav = document.querySelector('header');
-const menuPath = document.querySelectorAll('.menu-path')
+const menuPath = document.querySelectorAll('.menu-path');
+const sections = document.querySelectorAll('article');
+const menuLinks = document.querySelectorAll('.header-links');
+
+function changePage(link) {
+    zeppelinFloating.pause();
+    sections.forEach(section => {
+        section.classList.remove('active');
+        if (link.classList.contains(`${section.id}`)) {
+            fadeIn(section);
+            if(section.id === "homes"){
+                zeppelinFloating.play();
+                section.classList.add('active');
+            }else{
+                section.classList.add('active');
+            } 
+        }
+    })
+}
 
 function toggleOpen() {
     menu.classList.toggle('active');
@@ -20,17 +38,29 @@ function toggleOpen() {
     )
 }
 
-toggleBtnn.addEventListener('click', toggleOpen)
+/* GSAP Animation functions */
 
-
-
-function zeppelinFloating() {
-    TweenMax.to(zeppelin, 2, {
-        y: "-=10px",
-        yoyo: true,
-        repeat: -1,
-        ease: Power2.easeInOut
-    });
+function fadeIn (section) {
+    TweenMax.from(section, 1, {
+        y: "-100%"      
+    })
 }
 
-zeppelinFloating()
+/* const zeppelinFloating = 
+TweenMax.to(zeppelin, 2, {
+        y: "-=15px",
+        yoyo: true,
+        repeat: -1,
+        ease: Power0.easeNone,
+        paused: false
+    }); */
+
+/* DOM EVENTS */
+
+toggleBtnn.addEventListener('click', toggleOpen);
+
+menuLinks.forEach(link => link.addEventListener('click', function (e) {
+    e.preventDefault();
+    changePage(link)
+}))
+
