@@ -61,6 +61,7 @@ toggleBtnn.addEventListener('click', toggleOpen);
 
 menuLinks.forEach(link => link.addEventListener('click', function (e) {
     e.preventDefault();
-    changePage(link)
+    changePage(link);
+    toggleOpen();
 }))
 
