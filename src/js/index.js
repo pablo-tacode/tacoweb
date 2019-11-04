@@ -46,14 +46,14 @@ function fadeIn (section) {
     })
 }
 
-/* const zeppelinFloating = 
+const zeppelinFloating = 
 TweenMax.to(zeppelin, 2, {
         y: "-=15px",
         yoyo: true,
         repeat: -1,
         ease: Power0.easeNone,
         paused: false
-    }); */
+    });
 
 /* DOM EVENTS */
 
