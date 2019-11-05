@@ -20,6 +20,16 @@ body {
     margin: 0;
 }
 
+main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 100vh;
+    grid-template-columns: 100%;
+}
+
+/* ------------------------------------------------ Header ------------------------------------------------ */
+
 header {
     z-index: 2;
     width: 100vw;
@@ -72,22 +82,7 @@ nav>ul>li,
     display: none;
 }
 
-main {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: 100vh;
-    grid-template-columns: 100%;
-}
-
-.background>.opacity-mask {
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(180deg, #600364 0%, #B15F43 31%, #FCB425 75%);
-    position: absolute;
-    z-index: -1;
-    opacity: 0.45;
-}
+/* ------------------------------------------------ Background ------------------------------------------------ */
 
 .background {
     width: 100%;
@@ -99,6 +94,110 @@ main {
     z-index: 0;
 }
 
+.background>.opacity-mask {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #600364 0%, #B15F43 31%, #FCB425 75%);
+    position: absolute;
+    z-index: -1;
+    opacity: 0.45;
+}
+
+.background-elements {
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(10, 10%);
+}
+
+.background-elements>.img-container:nth-child(1) {
+    z-index: 0;
+    grid-column: 1/2;
+    grid-row: 1/11;
+    height: 90%;
+    align-self: flex-end;
+}
+
+.background-img {
+    width: 100%;
+    height: 100%;
+}
+
+.background-elements>.img-container:nth-child(2) {
+    z-index: 0;
+    grid-column: 1/2;
+    grid-row: 5/11;
+    background: url("../assets/images/cities_this.png") no-repeat center bottom;
+    background-size: contain;
+}
+
+/* ------------------------------------------------ Side Fixed Elements ------------------------------------------------ */
+
+.side-fixed-elements {
+    width: 8%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 90% 10%;
+    justify-items: center;
+    position: fixed;
+    z-index: 2;
+}
+
+.icons {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 70%;
+    height: 30%;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, 33.3%);
+    margin: 0;
+    justify-items: center;
+}
+
+.icons>a {
+    width: 100%;
+    height: 100%;
+}
+
+.icon {
+    height: 50%;
+    width: 100%;
+}
+
+.language-bttn-container {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    display: flex;
+    align-self: flex-end;
+}
+
+.language-bttn {
+    background: transparent;
+    border: none;
+    height: 60%;
+    width: 100%;
+    padding: 0;
+    cursor: pointer;
+}
+
+.language-bttn>img {
+    width: 100%;
+    height: 100%;
+}
+
+.tab-bar {
+    display: none;
+}
+
+/* ------------------------------------------------ Home ------------------------------------------------ */
+
 .home.active {
     width: 100%;
     height: 100vh;
@@ -107,7 +206,6 @@ main {
     justify-content: flex-end;
     z-index: 1;
 }
-
 
 .home {
     display: none;
@@ -119,27 +217,6 @@ main {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: repeat(10, 10%);
-}
-
-.home-elements>.img-container:nth-child(1) {
-    z-index: 0;
-    grid-column: 1/2;
-    grid-row: 1/11;
-    height: 90%;
-    align-self: flex-end;
-}
-
-.home-img {
-    width: 100%;
-    height: 100%;
-}
-
-.home-elements>.img-container:nth-child(2) {
-    z-index: 1;
-    grid-column: 1/2;
-    grid-row: 5/11;
-    background: url("../assets/images/cities_this.png") no-repeat center bottom;
-    background-size: contain;
 }
 
 .home-elements>h1 {
@@ -155,75 +232,6 @@ main {
     justify-content: center;
 }
 
-.icons {
-    z-index: 1;
-    width: 4%;
-    height: 90%;
-    grid-row: 4/7;
-    grid-column: 1/2;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(3, 33.3%);
-    margin-left: 2%;
-    justify-items: center;
-}
-
-.icons>a {
-    width: 100%;
-    height: 100%;
-}
-
-.icon {
-    height: 50%;
-    width: 100%;
-    cursor: pointer;
-}
-
-.language-bttn-container {
-    grid-row: 9/11;
-    grid-column: 1/2;
-    height: 80%;
-    width: 4%;
-    margin-left: 3%;
-    z-index: 1;
-    display: flex;
-    align-items: flex-end;
-}
-
-.language-bttn {
-    background: transparent;
-    border: none;
-    height: 50%;
-    width: 100%;
-    padding: 0;
-    cursor: pointer;
-}
-
-.language-bttn>img {
-    width: 100%;
-    height: 100%;
-}
-
-.call-to-action-bttn-container {
-    grid-row: 9/11;
-    grid-column: 1/2;
-    height: 80%;
-    width: 4%;
-    margin-right: 3%;
-    z-index: 1;
-    display: flex;
-    align-items: flex-end;
-    justify-self: right;
-}
-
-.call-to-action-bttn {
-    width: 100%;
-}
-
-.tab-bar {
-    display: none;
-}
-
 .zeppelin {
     z-index: 1;
     grid-column: 1/2;
@@ -233,6 +241,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .zeppelin>svg {
@@ -272,17 +281,12 @@ main {
 /* Media queries */
 
 @media screen and (max-width: 1024px) and (orientation: portrait) {
-    nav>ul {
-        grid-template-columns: 17% 17% 32% 17% 17%;
-    }
-
-    .icons {
-        margin-left: 4%;
-        grid-row: 5/8;
-    }
-
     header {
         height: 20%;
+    }
+    
+    nav>ul {
+        grid-template-columns: 17% 17% 32% 17% 17%;
     }
 
     nav>ul>li,
@@ -290,24 +294,42 @@ main {
         font-size: 2.5vw;
     }
 
-    .toggle-menu-icon {
-        display: none;
+    .side-fixed-elements {
+        width: 10%;
     }
 
-    .home-elements {
+    .icons {
+        width: 60%;
+        height: 30%;
+    }
+
+    .language-bttn-container {
+        width: 90%;
+        height: 90%;
+    }
+
+    /* .toggle-menu-icon {
+        display: none;
+    } */
+
+    .background-elements {
         height: 80%;
     }
 
-    .home-elements>.img-container:nth-child(1) {
+    .background-elements>.img-container:nth-child(1) {
         grid-row: 2/11;
         height: 100%;
         align-self: flex-end;
     }
 
-    .home-elements>.img-container:nth-child(2) {
+    .background-elements>.img-container:nth-child(2) {
         grid-row: 5/11;
         background: url(../assets/images/cities.png) no-repeat 40% bottom;
         background-size: cover;
+    }
+
+    .home-elements {
+        height: 80%;
     }
 
     .home-elements>h1 {
@@ -330,7 +352,8 @@ main {
 }
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
-    header {
+
+    /* header {
         height: auto;
         display: flex;
         flex-direction: column;
@@ -374,12 +397,12 @@ main {
     #path3.close {
         animation: 0.7s path2Animationreverse ease-out forwards;
     }
-
-    nav {
+ */
+    header {
         display: none
     }
 
-    .active {
+    /*     .active {
         display: flex;
         width: 100%;
         height: 100vh;
@@ -411,7 +434,7 @@ main {
 
     .li-logo {
         display: none;
-    }
+    } */
 
     .logo-link {
         height: 40%;
@@ -431,20 +454,40 @@ main {
         text-decoration: none;
     }
 
-    .home-elements {
+    .background-elements {
         height: 60%;
     }
 
-    .home-elements>.img-container:nth-child(1) {
+    .background-elements>.img-container:nth-child(1) {
         grid-row: 1/11;
         height: 100%;
         align-self: flex-end;
     }
 
-    .home-elements>.img-container:nth-child(2) {
+    .background-elements>.img-container:nth-child(2) {
         grid-row: 4/11;
         background: url(../assets/images/cities.png) no-repeat 40% bottom;
         background-size: cover;
+    }
+
+    .side-fixed-elements {
+        width: 10%;
+        height: 90vh;
+        align-self: flex-start;
+    }
+
+    .icons{
+        align-self: flex-end;
+    }
+    
+    .language-bttn-container {
+        width: 90%;
+        height: 90%;
+        align-self: flex-end;
+    }
+
+    .home-elements {
+        height: 60%;
     }
 
     .home-elements>h1 {
@@ -464,29 +507,6 @@ main {
 
     .zeppelin>svg {
         height: 50%;
-    }
-
-    .icons {
-        margin-left: 5%;
-        grid-row: 8/11;
-    }
-
-    .language-bttn-container {
-        align-items: flex-end;
-        grid-row: 8/9;
-        grid-column: 1/2;
-        margin-right: 5%;
-        justify-self: right;
-        width: 6%;
-        height: 100%;
-    }
-
-    .call-to-action-bttn-container {
-        width: 6%;
-        margin-right: 5%;
-        grid-row: 9/11;
-        align-items: center;
-        height: 100%;
     }
 
     #service.active {
@@ -511,15 +531,41 @@ main {
     }
 
     .tab-bar {
+        bottom: 0;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        grid-row: 10/11;
-        grid-column: 1/2;
+        position: absolute;
+        height: 10vh;
+        width: 100%;
+        z-index: 2;
+        background-image: linear-gradient(180deg, #7E0582 0%, #48024B 100%);
+        box-shadow: 0 -3px 8px 0 rgba(0,0,0,0.75);
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+    }
+
+    .tab-bar>ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .tab-bar>ul>li {
+        width: 20%;
+        height: 100%;
+        color: #ffffff;
+        list-style-type: none;
+    }
+
+    .tab-bar>ul>li>a {
         height: 100%;
         width: 100%;
-        z-index: 1;
-        background: #FCB425;
+        font-size: 3vw;
     }
 
     @keyframes menuAppearance {

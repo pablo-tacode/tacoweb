@@ -57,11 +57,11 @@ TweenMax.to(zeppelin, 2, {
 
 /* DOM EVENTS */
 
-toggleBtnn.addEventListener('click', toggleOpen);
+/* toggleBtnn.addEventListener('click', toggleOpen); */
 
 menuLinks.forEach(link => link.addEventListener('click', function (e) {
     e.preventDefault();
     changePage(link);
-    toggleOpen();
+    /* toggleOpen(); */
 }))
 
