@@ -535,7 +535,7 @@ nav>ul>li,
         display: flex;
         justify-content: space-around;
         align-items: center;
-        position: absolute;
+        position: fixed;
         height: 10vh;
         width: 100%;
         z-index: 2;
