@@ -478,12 +478,21 @@ nav>ul>li,
 
     .icons{
         align-self: flex-end;
+        height: 20%;
+    }
+
+    .icon{
+        opacity: 0.67;
     }
     
     .language-bttn-container {
-        width: 90%;
-        height: 90%;
-        align-self: flex-end;
+        width: 65%;
+        height: 65%;
+        align-self: flex-start;
+    }
+    
+    .language-bttn {
+        opacity: 0.67;
     }
 
     .home-elements {
