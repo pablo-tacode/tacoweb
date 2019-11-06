@@ -244,7 +244,11 @@ nav>ul>li,
     cursor: pointer;
 }
 
-.zeppelin>svg {
+.zeppelin>a{
+    width: 20%;
+}
+
+.zeppelin>a>svg {
     width: 100%;
     height: 50%;
 }
@@ -342,8 +346,14 @@ nav>ul>li,
         grid-row: 6/9;
     }
 
-    .zeppelin>svg {
-        height: 50%;
+    .zeppelin>a {
+        width: 30%;
+        height: 70%;
+    }
+
+    .zeppelin>a>svg {
+        width: 100%;
+        height: 70%;
     }
 
     .tab-bar {
@@ -445,7 +455,7 @@ nav>ul>li,
     } */
 
     .logo-link {
-        height: 40%;
+        height: 30%;
     }
 
     .logo {
@@ -468,7 +478,7 @@ nav>ul>li,
     }
 
     .background-elements {
-        height: 60%;
+        height: 70%;
     }
 
     .background-elements>.img-container:nth-child(1) {
@@ -478,7 +488,7 @@ nav>ul>li,
     }
 
     .background-elements>.img-container:nth-child(2) {
-        grid-row: 4/11;
+        grid-row: 4/10;
         background: url(../assets/images/cities.png) no-repeat 40% bottom;
         background-size: cover;
     }
@@ -514,7 +524,7 @@ nav>ul>li,
     }
 
     .home-elements {
-        height: 60%;
+        height: 70%;
     }
 
     .home-elements>h1 {
@@ -528,12 +538,13 @@ nav>ul>li,
     }
 
     #zeppelin-link {
-        height: 50%;
-        width: 30%;
+        height: 100%;
+        width: 40%;
     }
 
-    .zeppelin>svg {
-        height: 50%;
+    .zeppelin>a>svg {
+        width: 100%;
+        height: 100%;
     }
 
     #service.active {
