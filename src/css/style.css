@@ -472,7 +472,7 @@ nav>ul>li,
 
     .side-fixed-elements {
         width: 15%;
-        height: 94vh;
+        height: 92vh;
         align-self: flex-start;
     }
 
@@ -536,7 +536,7 @@ nav>ul>li,
         justify-content: space-around;
         align-items: center;
         position: fixed;
-        height: 6vh;
+        height: 8vh;
         width: 100%;
         z-index: 2;
         background-image: linear-gradient(180deg, #7E0582 0%, #48024B 100%);
