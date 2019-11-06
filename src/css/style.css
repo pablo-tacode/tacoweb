@@ -454,6 +454,11 @@ nav>ul>li,
         text-decoration: none;
     }
 
+    .background {
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+    }
+
     .background-elements {
         height: 60%;
     }
@@ -493,6 +498,11 @@ nav>ul>li,
     
     .language-bttn {
         opacity: 0.67;
+    }
+
+    .home.active{
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
     }
 
     .home-elements {
