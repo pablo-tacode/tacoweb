@@ -478,7 +478,7 @@ nav>ul>li,
 
     .icons{
         align-self: flex-end;
-        height: 20%;
+        height: 25%;
     }
 
     .icon{
@@ -486,8 +486,8 @@ nav>ul>li,
     }
     
     .language-bttn-container {
-        width: 65%;
-        height: 65%;
+        width: 85%;
+        height: 85%;
         align-self: flex-start;
     }
     
