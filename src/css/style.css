@@ -80,7 +80,7 @@ nav>ul>li, .header-links {
     background: url("../assets/images/Linea.png") no-repeat bottom center;
 }
 
-.links-onhover:focus{
+.links-onhover.active{
     color: #FBB420;
     font-size: 2.5vw;
     font-weight: bold;
@@ -622,13 +622,17 @@ nav>ul>li, .header-links {
         width: 100%;
     }
 
-    .tab-bar>ul>li>a>img {
+    .tab-bar>ul>li>a>svg {
         height: 70%;
         width: 70%;
     }
 
-    .header-links.project>img{
+    .header-links.project>svg{
         margin-top: 4%;
+    }
+
+    .background-icons.active{
+        fill: #FBB420;
     }
 
     @keyframes menuAppearance {

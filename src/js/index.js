@@ -5,11 +5,13 @@ const headerNav = document.querySelector('header');
 const menuPath = document.querySelectorAll('.menu-path');
 const sections = document.querySelectorAll('article');
 const menuLinks = document.querySelectorAll('.header-links');
+const headerLinksToFocus = document.querySelectorAll('.links-onhover');
+const tabLinks = document.querySelectorAll('.tab-links');
+const backgroundIcons = document.querySelectorAll('.background-icons');
 
 function changePage(link) {
     zeppelinFloating.pause();
     sections.forEach(section => {
-        section.classList.remove('active');
         if (link.classList.contains(`${section.id}`)) {
             fadeIn(section);
             if (section.id === "homes") {
@@ -22,7 +24,27 @@ function changePage(link) {
     })
 }
 
-function toggleOpen() {
+function focusAnchor(link) {
+    link.classList.add('active');
+}
+
+function changeBackgroundColor (link) {
+    backgroundIcons.forEach(icon => {
+        if(link.classList.contains(`${icon.id}`)){
+            icon.classList.add('active')
+        }
+    })
+}
+
+function removeActiveClass(arr) {
+    arr.forEach(element => {
+        if (element.classList.contains('active')) {
+            element.classList.remove('active')
+        }
+    })
+}
+
+/* function toggleOpen() {
     menu.classList.toggle('active');
     headerNav.classList.toggle('active-header');
     menuPath.forEach(
@@ -36,7 +58,7 @@ function toggleOpen() {
             }
         }
     )
-}
+} */
 
 /* ------------------------------------- GSAP Animation functions ------------------------------------- */
 
@@ -57,13 +79,27 @@ const zeppelinFloating =
 
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
 
-/* toggleBtnn.addEventListener('click', toggleOpen); */
-
 menuLinks.forEach(link => link.addEventListener('click', function (e) {
     e.preventDefault();
+    removeActiveClass(sections);
+    removeActiveClass(headerLinksToFocus);
+    removeActiveClass(backgroundIcons);
     changePage(link);
-    /* toggleOpen(); */
 }));
+
+headerLinksToFocus.forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        focusAnchor(link);
+    });
+});
+
+tabLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        changeBackgroundColor(link);
+    });
+})
 
 /* ------------------------------------- CSSOM EVENTS ------------------------------------- */
 
@@ -73,6 +109,6 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 /* Listen when rezising in order to 'refresh' the vh value */
 window.addEventListener('resize', () => {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
