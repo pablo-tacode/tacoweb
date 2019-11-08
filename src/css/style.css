@@ -8,6 +8,11 @@
     src: url("../assets/fonts/avenir-next-lt-pro-cufonfonts/AvenirNextLTPro-Regular.otf")
 }
 
+a, button {
+    -webkit-tap-highlight-color: transparent;
+    outline: transparent;
+}
+
 .container {
     width: 100%;
     height: 100%;
