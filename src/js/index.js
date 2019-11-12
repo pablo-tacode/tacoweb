@@ -1,13 +1,11 @@
 const zeppelin = document.getElementById('zeppelin');
-const toggleBtnn = document.getElementById('toggle-bttn');
-const menu = document.querySelector('.menu');
-const headerNav = document.querySelector('header');
-const menuPath = document.querySelectorAll('.menu-path');
 const sections = document.querySelectorAll('article');
 const menuLinks = document.querySelectorAll('.header-links');
 const headerLinksToFocus = document.querySelectorAll('.links-onhover');
 const tabLinks = document.querySelectorAll('.tab-links');
 const backgroundIcons = document.querySelectorAll('.background-icons');
+const sideIcons = document.querySelectorAll('.side-icons');
+const sideIconsImages = document.querySelectorAll('.icon');
 
 function changePage(link) {
     zeppelinFloating.pause();
@@ -28,6 +26,10 @@ function focusAnchor(link) {
     link.classList.add('active');
 }
 
+function sideIconsOnFocus (link){
+   link.firstChild.style.opacity='1'
+}
+
 function changeBackgroundColor (link) {
     backgroundIcons.forEach(icon => {
         if(link.classList.contains(`${icon.id}`)){
@@ -43,22 +45,6 @@ function removeActiveClass(arr) {
         }
     })
 }
-
-/* function toggleOpen() {
-    menu.classList.toggle('active');
-    headerNav.classList.toggle('active-header');
-    menuPath.forEach(
-        (path) => {
-            if (path.classList.contains('open')) {
-                path.classList.remove('open')
-                path.classList.add('close')
-            } else {
-                path.classList.remove('close')
-                path.classList.add('open')
-            }
-        }
-    )
-} */
 
 /* ------------------------------------- GSAP Animation functions ------------------------------------- */
 
@@ -98,6 +84,14 @@ tabLinks.forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();
         changeBackgroundColor(link);
+    });
+})
+
+sideIcons.forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        removeActiveClass(sideIconsImages);
+        focusAnchor(link.firstChild);
     });
 })
 
