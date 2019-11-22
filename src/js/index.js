@@ -6,14 +6,19 @@ const tabLinks = document.querySelectorAll('.tab-links');
 const backgroundIcons = document.querySelectorAll('.background-icons');
 const sideIcons = document.querySelectorAll('.side-icons');
 const sideIconsImages = document.querySelectorAll('.icon');
+const tagline = document.getElementById('tagline');
+const servicesIcon = document.getElementById('service');
+const servicesLink = document.getElementById('services-link');
 
 function changePage(link) {
     zeppelinFloating.pause();
     sections.forEach(section => {
         if (link.classList.contains(`${section.id}`)) {
             fadeIn(section);
+            dispel(tagline);
             if (section.id === "homes") {
                 zeppelinFloating.play();
+                appear(tagline)
                 section.classList.add('active');
             } else {
                 section.classList.add('active');
@@ -49,8 +54,20 @@ function removeActiveClass(arr) {
 /* ------------------------------------- GSAP Animation functions ------------------------------------- */
 
 function fadeIn(section) {
-    TweenMax.from(section, 1, {
-        y: "-100%"
+    TweenMax.from(section, 1.5, {
+        x: "-100%"
+    })
+}
+
+function dispel(element) {
+    TweenMax.to(element, 1.5, {
+        opacity: 0
+    })
+}
+
+function appear(element) {
+    TweenMax.to(element, 1.5, {
+        opacity: 1
     })
 }
 
@@ -93,6 +110,12 @@ sideIcons.forEach(link => {
         removeActiveClass(sideIconsImages);
         focusAnchor(link.firstChild);
     });
+})
+
+zeppelin.addEventListener('click', function (e) {
+    e.preventDefault();
+    servicesIcon.classList.add('active');
+    servicesLink.classList.add('active');
 })
 
 /* ------------------------------------- CSSOM EVENTS ------------------------------------- */
