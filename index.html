@@ -13,8 +13,8 @@
     <header>
         <nav class="menu">
             <ul>
-                <li><a class="header-links service links-onhover" id="services-link" href="#">servicios</a></li>
-                <li><a class="header-links project links-onhover" href="#">proyectos</a></li>
+                <li><a data-localize="menu.services" class="header-links service links-onhover" id="services-link" href="#">servicios</a></li>
+                <li><a data-localize="menu.projects" class="header-links project links-onhover" href="#">proyectos</a></li>
                 <li class="li-logo">
                     <a class="header-links homes logo-link" href="#">
                         <svg class="logo" width="372px" height="108px" viewBox="0 0 372 108" version="1.1"
@@ -65,7 +65,7 @@
                                         </g>
                                         <text id="estudio-web" font-family="Avenir-Light, Avenir" font-size="20"
                                             font-weight="300" letter-spacing="16.8148148" fill="#000000">
-                                            <tspan x="48.0385185" y="94">estudio web</tspan>
+                                            <tspan data-localize="home.slogan" x="48.0385185" y="94">estudio web</tspan>
                                         </text>
                                     </g>
                                 </g>
@@ -73,8 +73,8 @@
                         </svg>
                     </a>
                 </li>
-                <li><a class="header-links links-onhover" href="#">nosotros</a></li>
-                <li><a class="header-links links-onhover" href="#">contacto</a></li>
+                <li><a data-localize="menu.squad" class="header-links links-onhover" href="#">nosotros</a></li>
+                <li><a data-localize="menu.contact" class="header-links links-onhover" href="#">contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -98,9 +98,9 @@
                         alt="Ícono de Instagram"></a>
             </div>
             <div class="language-bttn-container">
-                <button class="language-bttn">
+                <button id="es" class="hide language-bttn">
                     <svg width="46px" height="46px" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <title>Ícono para cambio de idioma</title>
+                        <title>Ícono para cambio de idioma ES</title>
                         <g id="Home-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                             <g id="Selección-" transform="translate(-41.000000, -953.000000)">
                                 <g id="Idioma-Copy" transform="translate(42.000000, 954.000000)">
@@ -108,6 +108,23 @@
                                         <circle id="Oval" stroke="#FFFFFF" stroke-width="2" cx="22" cy="22" r="22"></circle>
                                         <text id="ES" font-family="Avenir-Medium, Avenir" font-size="15" font-weight="400" fill="#FFFFFF">
                                             <tspan x="14.2475" y="27">ES</tspan>
+                                        </text>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+                <button id="en" class="language-bttn">
+                    <svg width="46px" height="46px" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <title>Ícono para cambio de idioma EN</title>
+                        <g id="Home-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Selección-" transform="translate(-41.000000, -953.000000)">
+                                <g id="Idioma-Copy" transform="translate(42.000000, 954.000000)">
+                                    <g id="Idioma">
+                                        <circle id="Oval" stroke="#FFFFFF" stroke-width="2" cx="22" cy="22" r="22"></circle>
+                                        <text id="ES" font-family="Avenir-Medium, Avenir" font-size="15" font-weight="400" fill="#FFFFFF">
+                                            <tspan x="14.2475" y="27">EN</tspan>
                                         </text>
                                     </g>
                                 </g>
@@ -140,7 +157,7 @@
                                         </g>
                                         <text id="servicios" font-family="Avenir-Medium, Avenir" font-size="11"
                                             font-weight="400" letter-spacing="1.298">
-                                            <tspan x="0.374" y="39">servicios</tspan>
+                                            <tspan data-localize="tab-bar.services" x="0.374" y="39">servicios</tspan>
                                         </text>
                                     </g>
                                 </g>
@@ -171,7 +188,7 @@
                                         </g>
                                         <text id="proyectos" font-family="Avenir-Medium, Avenir" font-size="11"
                                             font-weight="400" letter-spacing="1.298">
-                                            <tspan x="0.3925" y="39">proyectos</tspan>
+                                            <tspan data-localize="tab-bar.projects" x="0.3925" y="39">proyectos</tspan>
                                         </text>
                                     </g>
                                 </g>
@@ -187,7 +204,7 @@
                                     <g id="icono-inicio" transform="translate(190.000000, 851.000000)">
                                         <text id="inicio" font-family="Avenir-Medium, Avenir" font-size="11"
                                             font-weight="400" letter-spacing="1.298">
-                                            <tspan x="0.17" y="37">inicio</tspan>
+                                            <tspan data-localize="tab-bar.home" x="0.17" y="37">inicio</tspan>
                                         </text>
                                         <g id="home-(1)-copy" transform="translate(2.000000, 0.000000)">
                                             <path
@@ -217,7 +234,7 @@
                                         </g>
                                         <text id="nosotros" font-family="Avenir-Medium, Avenir" font-size="11"
                                             font-weight="400" letter-spacing="1.298">
-                                            <tspan x="0.094" y="34">nosotros</tspan>
+                                            <tspan data-localize="tab-bar.squad" x="0.094" y="34">nosotros</tspan>
                                         </text>
                                     </g>
                                 </g>
@@ -249,7 +266,7 @@
                                         </g>
                                         <text id="contacto" font-family="Avenir-Medium, Avenir" font-size="11"
                                             font-weight="400" letter-spacing="1.298">
-                                            <tspan x="0.4895" y="32">contacto</tspan>
+                                            <tspan data-localize="tab-bar.contact" x="0.4895" y="32">contacto</tspan>
                                         </text>
                                     </g>
                                 </g>
@@ -305,7 +322,7 @@
                             </g>
                             <text id="estudio-web" font-family="Avenir-Light, Avenir" font-size="20" font-weight="300"
                                 letter-spacing="16.8148148" fill="#000000">
-                                <tspan x="48.0385185" y="94">estudio web</tspan>
+                                <tspan data-localize="home.slogan" x="48.0385185" y="94">estudio web</tspan>
                             </text>
                         </g>
                     </g>
@@ -373,7 +390,7 @@
                                             transform="translate(146.000000, 43.500000) rotate(1.000000) translate(-146.000000, -43.500000) "
                                             font-family="Avenir-Black, Avenir" font-size="28.5" font-weight="700"
                                             letter-spacing="0.910000026" fill="#5F0263">
-                                            <tspan x="78.6757499" y="53">EMPIEZA</tspan>
+                                            <tspan data-localize="home.start" x="78.6757499" y="53">EMPIEZA</tspan>
                                             <tspan x="213.32425" y="53"> </tspan>
                                         </text>
                                         <path d="M71,83 C120.678342,87.8553591 171.93603,87.8553591 224.773065,83"
@@ -383,7 +400,7 @@
                                             transform="translate(148.000000, 75.500000) rotate(-1.000000) translate(-148.000000, -75.500000) "
                                             font-family="Avenir-Black, Avenir" font-size="28.5" font-weight="700"
                                             letter-spacing="0.910000026" fill="#5F0263">
-                                            <tspan x="92.7007499" y="85">AHORA</tspan>
+                                            <tspan data-localize="home.now" x="92.7007499" y="85">AHORA</tspan>
                                             <tspan x="203.29925" y="85"> </tspan>
                                         </text>
                                     </g>
@@ -626,6 +643,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
         integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
     <script src="./src/js/index.js"></script>
+    <script src="./jquery.js"></script>
+    <script src="./jquery.localize.js"></script>
+    <script src="./language.js"> </script>
 </body>
 
 </html>

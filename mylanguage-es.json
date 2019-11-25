@@ -1,0 +1,20 @@
+{
+  "menu": {
+    "services": "servicios",
+    "projects": "proyectos",
+    "squad": "nosotros",
+    "contact": "contacto"
+  },
+  "tab-bar": {
+    "services": "servicios",
+    "projects": "proyectos",
+    "home": "inicio",
+    "squad": "nosotros",
+    "contact": "contacto"
+  },
+  "home": {
+    "slogan": "estudio web",
+    "start": "EMPIEZA",
+    "now": "AHORA"
+  }
+}

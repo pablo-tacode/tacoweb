@@ -1,0 +1,20 @@
+{
+  "menu": {
+    "services": "services",
+    "projects": "projects",
+    "squad": "squad",
+    "contact": "contact"
+  },
+  "tab-bar": {
+    "services": "services",
+    "projects": "projects",
+    "home": "home",
+    "squad": "squad",
+    "contact": "contact"
+  },
+  "home": {
+    "slogan": "web studio",
+    "start": "START",
+    "now": "NOW"
+  }
+}
