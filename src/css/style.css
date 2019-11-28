@@ -394,14 +394,20 @@ main>h1 {
   }
 
   .background-elements>.img-container:nth-child(1) {
-    grid-row: 2/11;
+    grid-row: 1/11;
+    align-self: flex-end;
     height: 100%;
+  }
+  
+  .background-elements>.img-container:nth-child(2) {
+    grid-row: 1/11;
+    height: 65%;
     align-self: flex-end;
   }
 
-  .background-elements>.img-container:nth-child(2) {
+  .background-elements>.img-container:nth-child(3) {
     grid-row: 5/11;
-    background: url(../assets/images/cities.png) no-repeat 40% bottom;
+    background: url("../assets/images/cities.png") no-repeat 40% bottom;
     background-size: cover;
   }
 
@@ -476,16 +482,34 @@ main>h1 {
   }
 
   .background-elements {
-    height: 70%;
+    height: 75%;
   }
 
-  .background-elements>.img-container:nth-child(1) {
+/*   .background-elements>.img-container:nth-child(1) {
     grid-row: 1/11;
     height: 100%;
     align-self: flex-end;
   }
 
   .background-elements>.img-container:nth-child(2) {
+    grid-row: 4/10;
+    background: url(../assets/images/cities.png) no-repeat 40% bottom;
+    background-size: cover;
+  } */
+
+  .background-elements>.img-container:nth-child(1) {
+    grid-row: 1/11;
+    align-self: flex-end;
+    height: 100%;
+  }
+  
+  .background-elements>.img-container:nth-child(2) {
+    grid-row: 1/11;
+    height: 65%;
+    align-self: flex-end;
+  }
+
+  .background-elements>.img-container:nth-child(3) {
     grid-row: 4/10;
     background: url(../assets/images/cities.png) no-repeat 40% bottom;
     background-size: cover;
