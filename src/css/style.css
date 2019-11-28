@@ -133,7 +133,12 @@ nav>ul>li,
   grid-template-rows: repeat(10, 10%);
 }
 
-.background-elements>.img-container:nth-child(1) {
+.background-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* .background-elements>.img-container:nth-child(1) {
   z-index: 0;
   grid-column: 1/2;
   grid-row: 1/11;
@@ -141,12 +146,41 @@ nav>ul>li,
   align-self: flex-end;
 }
 
-.background-img {
-  width: 100%;
-  height: 100%;
+.background-elements>.img-container:nth-child(2) {
+  z-index: 0;
+  grid-column: 1/2;
+  grid-row: 5/11;
+  background: url("../assets/images/cities_this.png") no-repeat center bottom;
+  background-size: contain;
+} */
+
+.background-elements>.img-container:nth-child(1) {
+  z-index: 0;
+  grid-column: 1/2;
+  grid-row: 1/11;
+  align-self: flex-end;
 }
 
+
 .background-elements>.img-container:nth-child(2) {
+  z-index: 0;
+  grid-column: 1/2;
+  grid-row: 1/11;
+  height: 65%;
+  align-self: flex-end;
+}
+
+#mountain-001.active{
+  height:100%;
+  transition: height 1s;
+}
+
+#mountain-001.innactive{
+  height:65%;
+  transition: height 1s;
+}
+
+.background-elements>.img-container:nth-child(3) {
   z-index: 0;
   grid-column: 1/2;
   grid-row: 5/11;
