@@ -79,7 +79,10 @@ const hideSpa = () => {
 
 function fadeIn(section) {
   TweenMax.fromTo(section, 1.5, {
-    x: "-100%" 
+    x: "-100%"
+  }, {
+    x: "0%",
+    zIndex: 1
   });
 }
 
@@ -106,7 +109,7 @@ const zeppelinFloating = TweenMax.to(zeppelin, 2, {
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
 
 menuLinks.forEach(link =>
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     removeActiveClass(sections);
     removeActiveClass(headerLinksToFocus);
@@ -116,28 +119,28 @@ menuLinks.forEach(link =>
 );
 
 headerLinksToFocus.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     focusAnchor(link);
   });
 });
 
 tabLinks.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     changeBackgroundColor(link);
   });
 });
 
 sideIcons.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     removeActiveClass(sideIconsImages);
     focusAnchor(link.firstChild);
   });
 });
 
-zeppelin.addEventListener("click", function(e) {
+zeppelin.addEventListener("click", function (e) {
   e.preventDefault();
   servicesIcon.classList.add("active");
   servicesLink.classList.add("active");
