@@ -39,13 +39,11 @@ function changePage(link) {
   sections.forEach(section => {
     if (link.classList.contains(`${section.id}`)) {
       fadeIn(section);
-      dispel(tagline);
       if (section.id === "homes") {
         zeppelinFloating.play();
-        appear(tagline);
         backgroundEntrance()
         section.classList.add("active");
-      }else {
+      } else {
         section.classList.add("active");
         backgroundExit();
       }
@@ -58,7 +56,7 @@ function focusAnchor(link) {
   link.classList.add("active");
 }
 
-function removeClass (element) {
+function removeClass(element) {
   element.classList.remove("active");
   element.classList.add("innactive")
 }
@@ -114,18 +112,6 @@ function fadeIn(section) {
   });
 }
 
-function dispel(element) {
-  TweenMax.to(element, 1.5, {
-    opacity: 0
-  });
-}
-
-function appear(element) {
-  TweenMax.to(element, 1.5, {
-    opacity: 1
-  });
-}
-
 const zeppelinFloating = TweenMax.to(zeppelin, 2, {
   y: "-=15px",
   yoyo: true,
@@ -134,34 +120,46 @@ const zeppelinFloating = TweenMax.to(zeppelin, 2, {
   paused: false
 });
 
-function backgroundExit () {
+function backgroundExit() {
   const tl = new TimelineMax();
   tl.to(mountainOne, 1, {
-    onStart:focusAnchor(mountainOne),
-    scaleX: 2,
+    scaleX: 3,
     ease: "power1.out"
-  }, 0.6)
-  tl.to(mountainTwo, 1, {
+  }, 0.1)
+  .to(mountainOne, 1, {
+    x: 450,
+    onComplete: focusAnchor(mountainOne)
+  }, 0.1)
+  .to(mountainTwo, 1, {
     y: "100%"
   }, 0.1)
-  tl.to(cities, 1, {
-    y:"100%"
+  .to(cities, 1, {
+    y: "100%"
+  }, 0.1)
+  .to(tagline, 0.5, {
+    opacity: 0
   }, 0.1)
 }
 
-function backgroundEntrance () {
+function backgroundEntrance() {
   const tl = new TimelineMax();
   tl.to(mountainOne, 1, {
-    onComplete:removeClass(mountainOne),
     scaleX: 1,
     ease: "power1.out"
-  }, 0.6)
-  tl.to(mountainTwo, 1, {
+  }, 0.1)
+  .to(mountainOne, 1, {
+    onStart: removeClass(mountainOne),
+    x: 0
+  }, 0.1)
+  .to(mountainTwo, 1, {
     y: "0%"
   }, 0.1)
-  tl.to(cities, 1, {
-    y:"0%"
+  .to(cities, 1, {
+    y: "0%"
   }, 0.1)
+  .to(tagline, 1, {
+    opacity: 1
+  }, 0.7)
 }
 
 /* ------------------------------------- DOM EVENTS ------------------------------------- */

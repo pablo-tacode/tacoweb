@@ -159,6 +159,7 @@ nav>ul>li,
   grid-column: 1/2;
   grid-row: 1/11;
   align-self: flex-end;
+  height: 100%;
 }
 
 
@@ -172,12 +173,12 @@ nav>ul>li,
 
 #mountain-001.active{
   height:100%;
-  transition: height 1s;
+  transition: height 1.6s;
 }
 
 #mountain-001.innactive{
   height:65%;
-  transition: height 1s;
+  transition: height 0.7s;
 }
 
 .background-elements>.img-container:nth-child(3) {
