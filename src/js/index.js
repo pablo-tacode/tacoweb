@@ -53,6 +53,15 @@ function removeActiveClass(arr) {
   });
 }
 
+const hideEn = () => {
+  en.classList.add("hide");
+  es.classList.remove("hide");
+};
+
+const hideEs = () => {
+  es.classList.add("hide");
+  en.classList.remove("hide");
+};
 /* ------------------------------------- GSAP Animation functions ------------------------------------- */
 
 function fadeIn(section) {
@@ -121,16 +130,8 @@ zeppelin.addEventListener("click", function(e) {
   servicesLink.classList.add("active");
 });
 
-const hideEn = () => {
-  en.classList.add("hide");
-  es.classList.remove("hide");
-};
 en.addEventListener("click", hideEn);
 
-const hideEs = () => {
-  es.classList.add("hide");
-  en.classList.remove("hide");
-};
 es.addEventListener("click", hideEs);
 
 /* ------------------------------------- CSSOM EVENTS ------------------------------------- */
