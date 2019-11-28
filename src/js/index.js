@@ -11,6 +11,8 @@ const servicesIcon = document.getElementById("service");
 const servicesLink = document.getElementById("services-link");
 const en = document.getElementById("en");
 const es = document.getElementById("es");
+const enMobile = document.getElementById("en-mobile");
+const esMobile = document.getElementById("es-mobile");
 
 function changePage(link) {
   zeppelinFloating.pause();
@@ -53,11 +55,34 @@ function removeActiveClass(arr) {
   });
 }
 
+const hideEn = () => {
+  en.classList.add("hide");
+  es.classList.remove("hide");
+};
+
+const hideEs = () => {
+  es.classList.add("hide");
+  en.classList.remove("hide");
+};
+
+const hideEng = () => {
+  enMobile.classList.add("hide");
+  esMobile.classList.remove("hide");
+};
+
+const hideSpa = () => {
+  esMobile.classList.add("hide");
+  enMobile.classList.remove("hide");
+};
+
 /* ------------------------------------- GSAP Animation functions ------------------------------------- */
 
 function fadeIn(section) {
-  TweenMax.from(section, 1.5, {
+  TweenMax.fromTo(section, 1.5, {
     x: "-100%"
+  }, {
+    x: "0%",
+    zIndex: 1
   });
 }
 
@@ -84,7 +109,7 @@ const zeppelinFloating = TweenMax.to(zeppelin, 2, {
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
 
 menuLinks.forEach(link =>
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     removeActiveClass(sections);
     removeActiveClass(headerLinksToFocus);
@@ -94,45 +119,40 @@ menuLinks.forEach(link =>
 );
 
 headerLinksToFocus.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     focusAnchor(link);
   });
 });
 
 tabLinks.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     changeBackgroundColor(link);
   });
 });
 
 sideIcons.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     removeActiveClass(sideIconsImages);
     focusAnchor(link.firstChild);
   });
 });
 
-zeppelin.addEventListener("click", function(e) {
+zeppelin.addEventListener("click", function (e) {
   e.preventDefault();
   servicesIcon.classList.add("active");
   servicesLink.classList.add("active");
 });
 
-const hideEn = () => {
-  en.classList.add("hide");
-  es.classList.remove("hide");
-};
 en.addEventListener("click", hideEn);
 
-const hideEs = () => {
-  es.classList.add("hide");
-  en.classList.remove("hide");
-};
 es.addEventListener("click", hideEs);
 
+enMobile.addEventListener("click", hideEng);
+
+esMobile.addEventListener("click", hideSpa);
 /* ------------------------------------- CSSOM EVENTS ------------------------------------- */
 
 /* Adjusting viewport units in mobile version. Reference: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
