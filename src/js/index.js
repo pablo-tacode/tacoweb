@@ -41,11 +41,11 @@ function changePage(link) {
       fadeIn(section);
       if (section.id === "homes") {
         zeppelinFloating.play();
-        backgroundEntrance()
+        homeBackgroundEntrance()
         section.classList.add("active");
       } else {
         section.classList.add("active");
-        backgroundExit();
+        homeBackgroundExit();
       }
     }
   });
@@ -120,14 +120,14 @@ const zeppelinFloating = TweenMax.to(zeppelin, 2, {
   paused: false
 });
 
-function backgroundExit() {
+function homeBackgroundExit() {
   const tl = new TimelineMax();
   tl.to(mountainOne, 1, {
     scaleX: 3,
     ease: "power1.out"
   }, 0.1)
   .to(mountainOne, 1, {
-    x: 450,
+    xPercent: "23%",
     onComplete: focusAnchor(mountainOne)
   }, 0.1)
   .to(mountainTwo, 1, {
@@ -141,7 +141,7 @@ function backgroundExit() {
   }, 0.1)
 }
 
-function backgroundEntrance() {
+function homeBackgroundEntrance() {
   const tl = new TimelineMax();
   tl.to(mountainOne, 1, {
     scaleX: 1,
@@ -149,7 +149,7 @@ function backgroundEntrance() {
   }, 0.1)
   .to(mountainOne, 1, {
     onStart: removeClass(mountainOne),
-    x: 0
+    xPercent: 0
   }, 0.1)
   .to(mountainTwo, 1, {
     y: "0%"
@@ -200,7 +200,7 @@ zeppelin.addEventListener("click", function (e) {
   e.preventDefault();
   servicesIcon.classList.add("active");
   servicesLink.classList.add("active");
-  backgroundExit();
+  homeBackgroundExit();
 });
 
 en.addEventListener("click", hideEn);
