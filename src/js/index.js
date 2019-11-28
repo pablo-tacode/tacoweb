@@ -11,6 +11,8 @@ const servicesIcon = document.getElementById("service");
 const servicesLink = document.getElementById("services-link");
 const en = document.getElementById("en");
 const es = document.getElementById("es");
+const enMobile = document.getElementById("en-mobile");
+const esMobile = document.getElementById("es-mobile");
 
 function changePage(link) {
   zeppelinFloating.pause();
@@ -62,6 +64,17 @@ const hideEs = () => {
   es.classList.add("hide");
   en.classList.remove("hide");
 };
+
+const hideEng = () => {
+  enMobile.classList.add("hide");
+  esMobile.classList.remove("hide");
+};
+
+const hideSpa = () => {
+  esMobile.classList.add("hide");
+  enMobile.classList.remove("hide");
+};
+
 /* ------------------------------------- GSAP Animation functions ------------------------------------- */
 
 function fadeIn(section) {
@@ -134,6 +147,9 @@ en.addEventListener("click", hideEn);
 
 es.addEventListener("click", hideEs);
 
+enMobile.addEventListener("click", hideEng);
+
+esMobile.addEventListener("click", hideSpa);
 /* ------------------------------------- CSSOM EVENTS ------------------------------------- */
 
 /* Adjusting viewport units in mobile version. Reference: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
