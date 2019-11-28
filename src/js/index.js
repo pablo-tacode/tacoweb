@@ -1,19 +1,39 @@
-const zeppelin = document.getElementById("zeppelin");
+/* General elements */
 const sections = document.querySelectorAll("article");
+
+/* Background elements */
+const mountainOne = document.getElementById("mountain-001");
+const mountainTwo = document.getElementById("mountain-002");
+const cities = document.getElementById("cities-001");
+
+/* Menu elements */
 const menuLinks = document.querySelectorAll(".header-links");
 const headerLinksToFocus = document.querySelectorAll(".links-onhover");
+
+/* Tab bar elements */
 const tabLinks = document.querySelectorAll(".tab-links");
 const backgroundIcons = document.querySelectorAll(".background-icons");
+
+/* Side bar elements */
 const sideIcons = document.querySelectorAll(".side-icons");
 const sideIconsImages = document.querySelectorAll(".icon");
-const tagline = document.getElementById("tagline");
-const servicesIcon = document.getElementById("service");
-const servicesLink = document.getElementById("services-link");
+
+/* Dictionary elements */
 const en = document.getElementById("en");
 const es = document.getElementById("es");
 const enMobile = document.getElementById("en-mobile");
 const esMobile = document.getElementById("es-mobile");
 
+/* Home elements */
+const zeppelin = document.getElementById("zeppelin");
+const tagline = document.getElementById("tagline");
+
+/* Services elements */
+const servicesIcon = document.getElementById("service");
+const servicesLink = document.getElementById("services-link");
+
+
+/* General Functions */
 function changePage(link) {
   zeppelinFloating.pause();
   sections.forEach(section => {
@@ -23,16 +43,24 @@ function changePage(link) {
       if (section.id === "homes") {
         zeppelinFloating.play();
         appear(tagline);
+        backgroundEntrance()
         section.classList.add("active");
-      } else {
+      }else {
         section.classList.add("active");
+        backgroundExit();
       }
     }
   });
 }
 
 function focusAnchor(link) {
+  link.classList.remove("innactive")
   link.classList.add("active");
+}
+
+function removeClass (element) {
+  element.classList.remove("active");
+  element.classList.add("innactive")
 }
 
 function sideIconsOnFocus(link) {
@@ -106,6 +134,36 @@ const zeppelinFloating = TweenMax.to(zeppelin, 2, {
   paused: false
 });
 
+function backgroundExit () {
+  const tl = new TimelineMax();
+  tl.to(mountainOne, 1, {
+    onStart:focusAnchor(mountainOne),
+    scaleX: 2,
+    ease: "power1.out"
+  }, 0.6)
+  tl.to(mountainTwo, 1, {
+    y: "100%"
+  }, 0.1)
+  tl.to(cities, 1, {
+    y:"100%"
+  }, 0.1)
+}
+
+function backgroundEntrance () {
+  const tl = new TimelineMax();
+  tl.to(mountainOne, 1, {
+    onComplete:removeClass(mountainOne),
+    scaleX: 1,
+    ease: "power1.out"
+  }, 0.6)
+  tl.to(mountainTwo, 1, {
+    y: "0%"
+  }, 0.1)
+  tl.to(cities, 1, {
+    y:"0%"
+  }, 0.1)
+}
+
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
 
 menuLinks.forEach(link =>
@@ -144,6 +202,7 @@ zeppelin.addEventListener("click", function (e) {
   e.preventDefault();
   servicesIcon.classList.add("active");
   servicesLink.classList.add("active");
+  backgroundExit();
 });
 
 en.addEventListener("click", hideEn);
@@ -153,6 +212,7 @@ es.addEventListener("click", hideEs);
 enMobile.addEventListener("click", hideEng);
 
 esMobile.addEventListener("click", hideSpa);
+
 /* ------------------------------------- CSSOM EVENTS ------------------------------------- */
 
 /* Adjusting viewport units in mobile version. Reference: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
