@@ -78,8 +78,8 @@ const hideSpa = () => {
 /* ------------------------------------- GSAP Animation functions ------------------------------------- */
 
 function fadeIn(section) {
-  TweenMax.from(section, 1.5, {
-    x: "-100%"
+  TweenMax.fromTo(section, 1.5, {
+    x: "-100%" 
   });
 }
 
