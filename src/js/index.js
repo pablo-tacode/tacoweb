@@ -45,7 +45,7 @@ function changePage(link) {
         section.classList.add("active");
       } else {
         section.classList.add("active");
-        homeBackgroundExit();
+        listenToScreenWidth(w);
       }
     }
   });
@@ -101,6 +101,20 @@ const hideSpa = () => {
   enMobile.classList.remove("hide");
 };
 
+function listenToScreenWidth (w) {
+    const targetWidth = 1024;
+    if ( w <= targetWidth) {
+      const mobilePercent = "0%"
+      const mobileScale = 1     
+      homeBackgroundExit(mobilePercent, mobileScale)
+    }
+    else {
+      const desktopPercent = "23%"
+      const desktopScale = 3     
+      homeBackgroundExit(desktopPercent, desktopScale)
+    }
+}
+
 /* ------------------------------------- GSAP Animation functions ------------------------------------- */
 
 function fadeIn(section) {
@@ -120,14 +134,14 @@ const zeppelinFloating = TweenMax.to(zeppelin, 2, {
   paused: false
 });
 
-function homeBackgroundExit() {
+function homeBackgroundExit(xPercentage, nScale) {
   const tl = new TimelineMax();
   tl.to(mountainOne, 1, {
-    scaleX: 3,
+    scaleX: nScale,
     ease: "power1.out"
   }, 0.1)
   .to(mountainOne, 1, {
-    xPercent: "23%",
+    xPercent: xPercentage,
     onComplete: focusAnchor(mountainOne)
   }, 0.1)
   .to(mountainTwo, 1, {
@@ -149,7 +163,7 @@ function homeBackgroundEntrance() {
   }, 0.1)
   .to(mountainOne, 1, {
     onStart: removeClass(mountainOne),
-    xPercent: 0
+    xPercent: "0%"
   }, 0.1)
   .to(mountainTwo, 1, {
     y: "0%"
@@ -200,7 +214,7 @@ zeppelin.addEventListener("click", function (e) {
   e.preventDefault();
   servicesIcon.classList.add("active");
   servicesLink.classList.add("active");
-  homeBackgroundExit();
+  listenToScreenWidth(w);
 });
 
 en.addEventListener("click", hideEn);
@@ -216,9 +230,11 @@ esMobile.addEventListener("click", hideSpa);
 /* Adjusting viewport units in mobile version. Reference: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty("--vh", `${vh}px`);
+let w = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
 
 /* Listen when rezising in order to 'refresh' the vh value */
 window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
+  /* listenToScreenWidth(w); */
 });
