@@ -236,5 +236,4 @@ let w = document.documentElement.clientWidth || document.body.clientWidth || win
 window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
-  /* listenToScreenWidth(w); */
 });
