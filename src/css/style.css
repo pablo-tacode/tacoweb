@@ -9,7 +9,8 @@
 }
 
 a,
-button {
+button,
+div {
   -webkit-tap-highlight-color: transparent;
   outline: transparent;
 }
@@ -313,16 +314,17 @@ main>h1 {
   z-index: 1;
   grid-column: 1/2;
   grid-row: 5/8;
-  width: 100%;
+  width: 20%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  justify-self: center;
 }
 
 .zeppelin>a {
-  width: 20%;
+  width: 100%;
 }
 
 .zeppelin>a>svg {
@@ -427,11 +429,12 @@ main>h1 {
 
   .zeppelin {
     grid-row: 6/9;
+    width: 30%;
   }
 
   .zeppelin>a {
-    width: 30%;
     height: 70%;
+    width: 100%;
   }
 
   .zeppelin>a>svg {
@@ -550,11 +553,11 @@ main>h1 {
 
   .zeppelin {
     grid-row: 5/8;
+    width: 40%;
   }
 
   #zeppelin-link {
     height: 100%;
-    width: 40%;
   }
 
   .zeppelin>a>svg {

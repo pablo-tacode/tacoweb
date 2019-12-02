@@ -25,6 +25,7 @@ const enMobile = document.getElementById("en-mobile");
 const esMobile = document.getElementById("es-mobile");
 
 /* Home elements */
+const home = document.querySelector(".home");
 const zeppelin = document.getElementById("zeppelin");
 const tagline = document.getElementById("tagline");
 
@@ -236,4 +237,9 @@ let w = document.documentElement.clientWidth || document.body.clientWidth || win
 window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
-});
+  /* if(home.classList.contains('active')){
+    console.log('Home is active')
+    }else{
+      listenToScreenWidth(w)
+    } */
+}); 
