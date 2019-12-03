@@ -32,6 +32,9 @@ const tagline = document.getElementById("tagline");
 /* Services elements */
 const servicesIcon = document.getElementById("service");
 const servicesLink = document.getElementById("services-link");
+const slides = document.querySelectorAll(".carousel-img");
+const prevArrow = document.getElementById("prev");
+const nextArrow = document.getElementById("next");
 
 
 /* General Functions */
@@ -46,7 +49,7 @@ function changePage(link) {
         section.classList.add("active");
       } else {
         section.classList.add("active");
-        listenToScreenWidth(w);
+        homeBackgroundExit();
       }
     }
   });
@@ -102,18 +105,49 @@ const hideSpa = () => {
   enMobile.classList.remove("hide");
 };
 
-function listenToScreenWidth (w) {
-    const targetWidth = 1024;
-    if ( w <= targetWidth) {
-      const mobilePercent = "0%"
-      const mobileScale = 1     
-      homeBackgroundExit(mobilePercent, mobileScale)
-    }
-    else {
-      const desktopPercent = "23%"
-      const desktopScale = 3     
-      homeBackgroundExit(desktopPercent, desktopScale)
-    }
+
+let xPercent, mountainScale
+
+function listenToScreenWidth(w) {
+  const targetWidth = 1024;
+  if (w <= targetWidth) {
+    xPercent = "0%"
+    mountainScale = 1
+    showSlides(slideIndex);
+    if(home.classList.contains('active')){
+      console.log('Home is active')
+      }else{
+        mountainOne.style.transform = "matrix(1, 0, 0, 1, 0, 0)";
+      }
+  } else {
+    xPercent = "23%"
+    mountainScale = 3
+    slides.forEach(slide => slide.removeAttribute('style'));
+    if(home.classList.contains('active')){
+      console.log('Home is active')
+      }else{
+        mountainOne.style.transform = "translate(23%, 0%) matrix(3, 0, 0, 1, 0, 0)";
+      }
+}}
+
+let slideIndex = 1;
+
+function showSlides(n) {
+  if (n > slides.length) {
+    slideIndex = 1
+  }
+  if (n < 1) {
+    slideIndex = slides.length
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "flex";
+}
+
+
+function addingSlides(n) {
+  showSlides(slideIndex += n);
 }
 
 /* ------------------------------------- GSAP Animation functions ------------------------------------- */
@@ -135,46 +169,46 @@ const zeppelinFloating = TweenMax.to(zeppelin, 2, {
   paused: false
 });
 
-function homeBackgroundExit(xPercentage, nScale) {
+function homeBackgroundExit() {
   const tl = new TimelineMax();
   tl.to(mountainOne, 1, {
-    scaleX: nScale,
-    ease: "power1.out"
-  }, 0.1)
-  .to(mountainOne, 1, {
-    xPercent: xPercentage,
-    onComplete: focusAnchor(mountainOne)
-  }, 0.1)
-  .to(mountainTwo, 1, {
-    y: "100%"
-  }, 0.1)
-  .to(cities, 1, {
-    y: "100%"
-  }, 0.1)
-  .to(tagline, 0.5, {
-    opacity: 0
-  }, 0.1)
+      scaleX: mountainScale,
+      ease: "power1.out"
+    }, 0.1)
+    .to(mountainOne, 1, {
+      xPercent: xPercent,
+      onComplete: focusAnchor(mountainOne)
+    }, 0.1)
+    .to(mountainTwo, 1, {
+      y: "100%"
+    }, 0.1)
+    .to(cities, 1, {
+      y: "100%"
+    }, 0.1)
+    .to(tagline, 0.5, {
+      opacity: 0
+    }, 0.1)
 }
 
 function homeBackgroundEntrance() {
   const tl = new TimelineMax();
   tl.to(mountainOne, 1, {
-    scaleX: 1,
-    ease: "power1.out"
-  }, 0.1)
-  .to(mountainOne, 1, {
-    onStart: removeClass(mountainOne),
-    xPercent: "0%"
-  }, 0.1)
-  .to(mountainTwo, 1, {
-    y: "0%"
-  }, 0.1)
-  .to(cities, 1, {
-    y: "0%"
-  }, 0.1)
-  .to(tagline, 1, {
-    opacity: 1
-  }, 0.7)
+      scaleX: 1,
+      ease: "power1.out"
+    }, 0.1)
+    .to(mountainOne, 1, {
+      onStart: removeClass(mountainOne),
+      xPercent: "0%"
+    }, 0.1)
+    .to(mountainTwo, 1, {
+      y: "0%"
+    }, 0.1)
+    .to(cities, 1, {
+      y: "0%"
+    }, 0.1)
+    .to(tagline, 1, {
+      opacity: 1
+    }, 0.7)
 }
 
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
@@ -215,7 +249,7 @@ zeppelin.addEventListener("click", function (e) {
   e.preventDefault();
   servicesIcon.classList.add("active");
   servicesLink.classList.add("active");
-  listenToScreenWidth(w);
+  homeBackgroundExit();
 });
 
 en.addEventListener("click", hideEn);
@@ -226,20 +260,28 @@ enMobile.addEventListener("click", hideEng);
 
 esMobile.addEventListener("click", hideSpa);
 
+prevArrow.addEventListener("click", (e) => {
+  e.preventDefault()
+  addingSlides(-1)
+});
+
+nextArrow.addEventListener("click", (e) => {
+  e.preventDefault()
+  addingSlides(1)
+});
+
 /* ------------------------------------- CSSOM EVENTS ------------------------------------- */
 
 /* Adjusting viewport units in mobile version. Reference: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty("--vh", `${vh}px`);
 let w = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
+listenToScreenWidth(w);
 
 /* Listen when rezising in order to 'refresh' the vh value */
 window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
-  /* if(home.classList.contains('active')){
-    console.log('Home is active')
-    }else{
-      listenToScreenWidth(w)
-    } */
-}); 
+  let w = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
+  listenToScreenWidth(w);
+});
