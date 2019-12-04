@@ -617,6 +617,7 @@ main>h1 {
     justify-content: center;
     text-decoration: none;
     position: absolute;
+    overflow: hidden;
   }
 
   .background {
@@ -657,6 +658,7 @@ main>h1 {
     z-index: 3;
     right: 0;
     margin: 5%;
+    overflow: hidden;
   }
 
   main>h1 {
@@ -664,6 +666,7 @@ main>h1 {
     height: calc(var(--vh, 1vh) * 100);
     grid-template-rows: 35% 10% 55%;
     grid-template-columns: 20% 60% 20%;
+    overflow: hidden;
   }
 
   .home-img {
@@ -680,11 +683,13 @@ main>h1 {
   .home-elements {
     height: 70%;
     height: calc(var(--vh, 1vh) * 70);
+    overflow: hidden;
   }
 
   .zeppelin {
     grid-row: 5/8;
     width: 40%;
+    overflow: hidden;
   }
 
   #zeppelin-link {
