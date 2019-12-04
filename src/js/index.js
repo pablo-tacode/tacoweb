@@ -126,7 +126,6 @@ function isHomeActiveDesktop() {
     console.log('Home is active');
   } else {
     mountainOne.style.transform = "translate(23%, 0%) matrix(3, 0, 0, 1, 0, 0)";
-    slides.forEach(slide => slide.removeAttribute('style'));
   }
 }
 
@@ -140,6 +139,7 @@ function listenToScreenWidth(w) {
   } else {
     xPercent = 23
     mountainScale = 3
+    TweenMax.set(["#slide-two", "#slide-one"], {clearProps:"all"})
     isHomeActiveDesktop();
   }
 }
@@ -208,9 +208,9 @@ function homeBackgroundExit() {
       onStart: focusAnchor(mountainTwo)
     }, 0.1)
     .to(cities, 1, {
-      yPercent: 100
+      opacity: 0
     }, 0.1)
-    .to(tagline, 0.5, {
+    .to(tagline, 0.3, {
       opacity: 0
     }, 0.1)
 }
@@ -229,8 +229,8 @@ function homeBackgroundEntrance() {
       onStart: removeClass(mountainTwo)
     }, 0.1)
     .to(cities, 1, {
-      yPercent: 0
-    }, 0.1)
+      opacity: 1
+    }, 0.7)
     .fromTo(home, 1.5, {
       xPercent: -100
     }, {
