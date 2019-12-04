@@ -122,11 +122,11 @@ function isHomeActiveMobile() {
 }
 
 function isHomeActiveDesktop() {
-  slides.forEach(slide => slide.removeAttribute('style'));
   if (home.classList.contains('active')) {
     console.log('Home is active');
   } else {
     mountainOne.style.transform = "translate(23%, 0%) matrix(3, 0, 0, 1, 0, 0)";
+    slides.forEach(slide => slide.removeAttribute('style'));
   }
 }
 
