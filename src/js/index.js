@@ -399,6 +399,12 @@ nextArrow.addEventListener("click", e => {
 //{ passive: false }
 //);
 
+window.addEventListener("touchmove", function(event) {
+  if (event.scale !== 1) {
+    event.preventDefault();
+  }
+});
+
 //$(window).bind(
 //"gesturestart touchmove",
 //function(event) {
