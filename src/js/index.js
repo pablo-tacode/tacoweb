@@ -389,6 +389,15 @@ nextArrow.addEventListener("click", e => {
   addingSlides(1);
 });
 
+window.addEventListener(
+  "touchmove",
+  function(event) {
+    if (event.scale !== 1) {
+      event.preventDefault();
+    }
+  },
+  { passive: false }
+);
 /* ------------------------------------- CSSOM EVENTS ------------------------------------- */
 
 /* Adjusting viewport units in mobile version. Reference: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
