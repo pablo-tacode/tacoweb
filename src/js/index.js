@@ -158,23 +158,31 @@ function fadeIn(section) {
       opacity: 0
     }, {
       opacity: 1
+    }, 1.3)
+    .fromTo(".services-title", 1, {
+      opacity: 0
+    }, {
+      opacity: 1
     }, 1.3);
 }
 
 function entranceFromRight(elementOne) {
   TweenMax.fromTo(elementOne, 1, {
     xPercent: -200,
-    width: 0
+    width: 0,
+    opacity:0
   }, {
     xPercent: 0,
-    width: "80%"
+    width: "80%",
+    opacity: 1
   })
 }
 
 function bye(element) {
   TweenMax.to(element, 1, {
       xPercent: 200,
-      width: 0
+      width: 0,
+      opacity: 0
     })
 }
 

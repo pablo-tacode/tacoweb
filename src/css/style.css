@@ -347,21 +347,36 @@ main>h1 {
   width: 80%;
   height: 80%;
   align-self: flex-end;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 10% 90%;
   align-items: center;
+  justify-items: center;
+}
+
+.services-title{
+  grid-column: 1/3;
+  grid-row: 1/2;
+  height: 50%;
+  width: 100%;
+  display: flex;
   justify-content: center;
 }
 
+.services-title>svg{
+  height: 100%;
+}
+
 .carousel-img{
+  grid-row: 2/3;
   display: flex;
-  margin: 0 5% 0 5%;
+  margin: 0;
   height: 80%;
 }
 
-.carousel-img>img{ 
+.carousel-img>svg{ 
   width: 100%;
   height: 100%;
-  object-fit: contain;
 }
 
 .arrows{
@@ -389,19 +404,30 @@ main>h1 {
 @media screen and (max-width: 1024px) and (orientation: landscape){
   .carousel {
     width: 60%;
-    height: 80%;
+    height: 75%;
     align-self: flex-end;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 100%;
+    grid-template-rows: 10% 90%;
     align-items: center;
     justify-items: center;
+  }
+
+  .services-title{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+    height: 50%;
+  }
+
+  .services-title>svg{
+    height: 75%;
   }
 
   .carousel-img {
     display: none;
     grid-column: 1/2;
-    grid-row: 1/2;
+    grid-row: 2/3;
   }
 
   .arrows{
@@ -409,18 +435,12 @@ main>h1 {
     color: #ffffff;
     height: 10%;
     width: 10%;
-  }
-  
-  #prev{
-    grid-column: 1/2;
-    grid-row: 1/2;
-    align-self: center;
-    justify-self: left;
+    opacity: 0;
   }
 
   #next{
     grid-column: 1/2;
-    grid-row: 1/2;
+    grid-row: 2/3;
     align-self: center;
     justify-self: right;
   }
@@ -511,19 +531,30 @@ main>h1 {
 
   .carousel {
     width: 60%;
-    height: 80%;
+    height: 75%;
     align-self: flex-end;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 100%;
+    grid-template-rows: 10% 90%;
     align-items: center;
     justify-items: center;
+  }
+
+  .services-title{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+    height: 50%;
+  }
+
+  .services-title>svg{
+    height: 75%;
   }
 
   .carousel-img {
     display: none;
     grid-column: 1/2;
-    grid-row: 1/2;
+    grid-row: 2/3;
   }
 
   .arrows{
@@ -534,16 +565,16 @@ main>h1 {
     opacity: 0;
   }
   
-  #prev{
+  /* #prev{
     grid-column: 1/2;
-    grid-row: 1/2;
+    grid-row: 2/3;
     align-self: center;
     justify-self: left;
-  }
+  } */
 
   #next{
     grid-column: 1/2;
-    grid-row: 1/2;
+    grid-row: 2/3;
     align-self: center;
     justify-self: right;
   }
@@ -660,9 +691,22 @@ main>h1 {
     height: calc(var(--vh, 1vh) * 100);
   }
 
-  .carousel{
+  .carousel {
     width: 80%;
     height: 70%;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 90%;
+  }
+
+  .services-title{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: flex-start;
+    height: 50%;
+  }
+
+  .services-title>svg{
+    height: 65%;
   }
 
   .carousel-img {
