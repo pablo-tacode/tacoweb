@@ -135,9 +135,9 @@ function listenToScreenWidth(w) {
     showSlides(slideIndex);
     isHomeActiveMobile();
   } else {
-    xPercent = 23
-    mountainScale = 3
-    TweenMax.set(["#slide-two", "#slide-one"], {clearProps:"all"})
+    xPercent = 23;
+    mountainScale = 3;
+    TweenMax.set(["#slide-two", "#slide-one"], { clearProps: "all" });
     isHomeActiveDesktop();
   }
 }
@@ -222,20 +222,42 @@ function homeBackgroundExit() {
     {
       scaleX: mountainScale,
       ease: "power1.out"
-    }, 0.1)
-    .to(mountainOne, 1, {
-      xPercent: xPercent,
-      onComplete: focusAnchor(mountainOne)
-    }, 0.1)
-    .to(mountainTwo, 1, {
-      onStart: focusAnchor(mountainTwo)
-    }, 0.1)
-    .to(cities, 1, {
-      opacity: 0
-    }, 0.1)
-    .to(tagline, 0.3, {
-      opacity: 0
-    }, 0.1)
+    },
+    0.1
+  )
+    .to(
+      mountainOne,
+      1,
+      {
+        xPercent: xPercent,
+        onComplete: focusAnchor(mountainOne)
+      },
+      0.1
+    )
+    .to(
+      mountainTwo,
+      1,
+      {
+        onStart: focusAnchor(mountainTwo)
+      },
+      0.1
+    )
+    .to(
+      cities,
+      1,
+      {
+        opacity: 0
+      },
+      0.1
+    )
+    .to(
+      tagline,
+      0.3,
+      {
+        opacity: 0
+      },
+      0.1
+    );
 }
 
 function homeBackgroundEntrance() {
@@ -246,26 +268,54 @@ function homeBackgroundEntrance() {
     {
       scaleX: 1,
       ease: "power1.out"
-    }, 0.1)
-    .to(mountainOne, 1, {
-      onStart: removeClass(mountainOne),
-      xPercent: 0
-    }, 0.1)
-    .to(mountainTwo, 1, {
-      onStart: removeClass(mountainTwo)
-    }, 0.1)
-    .to(cities, 1, {
-      opacity: 1
-    }, 0.7)
-    .fromTo(home, 1.5, {
-      xPercent: -100
-    }, {
-      xPercent: 0,
-      zIndex: 1
-    }, 0.1)
-    .to(tagline, 1, {
-      opacity: 1
-    }, 0.7)
+    },
+    0.1
+  )
+    .to(
+      mountainOne,
+      1,
+      {
+        onStart: removeClass(mountainOne),
+        xPercent: 0
+      },
+      0.1
+    )
+    .to(
+      mountainTwo,
+      1,
+      {
+        onStart: removeClass(mountainTwo)
+      },
+      0.1
+    )
+    .to(
+      cities,
+      1,
+      {
+        opacity: 1
+      },
+      0.7
+    )
+    .fromTo(
+      home,
+      1.5,
+      {
+        xPercent: -100
+      },
+      {
+        xPercent: 0,
+        zIndex: 1
+      },
+      0.1
+    )
+    .to(
+      tagline,
+      1,
+      {
+        opacity: 1
+      },
+      0.7
+    );
 }
 
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
@@ -349,16 +399,16 @@ nextArrow.addEventListener("click", e => {
 //{ passive: false }
 //);
 
-$(window).bind(
-  "gesturestart touchmove",
-  function(event) {
-    if (event.scale !== 1) {
-      event.preventDefault();
-      document.body.style.transform = "scale(1)";
-    }
-  },
-  { passive: false }
-);
+//$(window).bind(
+//"gesturestart touchmove",
+//function(event) {
+// if (event.scale !== 1) {
+// event.preventDefault();
+// document.body.style.transform = "scale(1)";
+//}
+//},
+//{ passive: false }
+//);
 /* ------------------------------------- CSSOM EVENTS ------------------------------------- */
 
 /* Adjusting viewport units in mobile version. Reference: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
