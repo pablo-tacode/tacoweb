@@ -389,15 +389,23 @@ nextArrow.addEventListener("click", e => {
   addingSlides(1);
 });
 
-window.addEventListener(
-  "touchmove",
-  function(event) {
-    if (event.scale !== 1) {
-      event.preventDefault();
-    }
-  },
-  { passive: false }
-);
+//window.addEventListener(
+//"touchmove",
+//function(event) {
+//if (event.scale !== 1) {
+// event.preventDefault();
+//}
+//},
+//{ passive: false }
+//);
+
+$(window).bind("gesturestart touchmove", function(event) {
+  event = event.originalEvent || event;
+  if (event.scale !== 1) {
+    event.preventDefault();
+    document.body.style.transform = "scale(1)";
+  }
+});
 /* ------------------------------------- CSSOM EVENTS ------------------------------------- */
 
 /* Adjusting viewport units in mobile version. Reference: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
