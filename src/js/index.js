@@ -39,8 +39,6 @@ const slides = document.querySelectorAll(".carousel-img");
 const nextArrow = document.getElementById("next");
 let slideIndex = 1;
 
-
-
 /* General Functions */
 function changePage(link) {
   zeppelinFloating.pause();
@@ -97,49 +95,49 @@ const hideEs = (spanish, english) => {
 
 function showSlides(n) {
   if (n > slides.length) {
-    slideIndex = 1
+    slideIndex = 1;
   }
   if (n < 1) {
-    slideIndex = slides.length
+    slideIndex = slides.length;
   }
   for (i = 0; i < slides.length; i++) {
-    bye(slides[i])
+    bye(slides[i]);
   }
   slides[slideIndex - 1].style.display = "flex";
   entranceFromRight(slides[slideIndex - 1]);
 }
 
 function addingSlides(n) {
-  showSlides(slideIndex += n)
+  showSlides((slideIndex += n));
 }
 
 function isHomeActiveMobile() {
-  if (home.classList.contains('active')) {
-    console.log('Home is active');
+  if (home.classList.contains("active")) {
+    console.log("Home is active");
   } else {
     mountainOne.style.transform = "matrix(1, 0, 0, 1, 0, 0)";
   }
 }
 
 function isHomeActiveDesktop() {
-  if (home.classList.contains('active')) {
-    console.log('Home is active');
+  if (home.classList.contains("active")) {
+    console.log("Home is active");
   } else {
     mountainOne.style.transform = "translate(23%, 0%) matrix(3, 0, 0, 1, 0, 0)";
-    slides.forEach(slide => slide.removeAttribute('style'));
+    slides.forEach(slide => slide.removeAttribute("style"));
   }
 }
 
 function listenToScreenWidth(w) {
-  console.log('listen to screen width')
+  console.log("listen to screen width");
   if (w <= targetWidth) {
-    xPercent = 0
-    mountainScale = 1
+    xPercent = 0;
+    mountainScale = 1;
     showSlides(slideIndex);
     isHomeActiveMobile();
   } else {
-    xPercent = 23
-    mountainScale = 3
+    xPercent = 23;
+    mountainScale = 3;
     isHomeActiveDesktop();
   }
 }
@@ -148,42 +146,64 @@ function listenToScreenWidth(w) {
 
 function fadeIn(section) {
   const tl = new TimelineMax();
-  tl.fromTo(section, 1.5, {
+  tl.fromTo(
+    section,
+    1.5,
+    {
       xPercent: -100
-    }, {
+    },
+    {
       xPercent: 0,
       zIndex: 1
-    })
-    .fromTo(".arrows", 1, {
-      opacity: 0
-    }, {
-      opacity: 1
-    }, 1.3)
-    .fromTo(".services-title", 1, {
-      opacity: 0
-    }, {
-      opacity: 1
-    }, 1.3);
+    }
+  )
+    .fromTo(
+      ".arrows",
+      1,
+      {
+        opacity: 0
+      },
+      {
+        opacity: 1
+      },
+      1.3
+    )
+    .fromTo(
+      ".services-title",
+      1,
+      {
+        opacity: 0
+      },
+      {
+        opacity: 1
+      },
+      1.3
+    );
 }
 
 function entranceFromRight(elementOne) {
-  TweenMax.fromTo(elementOne, 1, {
-    xPercent: -200,
-    width: 0,
-    opacity:0
-  }, {
-    xPercent: 0,
-    width: "80%",
-    opacity: 1
-  })
+  TweenMax.fromTo(
+    elementOne,
+    1,
+    {
+      xPercent: -200,
+      width: 0,
+      opacity: 0
+    },
+    {
+      xPercent: 0,
+      width: "80%",
+      opacity: 1
+    }
+  );
 }
 
 function bye(element) {
   TweenMax.to(element, 1, {
-      xPercent: 200,
-      width: 0,
-      opacity: 0
-    })
+    xPercent: 200,
+    width: 0,
+    opacity: 0
+  });
 }
 
 const zeppelinFloating = TweenMax.to(zeppelin, 2, {
@@ -196,56 +216,112 @@ const zeppelinFloating = TweenMax.to(zeppelin, 2, {
 
 function homeBackgroundExit() {
   const tl = new TimelineMax();
-  tl.to(mountainOne, 1, {
+  tl.to(
+    mountainOne,
+    1,
+    {
       scaleX: mountainScale,
       ease: "power1.out"
-    }, 0.1)
-    .to(mountainOne, 1, {
-      xPercent: xPercent,
-      onComplete: focusAnchor(mountainOne)
-    }, 0.1)
-    .to(mountainTwo, 1, {
-      onStart: focusAnchor(mountainTwo)
-    }, 0.1)
-    .to(cities, 1, {
-      yPercent: 100
-    }, 0.1)
-    .to(tagline, 0.5, {
-      opacity: 0
-    }, 0.1)
+    },
+    0.1
+  )
+    .to(
+      mountainOne,
+      1,
+      {
+        xPercent: xPercent,
+        onComplete: focusAnchor(mountainOne)
+      },
+      0.1
+    )
+    .to(
+      mountainTwo,
+      1,
+      {
+        onStart: focusAnchor(mountainTwo)
+      },
+      0.1
+    )
+    .to(
+      cities,
+      1,
+      {
+        yPercent: 100
+      },
+      0.1
+    )
+    .to(
+      tagline,
+      0.5,
+      {
+        opacity: 0
+      },
+      0.1
+    );
 }
 
 function homeBackgroundEntrance() {
   const tl = new TimelineMax();
-  tl.to(mountainOne, 1, {
+  tl.to(
+    mountainOne,
+    1,
+    {
       scaleX: 1,
       ease: "power1.out"
-    }, 0.1)
-    .to(mountainOne, 1, {
-      onStart: removeClass(mountainOne),
-      xPercent: 0
-    }, 0.1)
-    .to(mountainTwo, 1, {
-      onStart: removeClass(mountainTwo)
-    }, 0.1)
-    .to(cities, 1, {
-      yPercent: 0
-    }, 0.1)
-    .fromTo(home, 1.5, {
-      xPercent: -100
-    }, {
-      xPercent: 0,
-      zIndex: 1
-    }, 0.1)
-    .to(tagline, 1, {
-      opacity: 1
-    }, 0.7)
+    },
+    0.1
+  )
+    .to(
+      mountainOne,
+      1,
+      {
+        onStart: removeClass(mountainOne),
+        xPercent: 0
+      },
+      0.1
+    )
+    .to(
+      mountainTwo,
+      1,
+      {
+        onStart: removeClass(mountainTwo)
+      },
+      0.1
+    )
+    .to(
+      cities,
+      1,
+      {
+        yPercent: 0
+      },
+      0.1
+    )
+    .fromTo(
+      home,
+      1.5,
+      {
+        xPercent: -100
+      },
+      {
+        xPercent: 0,
+        zIndex: 1
+      },
+      0.1
+    )
+    .to(
+      tagline,
+      1,
+      {
+        opacity: 1
+      },
+      0.7
+    );
 }
 
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
 
 menuLinks.forEach(link =>
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     removeActiveClass(sections);
     removeActiveClass(headerLinksToFocus);
@@ -255,50 +331,50 @@ menuLinks.forEach(link =>
 );
 
 headerLinksToFocus.forEach(link => {
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     focusAnchor(link);
   });
 });
 
 tabLinks.forEach(link => {
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     changeBackgroundColor(link);
   });
 });
 
 sideIcons.forEach(link => {
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     removeActiveClass(sideIconsImages);
     focusAnchor(link.firstChild);
   });
 });
 
-zeppelin.addEventListener("click", function (e) {
+zeppelin.addEventListener("click", function(e) {
   e.preventDefault();
   servicesIcon.classList.add("active");
   servicesLink.classList.add("active");
   homeBackgroundExit();
 });
 
-en.addEventListener("click", (e) => {
+en.addEventListener("click", e => {
   e.preventDefault();
   hideEn(en, es);
 });
 
-es.addEventListener("click", (e) => {
+es.addEventListener("click", e => {
   e.preventDefault();
   hideEs(es, en);
 });
 
-enMobile.addEventListener("click", (e) => {
+enMobile.addEventListener("click", e => {
   e.preventDefault();
   hideEn(enMobile, esMobile);
 });
 
-esMobile.addEventListener("click", (e) => {
+esMobile.addEventListener("click", e => {
   e.preventDefault();
   hideEs(esMobile, enMobile);
 });
@@ -308,10 +384,18 @@ esMobile.addEventListener("click", (e) => {
   addingSlides(-1);
 }); */
 
-nextArrow.addEventListener("click", (e) => {
+nextArrow.addEventListener("click", e => {
   e.preventDefault();
   addingSlides(1);
 });
+
+document.documentElement.addEventListener(
+  "touchmove",
+  function(event) {
+    event.preventDefault();
+  },
+  false
+);
 
 /* ------------------------------------- CSSOM EVENTS ------------------------------------- */
 
@@ -319,7 +403,10 @@ nextArrow.addEventListener("click", (e) => {
 
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty("--vh", `${vh}px`);
-let w = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
+let w =
+  document.documentElement.clientWidth ||
+  document.body.clientWidth ||
+  window.innerWidth;
 listenToScreenWidth(w);
 
 /* Listen when rezising in order to 'refresh' the vh value */
@@ -327,6 +414,9 @@ listenToScreenWidth(w);
 window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
-  let w = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
+  let w =
+    document.documentElement.clientWidth ||
+    document.body.clientWidth ||
+    window.innerWidth;
   listenToScreenWidth(w);
 });
