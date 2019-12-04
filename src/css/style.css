@@ -166,7 +166,7 @@ nav>ul>li,
   transition: height 0.7s;
 }
 
-#mountain-002.active {
+#mountain-002.active{
   height: 0;
   transition: height 1.6s;
 }
@@ -677,6 +677,7 @@ main>h1 {
 
   .home-elements {
     height: 70%;
+    height: calc(var(--vh, 1vh) * 70);
   }
 
   .zeppelin {
