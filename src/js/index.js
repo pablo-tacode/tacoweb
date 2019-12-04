@@ -1,10 +1,12 @@
 /* General elements */
 const sections = document.querySelectorAll("article");
+const targetWidth = 1024;
 
 /* Background elements */
 const mountainOne = document.getElementById("mountain-001");
 const mountainTwo = document.getElementById("mountain-002");
 const cities = document.getElementById("cities-001");
+let xPercent, mountainScale;
 
 /* Menu elements */
 const menuLinks = document.querySelectorAll(".header-links");
@@ -32,6 +34,11 @@ const tagline = document.getElementById("tagline");
 /* Services elements */
 const servicesIcon = document.getElementById("service");
 const servicesLink = document.getElementById("services-link");
+const slides = document.querySelectorAll(".carousel-img");
+/* const prevArrow = document.getElementById("prev"); */
+const nextArrow = document.getElementById("next");
+let slideIndex = 1;
+
 
 
 /* General Functions */
@@ -39,31 +46,27 @@ function changePage(link) {
   zeppelinFloating.pause();
   sections.forEach(section => {
     if (link.classList.contains(`${section.id}`)) {
-      fadeIn(section);
       if (section.id === "homes") {
         zeppelinFloating.play();
-        homeBackgroundEntrance()
+        homeBackgroundEntrance();
         section.classList.add("active");
       } else {
+        fadeIn(section);
         section.classList.add("active");
-        listenToScreenWidth(w);
+        homeBackgroundExit();
       }
     }
   });
 }
 
 function focusAnchor(link) {
-  link.classList.remove("innactive")
+  link.classList.remove("innactive");
   link.classList.add("active");
 }
 
 function removeClass(element) {
   element.classList.remove("active");
-  element.classList.add("innactive")
-}
-
-function sideIconsOnFocus(link) {
-  link.firstChild.style.opacity = "1";
+  element.classList.add("innactive");
 }
 
 function changeBackgroundColor(link) {
@@ -82,49 +85,105 @@ function removeActiveClass(arr) {
   });
 }
 
-const hideEn = () => {
-  en.classList.add("hide");
-  es.classList.remove("hide");
+const hideEn = (english, spanish) => {
+  english.classList.add("hide");
+  spanish.classList.remove("hide");
 };
 
-const hideEs = () => {
-  es.classList.add("hide");
-  en.classList.remove("hide");
+const hideEs = (spanish, english) => {
+  spanish.classList.add("hide");
+  english.classList.remove("hide");
 };
 
-const hideEng = () => {
-  enMobile.classList.add("hide");
-  esMobile.classList.remove("hide");
-};
+function showSlides(n) {
+  if (n > slides.length) {
+    slideIndex = 1
+  }
+  if (n < 1) {
+    slideIndex = slides.length
+  }
+  for (i = 0; i < slides.length; i++) {
+    bye(slides[i])
+  }
+  slides[slideIndex - 1].style.display = "flex";
+  entranceFromRight(slides[slideIndex - 1]);
+}
 
-const hideSpa = () => {
-  esMobile.classList.add("hide");
-  enMobile.classList.remove("hide");
-};
+function addingSlides(n) {
+  showSlides(slideIndex += n)
+}
 
-function listenToScreenWidth (w) {
-    const targetWidth = 1024;
-    if ( w <= targetWidth) {
-      const mobilePercent = "0%"
-      const mobileScale = 1     
-      homeBackgroundExit(mobilePercent, mobileScale)
-    }
-    else {
-      const desktopPercent = "23%"
-      const desktopScale = 3     
-      homeBackgroundExit(desktopPercent, desktopScale)
-    }
+function isHomeActiveMobile() {
+  if (home.classList.contains('active')) {
+    console.log('Home is active');
+  } else {
+    mountainOne.style.transform = "matrix(1, 0, 0, 1, 0, 0)";
+  }
+}
+
+function isHomeActiveDesktop() {
+  slides.forEach(slide => slide.removeAttribute('style'));
+  if (home.classList.contains('active')) {
+    console.log('Home is active');
+  } else {
+    mountainOne.style.transform = "translate(23%, 0%) matrix(3, 0, 0, 1, 0, 0)";
+  }
+}
+
+function listenToScreenWidth(w) {
+  console.log('listen to screen width')
+  if (w <= targetWidth) {
+    xPercent = 0
+    mountainScale = 1
+    showSlides(slideIndex);
+    isHomeActiveMobile();
+  } else {
+    xPercent = 23
+    mountainScale = 3
+    isHomeActiveDesktop();
+  }
 }
 
 /* ------------------------------------- GSAP Animation functions ------------------------------------- */
 
 function fadeIn(section) {
-  TweenMax.fromTo(section, 1.5, {
-    x: "-100%"
+  const tl = new TimelineMax();
+  tl.fromTo(section, 1.5, {
+      xPercent: -100
+    }, {
+      xPercent: 0,
+      zIndex: 1
+    })
+    .fromTo(".arrows", 1, {
+      opacity: 0
+    }, {
+      opacity: 1
+    }, 1.3)
+    .fromTo(".services-title", 1, {
+      opacity: 0
+    }, {
+      opacity: 1
+    }, 1.3);
+}
+
+function entranceFromRight(elementOne) {
+  TweenMax.fromTo(elementOne, 1, {
+    xPercent: -200,
+    width: 0,
+    opacity:0
   }, {
-    x: "0%",
-    zIndex: 1
-  });
+    xPercent: 0,
+    width: "80%",
+    opacity: 1
+  })
+}
+
+function bye(element) {
+  TweenMax.to(element, 1, {
+      xPercent: 200,
+      width: 0,
+      opacity: 0
+    })
 }
 
 const zeppelinFloating = TweenMax.to(zeppelin, 2, {
@@ -135,46 +194,52 @@ const zeppelinFloating = TweenMax.to(zeppelin, 2, {
   paused: false
 });
 
-function homeBackgroundExit(xPercentage, nScale) {
+function homeBackgroundExit() {
   const tl = new TimelineMax();
   tl.to(mountainOne, 1, {
-    scaleX: nScale,
-    ease: "power1.out"
-  }, 0.1)
-  .to(mountainOne, 1, {
-    xPercent: xPercentage,
-    onComplete: focusAnchor(mountainOne)
-  }, 0.1)
-  .to(mountainTwo, 1, {
-    y: "100%"
-  }, 0.1)
-  .to(cities, 1, {
-    y: "100%"
-  }, 0.1)
-  .to(tagline, 0.5, {
-    opacity: 0
-  }, 0.1)
+      scaleX: mountainScale,
+      ease: "power1.out"
+    }, 0.1)
+    .to(mountainOne, 1, {
+      xPercent: xPercent,
+      onComplete: focusAnchor(mountainOne)
+    }, 0.1)
+    .to(mountainTwo, 1, {
+      onStart: focusAnchor(mountainTwo)
+    }, 0.1)
+    .to(cities, 1, {
+      yPercent: 100
+    }, 0.1)
+    .to(tagline, 0.5, {
+      opacity: 0
+    }, 0.1)
 }
 
 function homeBackgroundEntrance() {
   const tl = new TimelineMax();
   tl.to(mountainOne, 1, {
-    scaleX: 1,
-    ease: "power1.out"
-  }, 0.1)
-  .to(mountainOne, 1, {
-    onStart: removeClass(mountainOne),
-    xPercent: "0%"
-  }, 0.1)
-  .to(mountainTwo, 1, {
-    y: "0%"
-  }, 0.1)
-  .to(cities, 1, {
-    y: "0%"
-  }, 0.1)
-  .to(tagline, 1, {
-    opacity: 1
-  }, 0.7)
+      scaleX: 1,
+      ease: "power1.out"
+    }, 0.1)
+    .to(mountainOne, 1, {
+      onStart: removeClass(mountainOne),
+      xPercent: 0
+    }, 0.1)
+    .to(mountainTwo, 1, {
+      onStart: removeClass(mountainTwo)
+    }, 0.1)
+    .to(cities, 1, {
+      yPercent: 0
+    }, 0.1)
+    .fromTo(home, 1.5, {
+      xPercent: -100
+    }, {
+      xPercent: 0,
+      zIndex: 1
+    }, 0.1)
+    .to(tagline, 1, {
+      opacity: 1
+    }, 0.7)
 }
 
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
@@ -215,16 +280,38 @@ zeppelin.addEventListener("click", function (e) {
   e.preventDefault();
   servicesIcon.classList.add("active");
   servicesLink.classList.add("active");
-  listenToScreenWidth(w);
+  homeBackgroundExit();
 });
 
-en.addEventListener("click", hideEn);
+en.addEventListener("click", (e) => {
+  e.preventDefault();
+  hideEn(en, es);
+});
 
-es.addEventListener("click", hideEs);
+es.addEventListener("click", (e) => {
+  e.preventDefault();
+  hideEs(es, en);
+});
 
-enMobile.addEventListener("click", hideEng);
+enMobile.addEventListener("click", (e) => {
+  e.preventDefault();
+  hideEn(enMobile, esMobile);
+});
 
-esMobile.addEventListener("click", hideSpa);
+esMobile.addEventListener("click", (e) => {
+  e.preventDefault();
+  hideEs(esMobile, enMobile);
+});
+
+/* prevArrow.addEventListener("click", (e) => {
+  e.preventDefault();
+  addingSlides(-1);
+}); */
+
+nextArrow.addEventListener("click", (e) => {
+  e.preventDefault();
+  addingSlides(1);
+});
 
 /* ------------------------------------- CSSOM EVENTS ------------------------------------- */
 
@@ -232,14 +319,12 @@ esMobile.addEventListener("click", hideSpa);
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty("--vh", `${vh}px`);
 let w = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
+listenToScreenWidth(w);
 
 /* Listen when rezising in order to 'refresh' the vh value */
 window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
-  /* if(home.classList.contains('active')){
-    console.log('Home is active')
-    }else{
-      listenToScreenWidth(w)
-    } */
-}); 
+  let w = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
+  listenToScreenWidth(w);
+});

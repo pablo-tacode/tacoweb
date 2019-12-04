@@ -81,7 +81,7 @@ nav>ul>li,
 }
 
 .links-onhover {
-  height: 35%;
+  height: 50%;
 }
 
 .links-onhover:hover {
@@ -139,22 +139,6 @@ nav>ul>li,
   height: 100%;
 }
 
-/* .background-elements>.img-container:nth-child(1) {
-  z-index: 0;
-  grid-column: 1/2;
-  grid-row: 1/11;
-  height: 90%;
-  align-self: flex-end;
-}
-
-.background-elements>.img-container:nth-child(2) {
-  z-index: 0;
-  grid-column: 1/2;
-  grid-row: 5/11;
-  background: url("../assets/images/cities_this.png") no-repeat center bottom;
-  background-size: contain;
-} */
-
 .background-elements>.img-container:nth-child(1) {
   z-index: 0;
   grid-column: 1/2;
@@ -179,6 +163,16 @@ nav>ul>li,
 
 #mountain-001.innactive{
   height:65%;
+  transition: height 0.7s;
+}
+
+#mountain-002.active{
+  height: 0;
+  transition: height 1.6s;
+}
+
+#mountain-002.innactive{
+  height: 100%;
   transition: height 0.7s;
 }
 
@@ -332,6 +326,8 @@ main>h1 {
   height: 50%;
 }
 
+/* ------------------------------------------------ Services ------------------------------------------------ */
+
 .services {
   display: none;
 }
@@ -346,6 +342,48 @@ main>h1 {
   height: 100vh;
   z-index: 1;
 }
+
+.carousel {
+  width: 80%;
+  height: 80%;
+  align-self: flex-end;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 10% 90%;
+  align-items: center;
+  justify-items: center;
+}
+
+.services-title{
+  grid-column: 1/3;
+  grid-row: 1/2;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.services-title>svg{
+  height: 100%;
+}
+
+.carousel-img{
+  grid-row: 2/3;
+  display: flex;
+  margin: 0;
+  height: 80%;
+}
+
+.carousel-img>svg{ 
+  width: 100%;
+  height: 100%;
+}
+
+.arrows{
+  display: none;
+}
+
+/* ------------------------------------------------ Projects ------------------------------------------------ */
 
 .projects {
   display: none;
@@ -362,6 +400,51 @@ main>h1 {
 }
 
 /* Media queries */
+
+@media screen and (max-width: 1024px) and (orientation: landscape){
+  .carousel {
+    width: 60%;
+    height: 75%;
+    align-self: flex-end;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 90%;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .services-title{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+    height: 50%;
+  }
+
+  .services-title>svg{
+    height: 75%;
+  }
+
+  .carousel-img {
+    display: none;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .arrows{
+    display: block;
+    color: #ffffff;
+    height: 10%;
+    width: 10%;
+    opacity: 0;
+  }
+
+  #next{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-self: center;
+    justify-self: right;
+  }
+}
 
 @media screen and (max-width: 1024px) and (orientation: portrait) {
   header {
@@ -445,6 +528,56 @@ main>h1 {
   .tab-bar {
     display: none;
   }
+
+  .carousel {
+    width: 60%;
+    height: 75%;
+    align-self: flex-end;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 90%;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .services-title{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+    height: 50%;
+  }
+
+  .services-title>svg{
+    height: 75%;
+  }
+
+  .carousel-img {
+    display: none;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .arrows{
+    display: block;
+    color: #ffffff;
+    height: 10%;
+    width: 10%;
+    opacity: 0;
+  }
+  
+  /* #prev{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-self: center;
+    justify-self: left;
+  } */
+
+  #next{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-self: center;
+    justify-self: right;
+  }
 }
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
@@ -488,18 +621,6 @@ main>h1 {
     height: 80%;
   }
 
-/*   .background-elements>.img-container:nth-child(1) {
-    grid-row: 1/11;
-    height: 100%;
-    align-self: flex-end;
-  }
-
-  .background-elements>.img-container:nth-child(2) {
-    grid-row: 4/10;
-    background: url(../assets/images/cities.png) no-repeat 40% bottom;
-    background-size: cover;
-  } */
-
   .background-elements>.img-container:nth-child(1) {
     grid-row: 1/11;
     align-self: flex-end;
@@ -514,7 +635,7 @@ main>h1 {
 
   .background-elements>.img-container:nth-child(3) {
     grid-row: 4/10;
-    background: url(../assets/images/cities.png) no-repeat 40% bottom;
+    background: url("../assets/images/cities.png") no-repeat 40% bottom;
     background-size: cover;
   }
 
@@ -566,14 +687,33 @@ main>h1 {
   }
 
   #service.active {
-    display: grid;
-    grid-template-columns: 100%;
-    align-items: center;
-    justify-items: center;
-    width: 100%;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
-    z-index: 1;
+  }
+
+  .carousel {
+    width: 80%;
+    height: 70%;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 90%;
+  }
+
+  .services-title{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: flex-start;
+    height: 50%;
+  }
+
+  .services-title>svg{
+    height: 65%;
+  }
+
+  .carousel-img {
+    height: 80%;
+    width: 70%;
+    align-self: flex-start;
+    margin: 0;
   }
 
   #project.active {
@@ -627,8 +767,6 @@ main>h1 {
   .tab-bar>ul>li>a>svg {
     height: 85%;
     width: 85%;
-    /*         height: 70%;
-        width: 70%; */
   }
 
   .header-links.project>svg {
@@ -637,19 +775,5 @@ main>h1 {
 
   .background-icons.active {
     fill: #fbb420;
-  }
-
-  @keyframes menuAppearance {
-    0% {
-      opacity: 0;
-    }
-
-    50% {
-      opacity: 0.5;
-    }
-
-    100% {
-      opacity: 1;
-    }
   }
 }
