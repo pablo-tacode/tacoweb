@@ -391,6 +391,39 @@ nextArrow.addEventListener("click", e => {
   addingSlides(1);
 });
 
+//document.documentElement.addEventListener(
+//"touchmove",
+//function(event) {
+//event.preventDefault();
+//},
+//false
+//);
+
+//document.addEventListener(
+//"touchmove",
+//function(event) {
+//if (event.scale !== 1) {
+//event.preventDefault();
+//}
+//},
+//false
+//);
+
+document.addEventListener("gesturestart", function(e) {
+  e.preventDefault();
+  document.body.style.zoom = 0.99;
+});
+
+document.addEventListener("gesturechange", function(e) {
+  e.preventDefault();
+  document.body.style.zoom = 0.99;
+});
+
+document.addEventListener("gestureend", function(e) {
+  e.preventDefault();
+  document.body.style.zoom = 0.99;
+});
+
 /* ------------------------------------- CSSOM EVENTS ------------------------------------- */
 
 /* Adjusting viewport units in mobile version. Reference: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
