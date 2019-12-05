@@ -149,34 +149,28 @@ function listenToScreenWidth(w) {
 function fadeIn(section) {
   const tl = new TimelineMax();
   tl.fromTo(
-    section,
-    1.5,
-    {
-      xPercent: -100
-    },
-    {
-      xPercent: 0,
-      zIndex: 1
-    }
-  )
+      section,
+      1.5, {
+        xPercent: -100
+      }, {
+        xPercent: 0,
+        zIndex: 1
+      }
+    )
     .fromTo(
       ".arrows",
-      1,
-      {
+      1, {
         opacity: 0
-      },
-      {
+      }, {
         opacity: 1
       },
       1.3
     )
     .fromTo(
       ".services-title",
-      1,
-      {
+      1, {
         opacity: 0
-      },
-      {
+      }, {
         opacity: 1
       },
       1.3
@@ -186,13 +180,11 @@ function fadeIn(section) {
 function entranceFromRight(elementOne) {
   TweenMax.fromTo(
     elementOne,
-    1,
-    {
+    1, {
       xPercent: -200,
       width: 0,
       opacity: 0
-    },
-    {
+    }, {
       xPercent: 0,
       width: "80%",
       opacity: 1
@@ -219,18 +211,16 @@ const zeppelinFloating = TweenMax.to(zeppelin, 2, {
 function homeBackgroundExit() {
   const tl = new TimelineMax();
   tl.to(
-    mountainOne,
-    1,
-    {
-      scaleX: mountainScale,
-      ease: "power1.out"
-    },
-    0.1
-  )
+      mountainOne,
+      1, {
+        scaleX: mountainScale,
+        ease: "power1.out"
+      },
+      0.1
+    )
     .to(
       mountainOne,
-      1,
-      {
+      1, {
         xPercent: xPercent,
         onComplete: focusAnchor(mountainOne)
       },
@@ -238,24 +228,21 @@ function homeBackgroundExit() {
     )
     .to(
       mountainTwo,
-      1,
-      {
+      1, {
         onStart: focusAnchor(mountainTwo)
       },
       0.1
     )
     .to(
       cities,
-      1,
-      {
+      1, {
         opacity: 0
       },
       "-0.1"
     )
     .to(
       tagline,
-      0.3,
-      {
+      0.3, {
         opacity: 0
       },
       0.1
@@ -265,18 +252,16 @@ function homeBackgroundExit() {
 function homeBackgroundEntrance() {
   const tl = new TimelineMax();
   tl.to(
-    mountainOne,
-    1,
-    {
-      scaleX: 1,
-      ease: "power1.out"
-    },
-    0.1
-  )
+      mountainOne,
+      1, {
+        scaleX: 1,
+        ease: "power1.out"
+      },
+      0.1
+    )
     .to(
       mountainOne,
-      1,
-      {
+      1, {
         onStart: removeClass(mountainOne),
         xPercent: 0
       },
@@ -284,27 +269,23 @@ function homeBackgroundEntrance() {
     )
     .to(
       mountainTwo,
-      1,
-      {
+      1, {
         onStart: removeClass(mountainTwo)
       },
       0.1
     )
     .to(
       cities,
-      1,
-      {
+      1, {
         opacity: 1
       },
       0.7
     )
     .fromTo(
       home,
-      1.5,
-      {
+      1.5, {
         xPercent: -100
-      },
-      {
+      }, {
         xPercent: 0,
         zIndex: 1
       },
@@ -312,8 +293,7 @@ function homeBackgroundEntrance() {
     )
     .to(
       tagline,
-      1,
-      {
+      1, {
         opacity: 1
       },
       0.7
@@ -323,7 +303,7 @@ function homeBackgroundEntrance() {
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
 
 menuLinks.forEach(link =>
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     removeActiveClass(sections);
     removeActiveClass(headerLinksToFocus);
@@ -333,28 +313,28 @@ menuLinks.forEach(link =>
 );
 
 headerLinksToFocus.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     focusAnchor(link);
   });
 });
 
 tabLinks.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     changeBackgroundColor(link);
   });
 });
 
 sideIcons.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     removeActiveClass(sideIconsImages);
     focusAnchor(link.firstChild);
   });
 });
 
-zeppelin.addEventListener("click", function(e) {
+zeppelin.addEventListener("click", function (e) {
   e.preventDefault();
   servicesIcon.classList.add("active");
   servicesLink.classList.add("active");
@@ -409,17 +389,17 @@ nextArrow.addEventListener("click", e => {
 //false
 //);
 
-document.addEventListener("gesturestart", function(e) {
+document.addEventListener("gesturestart", function (e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
 
-document.addEventListener("gesturechange", function(e) {
+document.addEventListener("gesturechange", function (e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
 
-document.addEventListener("gestureend", function(e) {
+document.addEventListener("gestureend", function (e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });

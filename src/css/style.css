@@ -57,7 +57,7 @@ nav {
   display: none;
 }
 
-nav > ul {
+nav>ul {
   width: 90%;
   height: 100%;
   list-style-type: none;
@@ -68,7 +68,7 @@ nav > ul {
   grid-template-rows: 100%;
 }
 
-nav > ul > li,
+nav>ul>li,
 .header-links {
   height: 100%;
   display: flex;
@@ -117,7 +117,7 @@ nav > ul > li,
   z-index: 0;
 }
 
-.background > .opacity-mask {
+.background>.opacity-mask {
   width: 100%;
   height: 100vh;
   background: linear-gradient(180deg, #600364 0%, #b15f43 31%, #fcb425 75%);
@@ -139,7 +139,7 @@ nav > ul > li,
   height: 100%;
 }
 
-.background-elements > .img-container:nth-child(1) {
+.background-elements>.img-container:nth-child(1) {
   z-index: 0;
   grid-column: 1/2;
   grid-row: 1/11;
@@ -147,7 +147,8 @@ nav > ul > li,
   height: 100%;
 }
 
-.background-elements > .img-container:nth-child(2) {
+
+.background-elements>.img-container:nth-child(2) {
   z-index: 0;
   grid-column: 1/2;
   grid-row: 1/11;
@@ -175,7 +176,7 @@ nav > ul > li,
   transition: height 0.7s;
 }
 
-.background-elements > .img-container:nth-child(3) {
+.background-elements>.img-container:nth-child(3) {
   z-index: 0;
   grid-column: 1/2;
   grid-row: 5/11;
@@ -209,7 +210,7 @@ nav > ul > li,
   justify-items: center;
 }
 
-.icons > a {
+.icons>a {
   width: 100%;
   height: 100%;
 }
@@ -238,7 +239,7 @@ nav > ul > li,
   cursor: pointer;
 }
 
-.language-bttn > svg {
+.language-bttn>svg {
   width: 100%;
   height: 100%;
 }
@@ -257,7 +258,7 @@ nav > ul > li,
 
 /* ------------------------------------------------ Tag ------------------------------------------------ */
 
-main > h1 {
+main>h1 {
   width: 100%;
   z-index: 1;
   position: absolute;
@@ -316,11 +317,11 @@ main > h1 {
   justify-self: center;
 }
 
-.zeppelin > a {
+.zeppelin>a {
   width: 100%;
 }
 
-.zeppelin > a > svg {
+.zeppelin>a>svg {
   width: 100%;
   height: 50%;
 }
@@ -362,7 +363,7 @@ main > h1 {
   justify-content: center;
 }
 
-.services-title > svg {
+.services-title>svg {
   height: 100%;
 }
 
@@ -374,7 +375,7 @@ main > h1 {
   width: 100%;
 }
 
-.carousel-img > svg {
+.carousel-img>svg {
   width: 100%;
   height: 100%;
 }
@@ -402,6 +403,44 @@ main > h1 {
 /* Media queries */
 
 @media screen and (max-width: 1024px) and (orientation: landscape) {
+
+  /* main {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+  }
+
+  .background {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    position: absolute;
+  }
+
+  main>h1 {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+  }
+
+  .home.active {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+  }
+
+  .home-elements {
+    height: 70%;
+    height: calc(var(--vh, 1vh) * 70);
+  }
+
+  #service.active {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+  }
+
+
+  #project.active {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+  } */
+
   .carousel {
     width: 60%;
     height: 75%;
@@ -420,7 +459,7 @@ main > h1 {
     height: 50%;
   }
 
-  .services-title > svg {
+  .services-title>svg {
     height: 75%;
   }
 
@@ -451,11 +490,11 @@ main > h1 {
     height: 15%;
   }
 
-  nav > ul {
+  nav>ul {
     grid-template-columns: 17% 17% 32% 17% 17%;
   }
 
-  nav > ul > li,
+  nav>ul>li,
   .header-links {
     font-size: 2.5vw;
   }
@@ -478,25 +517,25 @@ main > h1 {
     height: 85%;
   }
 
-  .background-elements > .img-container:nth-child(1) {
+  .background-elements>.img-container:nth-child(1) {
     grid-row: 1/11;
     align-self: flex-end;
     height: 100%;
   }
 
-  .background-elements > .img-container:nth-child(2) {
+  .background-elements>.img-container:nth-child(2) {
     grid-row: 1/11;
     height: 65%;
     align-self: flex-end;
   }
 
-  .background-elements > .img-container:nth-child(3) {
+  .background-elements>.img-container:nth-child(3) {
     grid-row: 5/11;
     background: url("../assets/images/cities.png") no-repeat 40% bottom;
     background-size: cover;
   }
 
-  main > h1 {
+  main>h1 {
     grid-template-rows: 30% 10% 60%;
     grid-template-columns: 27.5% 45% 27.5%;
     justify-items: center;
@@ -515,12 +554,12 @@ main > h1 {
     width: 30%;
   }
 
-  .zeppelin > a {
+  .zeppelin>a {
     height: 70%;
     width: 100%;
   }
 
-  .zeppelin > a > svg {
+  .zeppelin>a>svg {
     width: 100%;
     height: 70%;
   }
@@ -547,7 +586,7 @@ main > h1 {
     height: 50%;
   }
 
-  .services-title > svg {
+  .services-title>svg {
     height: 75%;
   }
 
@@ -566,7 +605,7 @@ main > h1 {
     opacity: 0;
   }
 
-  .arrows > img {
+  .arrows>img {
     width: 100%;
     height: 100%;
   }
@@ -587,6 +626,7 @@ main > h1 {
 }
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
+
   header {
     display: none;
   }
@@ -629,19 +669,19 @@ main > h1 {
     height: 80%;
   }
 
-  .background-elements > .img-container:nth-child(1) {
+  .background-elements>.img-container:nth-child(1) {
     grid-row: 1/11;
     align-self: flex-end;
     height: 100%;
   }
 
-  .background-elements > .img-container:nth-child(2) {
+  .background-elements>.img-container:nth-child(2) {
     grid-row: 1/11;
     height: 65%;
     align-self: flex-end;
   }
 
-  .background-elements > .img-container:nth-child(3) {
+  .background-elements>.img-container:nth-child(3) {
     grid-row: 4/10;
     background: url("../assets/images/cities.png") no-repeat 40% bottom;
     background-size: cover;
@@ -661,7 +701,7 @@ main > h1 {
     overflow: hidden;
   }
 
-  main > h1 {
+  main>h1 {
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     grid-template-rows: 35% 10% 55%;
@@ -673,6 +713,7 @@ main > h1 {
     height: 90%;
     width: 100%;
   }
+
 
   .home.active {
     height: 100vh;
@@ -695,7 +736,7 @@ main > h1 {
     height: 100%;
   }
 
-  .zeppelin > a > svg {
+  .zeppelin>a>svg {
     width: 100%;
     height: 100%;
   }
@@ -754,7 +795,7 @@ main > h1 {
     border-top-left-radius: 20px;
   }
 
-  .tab-bar > ul {
+  .tab-bar>ul {
     width: 100%;
     height: 100%;
     display: flex;
@@ -764,24 +805,24 @@ main > h1 {
     padding: 0;
   }
 
-  .tab-bar > ul > li {
+  .tab-bar>ul>li {
     width: 15%;
     height: 100%;
     color: #ffffff;
     list-style-type: none;
   }
 
-  .tab-bar > ul > li > a {
+  .tab-bar>ul>li>a {
     height: 100%;
     width: 100%;
   }
 
-  .tab-bar > ul > li > a > svg {
+  .tab-bar>ul>li>a>svg {
     height: 85%;
     width: 85%;
   }
 
-  .header-links.project > svg {
+  .header-links.project>svg {
     margin-top: 4%;
   }
 
@@ -790,10 +831,12 @@ main > h1 {
   }
 }
 
-@media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) {
-    body {
-      position: fixed;
+/* @media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance:none) {
+
+    .tab-bar {
+      bottom: 12%;
+      
     }
   }
-}
+} */
