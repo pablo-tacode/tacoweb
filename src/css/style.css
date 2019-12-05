@@ -166,7 +166,7 @@ nav>ul>li,
   transition: height 0.7s;
 }
 
-#mountain-002.active{
+#mountain-002.active {
   height: 0;
   transition: height 1.6s;
 }
@@ -403,6 +403,7 @@ main>h1 {
 /* Media queries */
 
 @media screen and (max-width: 1024px) and (orientation: landscape) {
+  
   .carousel {
     width: 60%;
     height: 75%;
@@ -588,6 +589,7 @@ main>h1 {
 }
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
+
   header {
     display: none;
   }
@@ -597,7 +599,7 @@ main>h1 {
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     grid-template-rows: 100%;
-    grid-template-columns: 100%;
+    grid-template-columns: 100%; 
   }
 
   .logo-link {
@@ -623,6 +625,7 @@ main>h1 {
   .background {
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
+    position: absolute;
   }
 
   .background-elements {
@@ -745,7 +748,7 @@ main>h1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
+    position: absolute;
     height: 8vh;
     width: 100%;
     z-index: 2;
@@ -790,3 +793,11 @@ main>h1 {
     fill: #fbb420;
   }
 }
+
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) {
+
+   body{
+     position: fixed;
+   }
+}}
