@@ -789,3 +789,11 @@ main > h1 {
     fill: #fbb420;
   }
 }
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    body {
+      position: fixed;
+    }
+  }
+}
