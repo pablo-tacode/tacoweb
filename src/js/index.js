@@ -124,7 +124,6 @@ function isHomeActiveDesktop() {
     console.log("Home is active");
   } else {
     mountainOne.style.transform = "translate(23%, 0%) matrix(3, 0, 0, 1, 0, 0)";
-    slides.forEach(slide => slide.removeAttribute("style"));
   }
 }
 
@@ -138,6 +137,9 @@ function listenToScreenWidth(w) {
   } else {
     xPercent = 23;
     mountainScale = 3;
+    TweenMax.set(["#slide-two", "#slide-one"], {
+      clearProps: "all"
+    });
     isHomeActiveDesktop();
   }
 }
@@ -246,13 +248,13 @@ function homeBackgroundExit() {
       cities,
       1,
       {
-        yPercent: 100
+        opacity: 0
       },
-      0.1
+      "-0.1"
     )
     .to(
       tagline,
-      0.5,
+      0.3,
       {
         opacity: 0
       },
@@ -292,9 +294,9 @@ function homeBackgroundEntrance() {
       cities,
       1,
       {
-        yPercent: 0
+        opacity: 1
       },
-      0.1
+      0.7
     )
     .fromTo(
       home,
@@ -400,6 +402,7 @@ document.documentElement.addEventListener(
 /* ------------------------------------- CSSOM EVENTS ------------------------------------- */
 
 /* Adjusting viewport units in mobile version. Reference: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
+
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty("--vh", `${vh}px`);
 let w =
@@ -409,6 +412,7 @@ let w =
 listenToScreenWidth(w);
 
 /* Listen when rezising in order to 'refresh' the vh value */
+
 window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
