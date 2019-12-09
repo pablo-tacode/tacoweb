@@ -254,7 +254,7 @@ function homeBackgroundExit() {
     .to(logoSvg, 1, {
       onStart: focusAnchor(logoSvg)
     }, 0.1)
-    .to('.web-studio', 1, {
+    .to('.web-studio', 0.5, {
       fill: 'transparent'
     }, 0.1)
 }
