@@ -1,12 +1,14 @@
 /* General elements */
 const sections = document.querySelectorAll("article");
 const targetWidth = 1024;
+const logoWLetters = document.querySelectorAll(".logo-w-letters");
+const logoMobile = document.getElementById("logo-mobile");
+const logoSvg = document.getElementById("logo-svg");
 
 /* Background elements */
 const mountainOne = document.getElementById("mountain-001");
 const mountainTwo = document.getElementById("mountain-002");
 const cities = document.getElementById("cities-001");
-let xPercent, mountainScale;
 
 /* Menu elements */
 const menuLinks = document.querySelectorAll(".header-links");
@@ -82,7 +84,7 @@ function removeActiveClass(arr) {
   });
 }
 
-const hideEn = (english, spanish) => {
+/*const hideEn = (english, spanish) => {
   english.classList.add("hide");
   spanish.classList.remove("hide");
 };
@@ -90,7 +92,7 @@ const hideEn = (english, spanish) => {
 const hideEs = (spanish, english) => {
   spanish.classList.add("hide");
   english.classList.remove("hide");
-};
+};*/
 
 function showSlides(n) {
   if (n > slides.length) {
@@ -129,13 +131,9 @@ function isHomeActiveDesktop() {
 function listenToScreenWidth(w) {
   console.log("listen to screen width");
   if (w <= targetWidth) {
-    xPercent = 0;
-    mountainScale = 1;
     showSlides(slideIndex);
     isHomeActiveMobile();
   } else {
-    xPercent = 23;
-    mountainScale = 3;
     TweenMax.set(["#slide-two", "#slide-one"], {
       clearProps: "all"
     });
@@ -175,7 +173,7 @@ function fadeIn(section) {
         ease: "power2.out"
       },
       1.3
-    );
+    )
 }
 
 function entranceFromRight(elementOne) {
@@ -213,17 +211,8 @@ function homeBackgroundExit() {
   const tl = new TimelineMax();
   tl.to(
       mountainOne,
-      1, {
-        scaleX: mountainScale,
-        ease: "power1.out"
-      },
-      0.1
-    )
-    .to(
-      mountainOne,
-      1, {
-        xPercent: xPercent,
-        onComplete: focusAnchor(mountainOne)
+      1.5, {
+        onStart: focusAnchor(mountainOne)
       },
       0.1
     )
@@ -247,24 +236,35 @@ function homeBackgroundExit() {
         opacity: 0
       },
       0.1
-    );
+    )
+    .to(logoWLetters,
+      0.5, {
+        fill: '#ffffff',
+        ease: "sine.out"
+      },
+      0.1
+    )
+    .to(
+      logoMobile,
+      1, {
+        onStart: focusAnchor(logoMobile)
+      },
+      0.1
+    )
+    .to(logoSvg, 1, {
+      onStart: focusAnchor(logoSvg)
+    }, 0.1)
+    .to('.web-studio', 0.5, {
+      fill: 'transparent'
+    }, 0.1)
 }
 
 function homeBackgroundEntrance() {
   const tl = new TimelineMax();
   tl.to(
       mountainOne,
-      1, {
-        scaleX: 1,
-        ease: "power1.out"
-      },
-      0.1
-    )
-    .to(
-      mountainOne,
-      1, {
-        onStart: removeClass(mountainOne),
-        xPercent: 0
+      1.5, {
+        onStart: removeClass(mountainOne)
       },
       0.1
     )
@@ -298,7 +298,38 @@ function homeBackgroundEntrance() {
         opacity: 1
       },
       0.7
-    );
+    )
+    .to(
+      logoWLetters, 0.1, {
+        clearProps: "all"
+      },
+      '-0.5'
+    )
+    .fromTo(
+      logoMobile, 1.5, {
+        opacity: 0
+      }, {
+        opacity: 1
+      },
+      0.5
+    )
+    .to(
+      logoMobile,
+      1.5, {
+        onStart: removeClass(logoMobile)
+      },
+      0.1
+    )
+    .to(
+      logoSvg,
+      1, {
+        onStart: removeClass(logoSvg)
+      },
+      0.1
+    )
+    .to('.web-studio', 1.5, {
+      fill: '#000000'
+    }, 0.5)
 }
 
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
@@ -342,7 +373,7 @@ zeppelin.addEventListener("click", function (e) {
   homeBackgroundExit();
 });
 
-en.addEventListener("click", e => {
+/*en.addEventListener("click", e => {
   e.preventDefault();
   hideEn(en, es);
 });
@@ -360,7 +391,7 @@ enMobile.addEventListener("click", e => {
 esMobile.addEventListener("click", e => {
   e.preventDefault();
   hideEs(esMobile, enMobile);
-});
+});*/
 
 nextArrow.addEventListener("click", e => {
   e.preventDefault();
@@ -396,20 +427,21 @@ listenToScreenWidth(w);
 
 /* Listen when rezising in order to 'refresh' the vh value */
 
-window.addEventListener("resize", () => {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-  console.log(vh)
-  let w =
-    document.documentElement.clientWidth ||
-    document.body.clientWidth ||
-    window.innerWidth;
-  listenToScreenWidth(w);
-
-}, false);
+window.addEventListener(
+  "resize",
+  () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+    console.log(vh);
+    let w =
+      document.documentElement.clientWidth ||
+      document.body.clientWidth ||
+      window.innerWidth;
+    listenToScreenWidth(w);
+  },
+  false
+);
 
 if (/iPhone/i.test(navigator.userAgent)) {
   document.querySelector("html").classList.add("iphone");
 }
-
-
