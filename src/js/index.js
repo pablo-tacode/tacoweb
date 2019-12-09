@@ -28,14 +28,13 @@ const esMobile = document.getElementById("es-mobile");
 
 /* Home elements */
 const home = document.querySelector(".home");
-const zeppelin = document.getElementById("zeppelin");
+/* const zeppelin = document.getElementById("zeppelin"); */
 const tagline = document.getElementById("tagline");
 
 /* Services elements */
 const servicesIcon = document.getElementById("service");
 const servicesLink = document.getElementById("services-link");
 const slides = document.querySelectorAll(".carousel-img");
-/* const prevArrow = document.getElementById("prev"); */
 const nextArrow = document.getElementById("next");
 let slideIndex = 1;
 
@@ -155,7 +154,8 @@ function fadeIn(section) {
       }, {
         xPercent: 0,
         zIndex: 1
-      }
+      },
+      0.1
     )
     .fromTo(
       ".arrows",
@@ -171,7 +171,8 @@ function fadeIn(section) {
       1, {
         opacity: 0
       }, {
-        opacity: 1
+        opacity: 1,
+        ease: "power2.out"
       },
       1.3
     );
@@ -361,33 +362,10 @@ esMobile.addEventListener("click", e => {
   hideEs(esMobile, enMobile);
 });
 
-/* prevArrow.addEventListener("click", (e) => {
-  e.preventDefault();
-  addingSlides(-1);
-}); */
-
 nextArrow.addEventListener("click", e => {
   e.preventDefault();
   addingSlides(1);
 });
-
-//document.documentElement.addEventListener(
-//"touchmove",
-//function(event) {
-//event.preventDefault();
-//},
-//false
-//);
-
-//document.addEventListener(
-//"touchmove",
-//function(event) {
-//if (event.scale !== 1) {
-//event.preventDefault();
-//}
-//},
-//false
-//);
 
 document.addEventListener("gesturestart", function (e) {
   e.preventDefault();
@@ -421,9 +399,17 @@ listenToScreenWidth(w);
 window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
+  console.log(vh)
   let w =
     document.documentElement.clientWidth ||
     document.body.clientWidth ||
     window.innerWidth;
   listenToScreenWidth(w);
-});
+
+}, false);
+
+if (/iPhone/i.test(navigator.userAgent)) {
+  document.querySelector("html").classList.add("iphone");
+}
+
+
