@@ -129,13 +129,9 @@ function isHomeActiveDesktop() {
 function listenToScreenWidth(w) {
   console.log("listen to screen width");
   if (w <= targetWidth) {
-    xPercent = 0;
-    mountainScale = 1;
     showSlides(slideIndex);
     isHomeActiveMobile();
   } else {
-    xPercent = 23;
-    mountainScale = 3;
     TweenMax.set(["#slide-two", "#slide-one"], {
       clearProps: "all"
     });
@@ -213,17 +209,8 @@ function homeBackgroundExit() {
   const tl = new TimelineMax();
   tl.to(
       mountainOne,
-      1, {
-        scaleX: mountainScale,
-        ease: "power1.out"
-      },
-      0.1
-    )
-    .to(
-      mountainOne,
-      1, {
-        xPercent: xPercent,
-        onComplete: focusAnchor(mountainOne)
+      1.5, {
+        onStart: focusAnchor(mountainOne)
       },
       0.1
     )
@@ -254,17 +241,8 @@ function homeBackgroundEntrance() {
   const tl = new TimelineMax();
   tl.to(
       mountainOne,
-      1, {
-        scaleX: 1,
-        ease: "power1.out"
-      },
-      0.1
-    )
-    .to(
-      mountainOne,
-      1, {
-        onStart: removeClass(mountainOne),
-        xPercent: 0
+      1.5, {
+        onStart: removeClass(mountainOne)
       },
       0.1
     )

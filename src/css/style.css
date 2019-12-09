@@ -165,12 +165,14 @@ nav>ul>li,
 
 #mountain-001.active {
   height: 100vh;
-  transition: height 1.6s;
+  transform: scale(2);
+  transition: height 1.6s, transform 1.6s;
 }
 
 #mountain-001.innactive {
   height: 65%;
-  transition: height 0.7s;
+  transform: scale(1);
+  transition: height 0.7s, transform 1.7s;
 }
 
 #mountain-002.active {
