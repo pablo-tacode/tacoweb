@@ -82,7 +82,7 @@ function removeActiveClass(arr) {
   });
 }
 
-const hideEn = (english, spanish) => {
+/*const hideEn = (english, spanish) => {
   english.classList.add("hide");
   spanish.classList.remove("hide");
 };
@@ -90,7 +90,7 @@ const hideEn = (english, spanish) => {
 const hideEs = (spanish, english) => {
   spanish.classList.add("hide");
   english.classList.remove("hide");
-};
+};*/
 
 function showSlides(n) {
   if (n > slides.length) {
@@ -362,7 +362,7 @@ zeppelin.addEventListener("click", function(e) {
   homeBackgroundExit();
 });
 
-en.addEventListener("click", e => {
+/*en.addEventListener("click", e => {
   e.preventDefault();
   hideEn(en, es);
 });
@@ -380,7 +380,7 @@ enMobile.addEventListener("click", e => {
 esMobile.addEventListener("click", e => {
   e.preventDefault();
   hideEs(esMobile, enMobile);
-});
+});*/
 
 nextArrow.addEventListener("click", e => {
   e.preventDefault();
