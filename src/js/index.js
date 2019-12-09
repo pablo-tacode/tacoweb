@@ -391,6 +391,10 @@ nextArrow.addEventListener("click", e => {
   addingSlides(1);
 });
 
+if (/iPhone/i.test(navigator.userAgent)) {
+  document.querySelector("html").classList.add("iphone");
+}
+
 //document.documentElement.addEventListener(
 //"touchmove",
 //function(event) {
