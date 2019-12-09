@@ -416,6 +416,10 @@ main > h1 {
   padding: 20%;
 }
 
+.modal{
+  display: none;
+}
+
 /* ------------------------------------------------ Us ------------------------------------------------ */
 .uss {
   display: none;
@@ -805,6 +809,19 @@ main > h1 {
     height: calc(var(--vh, 1vh) * 100);
     z-index: 1;
     padding: 5%;
+  }
+
+  .modal{
+    display: none;
+    height: auto;
+    background: #fbb420;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    overflow-y: scroll;
   }
 
   .tab-bar {
