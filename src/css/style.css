@@ -164,7 +164,7 @@ nav>ul>li,
 }
 
 #mountain-001.active {
-  height: 100%;
+  height: 100vh;
   transition: height 1.6s;
 }
 
