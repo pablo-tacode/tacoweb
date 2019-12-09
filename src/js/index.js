@@ -251,13 +251,12 @@ function homeBackgroundExit() {
       },
       0.1
     )
-    .to(
-      logoSvg,
-      1, {
-        onStart: focusAnchor(logoSvg)
-      },
-      0.1
-    )
+    .to(logoSvg, 1, {
+      onStart: focusAnchor(logoSvg)
+    }, 0.1)
+    .to('.web-studio', 1, {
+      fill: 'transparent'
+    }, 0.1)
 }
 
 function homeBackgroundEntrance() {
@@ -328,6 +327,9 @@ function homeBackgroundEntrance() {
       },
       0.1
     )
+    .to('.web-studio', 1.5, {
+      fill: '#000000'
+    }, 0.5)
 }
 
 /* ------------------------------------- DOM EVENTS ------------------------------------- */

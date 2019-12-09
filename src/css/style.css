@@ -867,7 +867,7 @@ main > h1 {
     }
 
     .background-elements > .img-container:nth-child(3) {
-      grid-row: 4/11;
+      grid-row: 4/10;
       background: url("../assets/images/cities.png") no-repeat 40% bottom;
       background-size: cover;
     }
