@@ -600,6 +600,7 @@ main > h1 {
     grid-row: 2/3;
     align-self: center;
     justify-self: right;
+    margin-right: 5%;
   }
 }
 
