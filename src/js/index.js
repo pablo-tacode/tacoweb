@@ -2,7 +2,8 @@
 const sections = document.querySelectorAll("article");
 const targetWidth = 1024;
 const logoWLetters = document.querySelectorAll(".logo-w-letters");
-const logoMobile = document.getElementById("logo-mobile")
+const logoMobile = document.getElementById("logo-mobile");
+const logoSvg = document.getElementById("logo-svg");
 
 /* Background elements */
 const mountainOne = document.getElementById("mountain-001");
@@ -145,35 +146,29 @@ function listenToScreenWidth(w) {
 function fadeIn(section) {
   const tl = new TimelineMax();
   tl.fromTo(
-    section,
-    1.5,
-    {
-      xPercent: -100
-    },
-    {
-      xPercent: 0,
-      zIndex: 1
-    },
-    0.1
-  )
+      section,
+      1.5, {
+        xPercent: -100
+      }, {
+        xPercent: 0,
+        zIndex: 1
+      },
+      0.1
+    )
     .fromTo(
       ".arrows",
-      1,
-      {
+      1, {
         opacity: 0
-      },
-      {
+      }, {
         opacity: 1
       },
       1.3
     )
     .fromTo(
       ".services-title",
-      1,
-      {
+      1, {
         opacity: 0
-      },
-      {
+      }, {
         opacity: 1,
         ease: "power2.out"
       },
@@ -184,13 +179,11 @@ function fadeIn(section) {
 function entranceFromRight(elementOne) {
   TweenMax.fromTo(
     elementOne,
-    1,
-    {
+    1, {
       xPercent: -200,
       width: 0,
       opacity: 0
-    },
-    {
+    }, {
       xPercent: 0,
       width: "80%",
       opacity: 1
@@ -225,40 +218,44 @@ function homeBackgroundExit() {
     )
     .to(
       mountainTwo,
-      1,
-      {
+      1, {
         onStart: focusAnchor(mountainTwo)
       },
       0.1
     )
     .to(
       cities,
-      1,
-      {
+      1, {
         opacity: 0
       },
       "-0.1"
     )
     .to(
       tagline,
-      0.3,
-      {
+      0.3, {
         opacity: 0
       },
       0.1
     )
     .to(logoWLetters,
-    0.5, {
-      fill: '#ffffff'
-    },
-    0.1
+      0.5, {
+        fill: '#ffffff'
+      },
+      0.1
     )
     .to(
       logoMobile,
-      1,
-      {
+      1, {
         onStart: focusAnchor(logoMobile)
-      }
+      },
+      0.1
+    )
+    .to(
+      logoSvg,
+      1, {
+        onStart: focusAnchor(logoSvg)
+      },
+      0.1
     )
 }
 
@@ -273,27 +270,23 @@ function homeBackgroundEntrance() {
     )
     .to(
       mountainTwo,
-      1,
-      {
+      1, {
         onStart: removeClass(mountainTwo)
       },
       0.1
     )
     .to(
       cities,
-      1,
-      {
+      1, {
         opacity: 1
       },
       0.7
     )
     .fromTo(
       home,
-      1.5,
-      {
+      1.5, {
         xPercent: -100
-      },
-      {
+      }, {
         xPercent: 0,
         zIndex: 1
       },
@@ -301,8 +294,7 @@ function homeBackgroundEntrance() {
     )
     .to(
       tagline,
-      1,
-      {
+      1, {
         opacity: 1
       },
       0.7
@@ -312,13 +304,27 @@ function homeBackgroundEntrance() {
         clearProps: "all"
       },
       0.5
-    );
+    )
+    .to(
+      logoMobile,
+      1, {
+        onStart: removeClass(logoMobile)
+      },
+      0.1
+    )
+    .to(
+      logoSvg,
+      1, {
+        onStart: removeClass(logoSvg)
+      },
+      0.1
+    )
 }
 
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
 
 menuLinks.forEach(link =>
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     removeActiveClass(sections);
     removeActiveClass(headerLinksToFocus);
@@ -328,28 +334,28 @@ menuLinks.forEach(link =>
 );
 
 headerLinksToFocus.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     focusAnchor(link);
   });
 });
 
 tabLinks.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     changeBackgroundColor(link);
   });
 });
 
 sideIcons.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     removeActiveClass(sideIconsImages);
     focusAnchor(link.firstChild);
   });
 });
 
-zeppelin.addEventListener("click", function(e) {
+zeppelin.addEventListener("click", function (e) {
   e.preventDefault();
   servicesIcon.classList.add("active");
   servicesLink.classList.add("active");
@@ -381,17 +387,17 @@ nextArrow.addEventListener("click", e => {
   addingSlides(1);
 });
 
-document.addEventListener("gesturestart", function(e) {
+document.addEventListener("gesturestart", function (e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
 
-document.addEventListener("gesturechange", function(e) {
+document.addEventListener("gesturechange", function (e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
 
-document.addEventListener("gestureend", function(e) {
+document.addEventListener("gestureend", function (e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });

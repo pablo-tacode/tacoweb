@@ -616,19 +616,21 @@ main > h1 {
     position: fixed;
   }
 
-  .logo-link {
-    height: 25%;
+  .logo {
+    height: 45%;
+    width: 55%;
   }
 
-  .logo {
-    height: 35%;
-    width: 60%;
+  #logo-svg.active{
+    width: 85%;
+    height: 80%;
   }
 
   #logo-mobile {
     display: flex;
     z-index: 2;
     width: 100%;
+    height: 20%;
     align-items: center;
     justify-content: center;
     text-decoration: none;
@@ -636,8 +638,9 @@ main > h1 {
   }
 
   #logo-mobile.active{
-    align-items: flex-start;
-    justify-content: left;
+    width: 40%;
+    height: 15%;
+    justify-content: flex-end;
   }
 
   .background {
@@ -674,7 +677,7 @@ main > h1 {
 
   .mobile-language-bttn {
     display: block;
-    width: 10%;
+    width: 12%;
     position: absolute;
     z-index: 3;
     right: 0;
