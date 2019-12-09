@@ -1,12 +1,13 @@
 /* General elements */
 const sections = document.querySelectorAll("article");
 const targetWidth = 1024;
+const logoWLetters = document.querySelectorAll(".logo-w-letters");
+const logoMobile = document.getElementById("logo-mobile")
 
 /* Background elements */
 const mountainOne = document.getElementById("mountain-001");
 const mountainTwo = document.getElementById("mountain-002");
 const cities = document.getElementById("cities-001");
-let xPercent, mountainScale;
 
 /* Menu elements */
 const menuLinks = document.querySelectorAll(".header-links");
@@ -171,7 +172,7 @@ function fadeIn(section) {
         ease: "power2.out"
       },
       1.3
-    );
+    )
 }
 
 function entranceFromRight(elementOne) {
@@ -234,7 +235,20 @@ function homeBackgroundExit() {
         opacity: 0
       },
       0.1
-    );
+    )
+    .to(logoWLetters,
+    0.5, {
+      fill: '#ffffff'
+    },
+    0.1
+    )
+    .to(
+      logoMobile,
+      1,
+      {
+        onStart: focusAnchor(logoMobile)
+      }
+    )
 }
 
 function homeBackgroundEntrance() {
@@ -276,6 +290,12 @@ function homeBackgroundEntrance() {
         opacity: 1
       },
       0.7
+    )
+    .to(
+      logoWLetters, 0.5, {
+        clearProps: "all"
+      },
+      0.5
     );
 }
 

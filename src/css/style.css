@@ -627,7 +627,11 @@ main>h1 {
     justify-content: center;
     text-decoration: none;
     position: absolute;
-    overflow: hidden;
+  }
+
+  #logo-mobile.active{
+    align-items: flex-start;
+    justify-content: left;
   }
 
   .background {
