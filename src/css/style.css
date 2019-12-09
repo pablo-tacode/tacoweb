@@ -586,7 +586,6 @@ main > h1 {
   .arrows > img {
     width: 100%;
     height: 100%;
-    margin-left: -204%;
   }
 
   /* #prev{
@@ -623,7 +622,7 @@ main > h1 {
     width: 55%;
   }
 
-  #logo-svg.active{
+  #logo-svg.active {
     width: 85%;
     height: 80%;
   }
@@ -639,7 +638,7 @@ main > h1 {
     position: absolute;
   }
 
-  #logo-mobile.active{
+  #logo-mobile.active {
     width: 40%;
     height: 15%;
     justify-content: flex-end;
@@ -647,7 +646,7 @@ main > h1 {
     transition-timing-function: ease-in;
   }
 
-  #logo-mobile.innactive{
+  #logo-mobile.innactive {
     width: 100%;
     height: 20%;
     justify-content: center;
