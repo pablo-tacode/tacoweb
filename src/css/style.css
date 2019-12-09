@@ -635,7 +635,7 @@ main > h1 {
     position: absolute;
   }
 
-  #logo-mobile.active{
+  #logo-mobile.active {
     align-items: flex-start;
     justify-content: left;
   }
@@ -729,17 +729,17 @@ main > h1 {
   }
 
   .carousel {
-    width: 80%;
-    height: 70%;
+    width: 100%;
+    height: 85%;
     grid-template-columns: 100%;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 12% 90%;
   }
 
   .services-title {
     grid-column: 1/2;
     grid-row: 1/2;
     align-self: flex-start;
-    height: 50%;
+    height: 100%;
   }
 
   .carousel-img {
