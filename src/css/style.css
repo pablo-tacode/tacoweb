@@ -641,6 +641,16 @@ main > h1 {
     width: 40%;
     height: 15%;
     justify-content: flex-end;
+    transition: width 0.5s, height 0.5s;
+    transition-timing-function: ease-in;
+  }
+
+  #logo-mobile.innactive{
+    width: 100%;
+    height: 20%;
+    justify-content: center;
+    transition: width 0.5s, height 0.5s;
+    transition-timing-function: ease-out;
   }
 
   .background {
@@ -732,17 +742,17 @@ main > h1 {
   }
 
   .carousel {
-    width: 80%;
-    height: 70%;
+    width: 100%;
+    height: 85%;
     grid-template-columns: 100%;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 12% 90%;
   }
 
   .services-title {
     grid-column: 1/2;
     grid-row: 1/2;
     align-self: flex-start;
-    height: 50%;
+    height: 100%;
   }
 
   .carousel-img {

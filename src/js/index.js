@@ -239,7 +239,8 @@ function homeBackgroundExit() {
     )
     .to(logoWLetters,
       0.5, {
-        fill: '#ffffff'
+        fill: '#ffffff',
+        ease: "sine.out"
       },
       0.1
     )
@@ -300,14 +301,22 @@ function homeBackgroundEntrance() {
       0.7
     )
     .to(
-      logoWLetters, 0.5, {
+      logoWLetters, 0.1, {
         clearProps: "all"
+      },
+      '-0.5'
+    )
+    .fromTo(
+      logoMobile, 1.5, {
+        opacity: 0
+      }, {
+        opacity: 1
       },
       0.5
     )
     .to(
       logoMobile,
-      1, {
+      1.5, {
         onStart: removeClass(logoMobile)
       },
       0.1
