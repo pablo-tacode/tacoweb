@@ -83,7 +83,7 @@ function removeActiveClass(arr) {
   });
 }
 
-const hideEn = (english, spanish) => {
+/*const hideEn = (english, spanish) => {
   english.classList.add("hide");
   spanish.classList.remove("hide");
 };
@@ -91,7 +91,7 @@ const hideEn = (english, spanish) => {
 const hideEs = (spanish, english) => {
   spanish.classList.add("hide");
   english.classList.remove("hide");
-};
+};*/
 
 function showSlides(n) {
   if (n > slides.length) {
@@ -145,29 +145,35 @@ function listenToScreenWidth(w) {
 function fadeIn(section) {
   const tl = new TimelineMax();
   tl.fromTo(
-      section,
-      1.5, {
-        xPercent: -100
-      }, {
-        xPercent: 0,
-        zIndex: 1
-      },
-      0.1
-    )
+    section,
+    1.5,
+    {
+      xPercent: -100
+    },
+    {
+      xPercent: 0,
+      zIndex: 1
+    },
+    0.1
+  )
     .fromTo(
       ".arrows",
-      1, {
+      1,
+      {
         opacity: 0
-      }, {
+      },
+      {
         opacity: 1
       },
       1.3
     )
     .fromTo(
       ".services-title",
-      1, {
+      1,
+      {
         opacity: 0
-      }, {
+      },
+      {
         opacity: 1,
         ease: "power2.out"
       },
@@ -178,11 +184,13 @@ function fadeIn(section) {
 function entranceFromRight(elementOne) {
   TweenMax.fromTo(
     elementOne,
-    1, {
+    1,
+    {
       xPercent: -200,
       width: 0,
       opacity: 0
-    }, {
+    },
+    {
       xPercent: 0,
       width: "80%",
       opacity: 1
@@ -217,21 +225,24 @@ function homeBackgroundExit() {
     )
     .to(
       mountainTwo,
-      1, {
+      1,
+      {
         onStart: focusAnchor(mountainTwo)
       },
       0.1
     )
     .to(
       cities,
-      1, {
+      1,
+      {
         opacity: 0
       },
       "-0.1"
     )
     .to(
       tagline,
-      0.3, {
+      0.3,
+      {
         opacity: 0
       },
       0.1
@@ -262,23 +273,27 @@ function homeBackgroundEntrance() {
     )
     .to(
       mountainTwo,
-      1, {
+      1,
+      {
         onStart: removeClass(mountainTwo)
       },
       0.1
     )
     .to(
       cities,
-      1, {
+      1,
+      {
         opacity: 1
       },
       0.7
     )
     .fromTo(
       home,
-      1.5, {
+      1.5,
+      {
         xPercent: -100
-      }, {
+      },
+      {
         xPercent: 0,
         zIndex: 1
       },
@@ -286,7 +301,8 @@ function homeBackgroundEntrance() {
     )
     .to(
       tagline,
-      1, {
+      1,
+      {
         opacity: 1
       },
       0.7
@@ -302,7 +318,7 @@ function homeBackgroundEntrance() {
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
 
 menuLinks.forEach(link =>
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     removeActiveClass(sections);
     removeActiveClass(headerLinksToFocus);
@@ -312,35 +328,35 @@ menuLinks.forEach(link =>
 );
 
 headerLinksToFocus.forEach(link => {
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     focusAnchor(link);
   });
 });
 
 tabLinks.forEach(link => {
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     changeBackgroundColor(link);
   });
 });
 
 sideIcons.forEach(link => {
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     removeActiveClass(sideIconsImages);
     focusAnchor(link.firstChild);
   });
 });
 
-zeppelin.addEventListener("click", function (e) {
+zeppelin.addEventListener("click", function(e) {
   e.preventDefault();
   servicesIcon.classList.add("active");
   servicesLink.classList.add("active");
   homeBackgroundExit();
 });
 
-en.addEventListener("click", e => {
+/*en.addEventListener("click", e => {
   e.preventDefault();
   hideEn(en, es);
 });
@@ -358,24 +374,24 @@ enMobile.addEventListener("click", e => {
 esMobile.addEventListener("click", e => {
   e.preventDefault();
   hideEs(esMobile, enMobile);
-});
+});*/
 
 nextArrow.addEventListener("click", e => {
   e.preventDefault();
   addingSlides(1);
 });
 
-document.addEventListener("gesturestart", function (e) {
+document.addEventListener("gesturestart", function(e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
 
-document.addEventListener("gesturechange", function (e) {
+document.addEventListener("gesturechange", function(e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
 
-document.addEventListener("gestureend", function (e) {
+document.addEventListener("gestureend", function(e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
@@ -394,20 +410,21 @@ listenToScreenWidth(w);
 
 /* Listen when rezising in order to 'refresh' the vh value */
 
-window.addEventListener("resize", () => {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-  console.log(vh)
-  let w =
-    document.documentElement.clientWidth ||
-    document.body.clientWidth ||
-    window.innerWidth;
-  listenToScreenWidth(w);
-
-}, false);
+window.addEventListener(
+  "resize",
+  () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+    console.log(vh);
+    let w =
+      document.documentElement.clientWidth ||
+      document.body.clientWidth ||
+      window.innerWidth;
+    listenToScreenWidth(w);
+  },
+  false
+);
 
 if (/iPhone/i.test(navigator.userAgent)) {
   document.querySelector("html").classList.add("iphone");
 }
-
-
