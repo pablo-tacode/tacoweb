@@ -950,6 +950,14 @@ main > h1 {
     overflow-y: scroll;
   }
 
+  .modal.innactive{
+    display: none;
+  }
+
+  .modal.active {
+    display: grid;
+  }
+
   .modal-content {
     display: grid;
     height: auto;

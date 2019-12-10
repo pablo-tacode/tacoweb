@@ -1,6 +1,7 @@
 const openModal = document.getElementById("open-modal-one");
 const openModalTwo = document.getElementById("open-modal-two");
 const modal = document.querySelector(".modal");
+const logoHomeMobile = document.getElementById("logo-mobile");
 
 const modalPuerquiAhorro = `
             <div class="modal-content" id="modal-one">
@@ -43,27 +44,68 @@ const modalMedicalBoard = `
 `;
 
 function openingModal() {
-  modal.style.display = "grid";
+    modal.classList.remove('innactive');
+    modal.classList.add('active');
 }
 
 function closingModal() {
-  modal.style.display = "none";
+    modal.classList.remove('active');
+    modal.classList.add('innactive');
+}
+
+function modalEntrance() {
+    const tl = new TimelineMax();
+    tl.to(modal, 0.1, {
+            onStart: openingModal
+        })
+        .fromTo(
+            modal,
+            0.5, {
+                yPercent: 100
+            }, {
+                yPercent: 0,
+                zIndex: 3
+            },
+            '=+0.1'
+        )
+}
+
+function modalExit() {
+    const tl = new TimelineMax();
+    tl.fromTo(
+            modal,
+            0.8, {
+                yPercent: 0
+            }, {
+                yPercent: 100,
+                zIndex: 3
+            },
+        )
+        .to(modal, 0.1, {
+                onComplete: closingModal
+            },
+            '=+0.1')
 }
 
 openModal.addEventListener("click", e => {
-  e.preventDefault();
-  openingModal();
-  modal.innerHTML = "";
-  modal.insertAdjacentHTML("beforeend", modalPuerquiAhorro);
-  const closeModal = document.getElementById("close-modal-one");
-  closeModal.addEventListener("click", closingModal);
+    e.preventDefault();
+    modalEntrance();
+    modal.innerHTML = "";
+    modal.insertAdjacentHTML("beforeend", modalPuerquiAhorro);
+    const closeModal = document.getElementById("close-modal-one");
+    closeModal.addEventListener("click", modalExit);
 });
 
 openModalTwo.addEventListener("click", e => {
-  e.preventDefault();
-  openingModal();
-  modal.innerHTML = "";
-  modal.insertAdjacentHTML("beforeend", modalMedicalBoard);
-  const closeModalTwo = document.getElementById("close-modal-two");
-  closeModalTwo.addEventListener("click", closingModal);
+    e.preventDefault();
+    modalEntrance();
+    modal.innerHTML = "";
+    modal.insertAdjacentHTML("beforeend", modalMedicalBoard);
+    const closeModalTwo = document.getElementById("close-modal-two");
+    closeModalTwo.addEventListener("click", modalExit);
 });
+
+logoMobile.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalExit();
+})

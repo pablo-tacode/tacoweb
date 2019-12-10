@@ -44,7 +44,6 @@ let slideIndex = 1;
 /* Projects elements */
 const slidesProjects = document.querySelectorAll(".carousel-img-projects");
 const nextPArrow = document.getElementById("next-projects");
-const modalB = document.querySelector('.modal');
 
 /* General Functions */
 function changePage(link) {
@@ -56,7 +55,6 @@ function changePage(link) {
       if (section.id === "homes") {
         zeppelinFloating.play();
         homeBackgroundEntrance();
-        modalB.style.display = 'none';
       } else if (section.id === "service") {
         homeBackgroundExit();
         if (1024 <= targetWidth) {
