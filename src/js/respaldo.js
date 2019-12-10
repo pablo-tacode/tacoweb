@@ -30,20 +30,15 @@ const esMobile = document.getElementById("es-mobile");
 
 /* Home elements */
 const home = document.querySelector(".home");
-const zeppelin = document.getElementById("zeppelin");
+/* const zeppelin = document.getElementById("zeppelin"); */
 const tagline = document.getElementById("tagline");
 
 /* Services elements */
-const servicesSection = document.getElementById("service");
-const servicesIcon = document.getElementById("service-icon");
+const servicesIcon = document.getElementById("service");
 const servicesLink = document.getElementById("services-link");
 const slides = document.querySelectorAll(".carousel-img");
 const nextArrow = document.getElementById("next");
 let slideIndex = 1;
-
-/* Projects elements */
-const slidesProjects = document.querySelectorAll(".carousel-img-projects");
-const nextPArrow = document.getElementById("next-projects")
 
 /* General Functions */
 function changePage(link) {
@@ -54,20 +49,6 @@ function changePage(link) {
         zeppelinFloating.play();
         homeBackgroundEntrance();
         section.classList.add("active");
-      } else if(section.id === "service"){
-        fadeIn(section);
-        section.classList.add("active");
-        homeBackgroundExit();
-        if (1024 <= targetWidth) {
-          showSlides(1, slides)
-            }
-      } else if(section.id === "project"){
-        fadeIn(section);
-        section.classList.add("active");
-        homeBackgroundExit();
-        if (1024 <= targetWidth) {
-          showSlides(1, slidesProjects)
-            }
       } else {
         fadeIn(section);
         section.classList.add("active");
@@ -89,9 +70,7 @@ function removeClass(element) {
 
 function changeBackgroundColor(link) {
   backgroundIcons.forEach(icon => {
-    let arr = icon.id.split('-');
-    let x = arr.shift()
-    if (link.classList.contains(x)) {
+    if (link.classList.contains(`${icon.id}`)) {
       icon.classList.add("active");
     }
   });
@@ -114,22 +93,22 @@ const hideEs = (spanish, english) => {
   english.classList.remove("hide");
 };*/
 
-function showSlides(n, arr) {
-  if (n > arr.length) {
+function showSlides(n) {
+  if (n > slides.length) {
     slideIndex = 1;
   }
   if (n < 1) {
-    slideIndex = arr.length;
+    slideIndex = slides.length;
   }
-  for (i = 0; i < arr.length; i++) {
-    bye(arr[i]);
+  for (i = 0; i < slides.length; i++) {
+    bye(slides[i]);
   }
-  arr[slideIndex - 1].style.display = "grid";
-  entranceFromRight(arr[slideIndex - 1]);
+  slides[slideIndex - 1].style.display = "flex";
+  entranceFromRight(slides[slideIndex - 1]);
 }
 
-function addingSlides(n, slides) {
-  showSlides((slideIndex += n), slides);
+function addingSlides(n) {
+  showSlides((slideIndex += n));
 }
 
 function isHomeActiveMobile() {
@@ -151,6 +130,7 @@ function isHomeActiveDesktop() {
 function listenToScreenWidth(w) {
   console.log("listen to screen width");
   if (w <= targetWidth) {
+    showSlides(slideIndex);
     isHomeActiveMobile();
   } else {
     TweenMax.set(["#slide-two", "#slide-one"], {
@@ -411,12 +391,7 @@ esMobile.addEventListener("click", e => {
 
 nextArrow.addEventListener("click", e => {
   e.preventDefault();
-  addingSlides(1, slides);
-});
-
-nextPArrow.addEventListener("click", e => {
-  e.preventDefault();
-  addingSlides(1, slidesProjects);
+  addingSlides(1);
 });
 
 document.addEventListener("gesturestart", function (e) {
