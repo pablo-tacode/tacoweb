@@ -30,7 +30,7 @@ const esMobile = document.getElementById("es-mobile");
 
 /* Home elements */
 const home = document.querySelector(".home");
-/* const zeppelin = document.getElementById("zeppelin"); */
+const zeppelin = document.getElementById("zeppelin");
 const tagline = document.getElementById("tagline");
 
 /* Services elements */
@@ -40,6 +40,10 @@ const servicesLink = document.getElementById("services-link");
 const slides = document.querySelectorAll(".carousel-img");
 const nextArrow = document.getElementById("next");
 let slideIndex = 1;
+
+/* Projects elements */
+const slidesProjects = document.querySelectorAll(".carousel-img-projects");
+const nextPArrow = document.getElementById("next-projects")
 
 /* General Functions */
 function changePage(link) {
@@ -56,6 +60,13 @@ function changePage(link) {
         homeBackgroundExit();
         if (1024 <= targetWidth) {
           showSlides(1, slides)
+            }
+      } else if(section.id === "project"){
+        fadeIn(section);
+        section.classList.add("active");
+        homeBackgroundExit();
+        if (1024 <= targetWidth) {
+          showSlides(1, slidesProjects)
             }
       } else {
         fadeIn(section);
@@ -113,7 +124,7 @@ function showSlides(n, arr) {
   for (i = 0; i < arr.length; i++) {
     bye(arr[i]);
   }
-  arr[slideIndex - 1].style.display = "flex";
+  arr[slideIndex - 1].style.display = "grid";
   entranceFromRight(arr[slideIndex - 1]);
 }
 
@@ -140,10 +151,6 @@ function isHomeActiveDesktop() {
 function listenToScreenWidth(w) {
   console.log("listen to screen width");
   if (w <= targetWidth) {
-/*     if(servicesSection.classList.contains('active')){
-      console.log('is active')
-       addingSlides(1, slides);
-    } */
     isHomeActiveMobile();
   } else {
     TweenMax.set(["#slide-two", "#slide-one"], {
@@ -405,6 +412,11 @@ esMobile.addEventListener("click", e => {
 nextArrow.addEventListener("click", e => {
   e.preventDefault();
   addingSlides(1, slides);
+});
+
+nextPArrow.addEventListener("click", e => {
+  e.preventDefault();
+  addingSlides(1, slidesProjects);
 });
 
 document.addEventListener("gesturestart", function (e) {
