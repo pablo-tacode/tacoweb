@@ -38,9 +38,9 @@ const modalMedicalBoard = `
                         <li>Seguimiento de tratamientos</li>
                     </ul>
                 </div>
-                <img modal-img-one src="./src/assets/images/medicalBoard_001.png" alt="Primera pantalla de la aplicacion medical board">
-                <img modal-img-two src="./src/assets/images/medicalBoard_002.png" alt="Segunda pantalla de la aplicacion medical board">
-                <img modal-img-three src="./src/assets/images/medicalBoard_003.png" alt="Tercera pantalla de la aplicacion medical board">
+                <img class="modal-img-one" src="./src/assets/images/medicalBoard_001.png" alt="Primera pantalla de la aplicacion medical board">
+                <img class="modal-img-two" src="./src/assets/images/medicalBoard_002.png" alt="Segunda pantalla de la aplicacion medical board">
+                <img class="modal-img-three" src="./src/assets/images/medicalBoard_003.png" alt="Tercera pantalla de la aplicacion medical board">
             </div>
 `;
 
