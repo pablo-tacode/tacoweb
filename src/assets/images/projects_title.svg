@@ -10,7 +10,7 @@
                 <text id="PROYECTOS" font-family="Avenir-Black, Avenir" font-size="35" font-weight="700" letter-spacing="1.09390944" fill="#FFFFFF">
                     <tspan x="13" y="41">PROYECTOS</tspan>
                 </text>
-                <circle id="Oval" fill="#FFFFFF" cx="198" cy="29" r="10"></circle>
+                <circle id="Oval" fill="#FFFFFF" cx="197" cy="29" r="10"></circle>
             </g>
         </g>
     </g>

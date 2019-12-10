@@ -1,8 +1,7 @@
-const openModal = document.getElementById('open-modal-one');
-const openModalTwo = document.getElementById('open-modal-two')
-const closeModal = document.getElementById('close-modal-one');
-const closeModalTwo = document.getElementById('close-modal-two');
-const modal = document.querySelector('.modal');
+const openModal = document.getElementById("open-modal-one");
+const openModalTwo = document.getElementById("open-modal-two");
+const modal = document.querySelector(".modal");
+const logoHomeMobile = document.getElementById("logo-mobile");
 
 const modalPuerquiAhorro = `
             <div class="modal-content" id="modal-one">
@@ -22,7 +21,7 @@ const modalPuerquiAhorro = `
                 <img class="modal-img-two" src="./src/assets/images/PuerquiAhorro_002.png" alt="Segunda pantalla de la aplicacion puerqui ahorro">
                 <img class="modal-img-three" src="./src/assets/images/PuerquiAhorro_003.png" alt="Tercera pantalla de la aplicacion puerqui ahorro">
             </div>
-`
+`;
 
 const modalMedicalBoard = `
             <div class="modal-content" id="modal-two">
@@ -42,36 +41,71 @@ const modalMedicalBoard = `
                 <img class="modal-img-two" src="./src/assets/images/medicalBoard_002.png" alt="Segunda pantalla de la aplicacion medical board">
                 <img class="modal-img-three" src="./src/assets/images/medicalBoard_003.png" alt="Tercera pantalla de la aplicacion medical board">
             </div>
-`
+`;
 
 function openingModal() {
-    modal.style.display = 'grid';
+    modal.classList.remove('innactive');
+    modal.classList.add('active');
 }
 
 function closingModal() {
-    modal.style.display = 'none';
+    modal.classList.remove('active');
+    modal.classList.add('innactive');
 }
 
-openModal.addEventListener('click', (e) => {
+function modalEntrance() {
+    const tl = new TimelineMax();
+    tl.to(modal, 0.1, {
+            onStart: openingModal
+        })
+        .fromTo(
+            modal,
+            0.5, {
+                yPercent: 100
+            }, {
+                yPercent: 0,
+                zIndex: 3
+            },
+            '=+0.1'
+        )
+}
+
+function modalExit() {
+    const tl = new TimelineMax();
+    tl.fromTo(
+            modal,
+            0.8, {
+                yPercent: 0
+            }, {
+                yPercent: 100,
+                zIndex: 3
+            },
+        )
+        .to(modal, 0.1, {
+                onComplete: closingModal
+            },
+            '=+0.1')
+}
+
+openModal.addEventListener("click", e => {
     e.preventDefault();
-    openingModal();
-    modal.innerHTML = '';
-    modal.insertAdjacentHTML('beforeend', modalPuerquiAhorro)
+    modalEntrance();
+    modal.innerHTML = "";
+    modal.insertAdjacentHTML("beforeend", modalPuerquiAhorro);
+    const closeModal = document.getElementById("close-modal-one");
+    closeModal.addEventListener("click", modalExit);
 });
 
-openModalTwo.addEventListener('click', (e) => {
+openModalTwo.addEventListener("click", e => {
     e.preventDefault();
-    openingModal();
-    modal.innerHTML = '';
-    modal.insertAdjacentHTML('beforeend', modalMedicalBoard)
+    modalEntrance();
+    modal.innerHTML = "";
+    modal.insertAdjacentHTML("beforeend", modalMedicalBoard);
+    const closeModalTwo = document.getElementById("close-modal-two");
+    closeModalTwo.addEventListener("click", modalExit);
 });
 
-closeModal.addEventListener('click', (e) => {
+logoMobile.addEventListener('click', (e) => {
     e.preventDefault();
-    closingModal();
-});
-
-closeModalTwo.addEventListener('click', (e) => {
-    e.preventDefault();
-    closingModal();
-});
+    modalExit();
+})
