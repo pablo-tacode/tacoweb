@@ -43,34 +43,31 @@ let slideIndex = 1;
 
 /* Projects elements */
 const slidesProjects = document.querySelectorAll(".carousel-img-projects");
-const nextPArrow = document.getElementById("next-projects")
+const nextPArrow = document.getElementById("next-projects");
+const modalB = document.querySelector('.modal');
 
 /* General Functions */
 function changePage(link) {
   zeppelinFloating.pause();
   sections.forEach(section => {
     if (link.classList.contains(`${section.id}`)) {
+      fadeIn(section);
+      section.classList.add("active");
       if (section.id === "homes") {
         zeppelinFloating.play();
         homeBackgroundEntrance();
-        section.classList.add("active");
-      } else if(section.id === "service"){
-        fadeIn(section);
-        section.classList.add("active");
+        modalB.style.display = 'none';
+      } else if (section.id === "service") {
         homeBackgroundExit();
         if (1024 <= targetWidth) {
-          showSlides(1, slides)
-            }
-      } else if(section.id === "project"){
-        fadeIn(section);
-        section.classList.add("active");
+          showSlides(slideIndex, slides)
+        }
+      } else if (section.id === "project") {
         homeBackgroundExit();
         if (1024 <= targetWidth) {
-          showSlides(1, slidesProjects)
-            }
+          showSlides(slideIndex, slidesProjects)
+        }
       } else {
-        fadeIn(section);
-        section.classList.add("active");
         homeBackgroundExit();
       }
     }
@@ -153,7 +150,7 @@ function listenToScreenWidth(w) {
   if (w <= targetWidth) {
     isHomeActiveMobile();
   } else {
-    TweenMax.set(["#slide-two", "#slide-one"], {
+    TweenMax.set(["#slide-two", "#slide-one", "#slide-one-projects", "#slide-two-projects"], {
       clearProps: "all"
     });
     isHomeActiveDesktop();
@@ -184,7 +181,7 @@ function fadeIn(section) {
       1.3
     )
     .fromTo(
-      ".services-title",
+      ".section-title",
       1, {
         opacity: 0
       }, {

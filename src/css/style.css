@@ -954,7 +954,7 @@ main>h1 {
     height: auto;
     width: 100%;
     grid-template-columns: 100%;
-    grid-template-rows: 0.7fr 0.5fr 2fr repeat(3, 3fr);
+    grid-template-rows: 0.6fr 0.3fr 2fr repeat(3, 3fr);
   }
 
   #modal-one {
@@ -986,7 +986,8 @@ main>h1 {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    padding: 8%;
+    padding-left: 8%;
+    padding-right: 8%;
   }
 
   .modal-text>h3 {
@@ -998,6 +999,7 @@ main>h1 {
 
   .modal-text>ul>li {
     margin-bottom: 3%;
+    list-style-image: url("../assets/images/bullet.svg");
   }
 
   .modal-img-one {
