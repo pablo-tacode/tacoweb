@@ -1,8 +1,8 @@
-const openModal = document.getElementById('open-modal-one');
-const openModalTwo = document.getElementById('open-modal-two')
-const closeModal = document.getElementById('close-modal-one');
-const closeModalTwo = document.getElementById('close-modal-two');
-const modal = document.querySelector('.modal');
+const openModal = document.getElementById("open-modal-one");
+const openModalTwo = document.getElementById("open-modal-two");
+//const closeModal = document.getElementById("close-modal-one");
+const closeModalTwo = document.getElementById("close-modal-two");
+const modal = document.querySelector(".modal");
 
 const modalPuerquiAhorro = `
             <div class="modal-content" id="modal-one">
@@ -22,7 +22,7 @@ const modalPuerquiAhorro = `
                 <img class="modal-img-two" src="./src/assets/images/PuerquiAhorro_002.png" alt="Segunda pantalla de la aplicacion puerqui ahorro">
                 <img class="modal-img-three" src="./src/assets/images/PuerquiAhorro_003.png" alt="Tercera pantalla de la aplicacion puerqui ahorro">
             </div>
-`
+`;
 
 const modalMedicalBoard = `
             <div class="modal-content" id="modal-two">
@@ -42,36 +42,40 @@ const modalMedicalBoard = `
                 <img modal-img-two src="./src/assets/images/medicalBoard_002.png" alt="Segunda pantalla de la aplicacion medical board">
                 <img modal-img-three src="./src/assets/images/medicalBoard_003.png" alt="Tercera pantalla de la aplicacion medical board">
             </div>
-`
+`;
 
 function openingModal() {
-    modal.style.display = 'grid';
+  modal.style.display = "grid";
 }
 
 function closingModal() {
-    modal.style.display = 'none';
+  modal.style.display = "none";
 }
 
-openModal.addEventListener('click', (e) => {
-    e.preventDefault();
-    openingModal();
-    modal.innerHTML = '';
-    modal.insertAdjacentHTML('beforeend', modalPuerquiAhorro)
+openModal.addEventListener("click", e => {
+  e.preventDefault();
+  openingModal();
+  modal.innerHTML = "";
+  modal.insertAdjacentHTML("beforeend", modalPuerquiAhorro);
+  const closeModal = document.getElementById("close-modal-one");
+  closeModal.addEventListener("click", closingModal);
 });
 
-openModalTwo.addEventListener('click', (e) => {
-    e.preventDefault();
-    openingModal();
-    modal.innerHTML = '';
-    modal.insertAdjacentHTML('beforeend', modalMedicalBoard)
+openModalTwo.addEventListener("click", e => {
+  e.preventDefault();
+  openingModal();
+  modal.innerHTML = "";
+  modal.insertAdjacentHTML("beforeend", modalMedicalBoard);
+  const closeModalTwo = document.getElementById("close-modal-two");
+  closeModalTwo.addEventListener("click", closingModal);
 });
 
-closeModal.addEventListener('click', (e) => {
-    e.preventDefault();
-    closingModal();
-});
+//closeModal.addEventListener("click", e => {
+//e.preventDefault();
+// closingModal();
+//});
 
-closeModalTwo.addEventListener('click', (e) => {
-    e.preventDefault();
-    closingModal();
-});
+//closeModalTwo.addEventListener("click", e => {
+//e.preventDefault();
+//closingModal();
+//});
