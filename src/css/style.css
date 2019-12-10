@@ -14,6 +14,11 @@
   src: url("../assets/fonts/avenir-next-lt-pro-cufonfonts/AvenirNextLTPro-Regular.otf");
 }
 
+@font-face {
+  font-family: Avenir-Black;
+  src: url("../assets/fonts/avenir-next-lt-pro-cufonfonts/AvenirNextLTPro-Bold.otf");
+}
+
 .iphone {
   width: 100%;
   overflow: hidden;
@@ -408,12 +413,98 @@ main > h1 {
 
 #project.active {
   display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
   align-items: center;
   justify-items: center;
   width: 100%;
   height: 100vh;
   z-index: 1;
-  padding: 20%;
+}
+
+.carousel-projects {
+  width: 70%;
+  height: 80%;
+  align-self: flex-end;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 10% 90%;
+  align-items: center;
+  justify-items: center;
+}
+
+.projects-title {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.projects-title > svg {
+  height: 100%;
+}
+
+.carousel-img-projects {
+  grid-row: 2/3;
+  display: grid;
+  height: 80%;
+  width: 100%;
+  grid-template-columns: 100%;
+  grid-template-rows: 25% 60% 15%;
+}
+
+.project-text {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  color: #ffffff;
+  font-family: Avenir-Light;
+  font-size: 1.1em;
+  padding: 4%;
+}
+
+.project-text > h3 {
+  color: #fbb420;
+  font-family: Avenir-Black;
+}
+
+.project-img {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  width: 90%;
+  height: 90%;
+  align-self: center;
+  justify-self: center;
+}
+
+.open-icon {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  height: 70%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  justify-self: center;
+}
+
+.open-icon > svg {
+  height: 100%;
+}
+
+.arrows {
+  display: none;
+}
+
+.modal {
+  display: none;
 }
 
 /* ------------------------------------------------ Us ------------------------------------------------ */
@@ -576,7 +667,8 @@ main > h1 {
     display: none;
   }
 
-  .carousel {
+  .carousel,
+  .carousel-projects {
     width: 60%;
     height: 75%;
     align-self: flex-end;
@@ -587,18 +679,21 @@ main > h1 {
     justify-items: center;
   }
 
-  .services-title {
+  .services-title,
+  .projects-title {
     grid-column: 1/2;
     grid-row: 1/2;
     align-self: center;
     height: 50%;
   }
 
-  .services-title > svg {
-    height: 75%;
+  .services-title > img {
+    height: 80%;
+    width: 80%;
   }
 
-  .carousel-img {
+  .carousel-img,
+  .carousel-img-projects {
     display: none;
     grid-column: 1/2;
     grid-row: 2/3;
@@ -616,14 +711,8 @@ main > h1 {
   .arrows > img {
     width: 100%;
     height: 100%;
+    margin-left: -20%;
   }
-
-  /* #prev{
-    grid-column: 1/2;
-    grid-row: 2/3;
-    align-self: center;
-    justify-self: left;
-  } */
 
   #next {
     grid-column: 1/2;
@@ -631,6 +720,15 @@ main > h1 {
     align-self: center;
     justify-self: right;
     margin-right: 5%;
+  }
+
+  #next-projects {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-self: flex-start;
+    justify-self: right;
+    margin-right: 5%;
+    margin-top: 20%;
   }
 }
 
@@ -663,7 +761,7 @@ main > h1 {
 
   #logo-mobile {
     display: grid;
-    z-index: 2;
+    z-index: 4;
     width: 100%;
     height: 20%;
     align-items: center;
@@ -723,7 +821,7 @@ main > h1 {
     display: block;
     width: 12%;
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     right: 0;
     margin: 5%;
     overflow: hidden;
@@ -775,18 +873,26 @@ main > h1 {
     z-index: 1;
   }
 
-  .carousel {
+  .carousel,
+  .carousel-projects {
     width: 100%;
     height: 86%;
     grid-template-columns: 100%;
     grid-template-rows: 11% 90%;
   }
 
-  .services-title {
+  .services-title,
+  .projects-title {
     grid-column: 1/2;
     grid-row: 1/2;
     align-self: flex-start;
     height: 99%;
+    width: 70%;
+  }
+
+  .projects-title > img {
+    width: 80%;
+    height: 80%;
   }
 
   .carousel-img {
@@ -796,15 +902,135 @@ main > h1 {
     margin: 0;
   }
 
-  #project.active {
+  .carousel-img-projects {
+    height: 83%;
+    width: 70%;
+    align-self: flex-start;
+  }
+
+  .project-img {
+    width: 50%;
+  }
+
+  .carousel-img-projects {
+    grid-row: 2/3;
     display: grid;
-    align-items: center;
-    justify-items: center;
+    height: 80%;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% 55% 15%;
+  }
+
+  .project-text {
+    font-size: 1em;
+  }
+
+  .open-icon {
+    align-self: flex-end;
+    width: 50%;
+    height: 100%;
+  }
+
+  #project.active {
     width: 100%;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     z-index: 1;
-    padding: 5%;
+  }
+
+  .modal {
+    display: none;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    overflow-y: scroll;
+  }
+
+  .modal.innactive{
+    display: none;
+  }
+
+  .modal.active {
+    display: grid;
+  }
+
+  .modal-content {
+    display: grid;
+    height: auto;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 0.6fr 0.3fr 2fr repeat(3, 3fr);
+  }
+
+  #modal-one {
+    background-color: #49d9c2;
+  }
+
+  #modal-two {
+    background-color: #33cccd;
+  }
+
+  .close-modal {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-self: center;
+    justify-self: right;
+    margin-right: 8%;
+    z-index: 1;
+  }
+
+  .modal-text {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    align-self: center;
+    justify-self: center;
+    font-family: Avenir-Light;
+    font-size: 1.1em;
+    color: #ffffff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  .modal-text > h3 {
+    color: #fbb420;
+    font-family: Avenir-Black;
+    text-shadow: 1px 1px 4px rgba(7, 7, 7, 0.5);
+    padding: 6%;
+  }
+
+  .modal-text > ul > li {
+    margin-bottom: 3%;
+    list-style-image: url("../assets/images/bullet.svg");
+  }
+
+  .modal-img-one {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .modal-img-two {
+    grid-column: 1/2;
+    grid-row: 5/6;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .modal-img-three {
+    grid-column: 1/2;
+    grid-row: 6/7;
+    align-self: center;
+    justify-self: center;
   }
 
   .tab-bar {
