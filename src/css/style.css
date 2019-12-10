@@ -494,7 +494,8 @@ main>h1 {
   align-self: center;
   justify-self: center;
 }
-.open-icon>svg{
+
+.open-icon>svg {
   height: 100%;
 }
 
@@ -888,12 +889,12 @@ main>h1 {
     width: 70%;
   }
 
-  .projects-title>img{
+  .projects-title>img {
     width: 80%;
     height: 80%;
   }
 
-  .carousel-img{
+  .carousel-img {
     height: 80%;
     width: 70%;
     align-self: flex-start;
@@ -918,7 +919,7 @@ main>h1 {
     grid-template-columns: 100%;
     grid-template-rows: 30% 55% 15%;
   }
-  
+
   .project-text {
     font-size: 1em;
   }
@@ -939,7 +940,6 @@ main>h1 {
   .modal {
     display: none;
     height: auto;
-    background: #fbb420;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -947,6 +947,78 @@ main>h1 {
     left: 0;
     z-index: 3;
     overflow-y: scroll;
+  }
+
+  .modal-content {
+    display: grid;
+    height: auto;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 0.7fr 0.5fr 2fr repeat(3, 3fr);
+  }
+
+  #modal-one {
+    background-color: #49D9C2;
+  }
+
+  #modal-two {
+    background-color: #33CCCD;
+  }
+
+  .close-modal {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-self: center;
+    justify-self: right;
+    margin-right: 8%;
+  }
+
+  .modal-text {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    align-self: center;
+    justify-self: center;
+    font-family: Avenir-Light;
+    font-size: 1.1em;
+    color: #ffffff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 8%;
+  }
+
+  .modal-text>h3 {
+    color: #FBB420;
+    font-family: Avenir-Black;
+    text-shadow: 1px 1px 4px rgba(7, 7, 7, 0.50);
+    padding: 6%;
+  }
+
+  .modal-text>ul>li {
+    margin-bottom: 3%;
+  }
+
+  .modal-img-one {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .modal-img-two {
+    grid-column: 1/2;
+    grid-row: 5/6;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .modal-img-three {
+    grid-column: 1/2;
+    grid-row: 6/7;
+    align-self: center;
+    justify-self: center;
   }
 
   .tab-bar {
