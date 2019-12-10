@@ -1,7 +1,5 @@
 const openModal = document.getElementById("open-modal-one");
 const openModalTwo = document.getElementById("open-modal-two");
-//const closeModal = document.getElementById("close-modal-one");
-const closeModalTwo = document.getElementById("close-modal-two");
 const modal = document.querySelector(".modal");
 
 const modalPuerquiAhorro = `
