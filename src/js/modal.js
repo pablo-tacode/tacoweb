@@ -69,13 +69,3 @@ openModalTwo.addEventListener("click", e => {
   const closeModalTwo = document.getElementById("close-modal-two");
   closeModalTwo.addEventListener("click", closingModal);
 });
-
-//closeModal.addEventListener("click", e => {
-//e.preventDefault();
-// closingModal();
-//});
-
-//closeModalTwo.addEventListener("click", e => {
-//e.preventDefault();
-//closingModal();
-//});
