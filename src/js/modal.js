@@ -110,7 +110,13 @@ openModalTwo.addEventListener("click", e => {
     closeModalTwo.addEventListener("click", modalExit);
 });
 
-logoMobile.addEventListener('click', (e) => {
+logoHomeMobile.addEventListener('click', (e) => {
     e.preventDefault();
     modalExit();
-})
+});
+
+fetch('../src/us.json')
+.then(resp => resp.json())
+.then((packageJson) => {
+  console.log(packageJson);
+});
