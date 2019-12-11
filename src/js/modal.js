@@ -9,6 +9,7 @@ const openModalAnalhi = document.getElementById("open-modal-analhi");
 const openModalIrving = document.getElementById("open-modal-irving");
 const openModalKaren = document.getElementById("open-modal-karen");
 const openModalOlga = document.getElementById("open-modal-olga");
+const openModalMision = document.getElementById("open-icon-mision");
 
 const usObj = {
   pablo: {
