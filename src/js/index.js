@@ -45,6 +45,10 @@ let slideIndex = 1;
 const slidesProjects = document.querySelectorAll(".carousel-img-projects");
 const nextPArrow = document.getElementById("next-projects");
 
+/* Us elements */
+const slidesUs = document.querySelectorAll(".carousel-img-us");
+/* const nextUArrow = document.getElementById("next-projects"); */
+
 /* General Functions */
 function changePage(link) {
   zeppelinFloating.pause();
@@ -64,6 +68,11 @@ function changePage(link) {
         homeBackgroundExit();
         if (1024 <= targetWidth) {
           showSlides(slideIndex, slidesProjects)
+        }
+      } else if (section.id === "us") {
+        homeBackgroundExit();
+        if (1024 <= targetWidth) {
+          showSlides(slideIndex, slidesUs)
         }
       } else {
         homeBackgroundExit();
