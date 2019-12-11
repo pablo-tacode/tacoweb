@@ -3,7 +3,6 @@ const openModalTwo = document.getElementById("open-modal-two");
 const modal = document.querySelector(".modal");
 const logoHomeMobile = document.getElementById("logo-mobile");
 const openModalMision = document.getElementById("open-icon-mision");
-const openModalPablo = document.getElementById("open-modal-pablo");
 
 const usObj = {
     pablo: {
@@ -212,10 +211,3 @@ openModalMision.addEventListener("click", e => {
     const closeModalMision= document.getElementById("close-modal-mision");
     closeModalMision.addEventListener("click", modalExit);
 });
-
-openModalPablo.addEventListener("click", e => {
-    e.preventDefault();
-    modalEntrance();
-    modal.innerHTML = "";
-    modal.insertAdjacentHTML("beforeend", modalUs);
-})
