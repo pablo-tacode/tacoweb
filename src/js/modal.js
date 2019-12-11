@@ -2,64 +2,92 @@ const openModal = document.getElementById("open-modal-one");
 const openModalTwo = document.getElementById("open-modal-two");
 const modal = document.querySelector(".modal");
 const logoHomeMobile = document.getElementById("logo-mobile");
+const openModalPablo = document.getElementById("open-modal-pablo");
+const openModalIvan = document.getElementById("open-modal-ivan");
+const openModalAriadna = document.getElementById("open-modal-ariadna");
+const openModalAnalhi = document.getElementById("open-modal-analhi");
+const openModalIrving = document.getElementById("open-modal-irving");
+const openModalKaren = document.getElementById("open-modal-karen");
+const openModalOlga = document.getElementById("open-modal-olga");
 
 const usObj = {
-    pablo: {
-        id: 1,
-        cargo: "Founder & CEO",
-        frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        parrafo1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        parrafo2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        parrafo3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    },
-    ivan: {
-        id: 2,
-        cargo: "Ingeniero de Software",
-        frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        parrafo1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        parrafo2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        parrafo3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    },
-    ariadna: {
-        id: 3,
-        cargo: "Diseñadora UX",
-        frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        parrafo1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        parrafo2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        parrafo3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    },
-    irving: {
-        id: 4,
-        cargo: "Marketing Digital",
-        frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        parrafo1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        parrafo2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        parrafo3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    },
-    analhi: {
-        id: 5,
-        cargo: "Diseñadora UI",
-        frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        parrafo1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        parrafo2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        parrafo3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    },
-    karen: {
-        id: 6,
-        cargo: "Desarolladora Fullstack",
-        frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        parrafo1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        parrafo2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        parrafo3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    },
-    olga: {
-        id: 7,
-        cargo: "Desarolladora Fullstack",
-        frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        parrafo1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        parrafo2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        parrafo3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    }
+  pablo: {
+    id: 1,
+    cargo: "Founder & CEO",
+    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    parrafo1:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo3:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  ivan: {
+    id: 2,
+    cargo: "Ingeniero de Software",
+    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    parrafo1:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo3:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  ariadna: {
+    id: 3,
+    cargo: "Diseñadora UX",
+    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    parrafo1:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo3:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  irving: {
+    id: 4,
+    cargo: "Marketing Digital",
+    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    parrafo1:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo3:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  analhi: {
+    id: 5,
+    cargo: "Diseñadora UI",
+    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    parrafo1:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo3:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  karen: {
+    id: 6,
+    cargo: "Desarolladora Fullstack",
+    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    parrafo1:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo3:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  olga: {
+    id: 7,
+    cargo: "Desarolladora Fullstack",
+    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    parrafo1:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo3:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  }
 };
 
 const modalPuerquiAhorro = `
@@ -118,77 +146,89 @@ const modalUs = `
                     <p></p>
                 </div>
             </div>
-            `
+            `;
 
 function openingModal() {
-    modal.classList.remove("innactive");
-    modal.classList.add("active");
+  modal.classList.remove("innactive");
+  modal.classList.add("active");
 }
 
 function closingModal() {
-    modal.classList.remove("active");
-    modal.classList.add("innactive");
+  modal.classList.remove("active");
+  modal.classList.add("innactive");
 }
 
 function scrollingTop() {
-    modal.scrollTo(0, 0);
+  modal.scrollTo(0, 0);
 }
 
 function modalEntrance() {
-    const tl = new TimelineMax();
-    tl.to(modal, 0.1, {
-        onStart: openingModal
-    }).fromTo(
-        modal,
-        0.5, {
-            yPercent: 100
-        }, {
-            yPercent: 0,
-            zIndex: 3
-        },
-        "=+0.1"
-    );
+  const tl = new TimelineMax();
+  tl.to(modal, 0.1, {
+    onStart: openingModal
+  }).fromTo(
+    modal,
+    0.5,
+    {
+      yPercent: 100
+    },
+    {
+      yPercent: 0,
+      zIndex: 3
+    },
+    "=+0.1"
+  );
 }
 
 function modalExit() {
-    const tl = new TimelineMax();
-    tl.fromTo(
-        modal,
-        0.8, {
-            yPercent: 0
-        }, {
-            yPercent: 100,
-            zIndex: 3
-        }
-    ).to(
-        modal,
-        0.1, {
-            onStart: scrollingTop,
-            onComplete: closingModal
-        },
-        "=+0.1"
-    );
+  const tl = new TimelineMax();
+  tl.fromTo(
+    modal,
+    0.8,
+    {
+      yPercent: 0
+    },
+    {
+      yPercent: 100,
+      zIndex: 3
+    }
+  ).to(
+    modal,
+    0.1,
+    {
+      onStart: scrollingTop,
+      onComplete: closingModal
+    },
+    "=+0.1"
+  );
 }
 
 openModal.addEventListener("click", e => {
-    e.preventDefault();
-    modalEntrance();
-    modal.innerHTML = "";
-    modal.insertAdjacentHTML("beforeend", modalPuerquiAhorro);
-    const closeModal = document.getElementById("close-modal-one");
-    closeModal.addEventListener("click", modalExit);
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  modal.insertAdjacentHTML("beforeend", modalPuerquiAhorro);
+  const closeModal = document.getElementById("close-modal-one");
+  closeModal.addEventListener("click", modalExit);
 });
 
 openModalTwo.addEventListener("click", e => {
-    e.preventDefault();
-    modalEntrance();
-    modal.innerHTML = "";
-    modal.insertAdjacentHTML("beforeend", modalMedicalBoard);
-    const closeModalTwo = document.getElementById("close-modal-two");
-    closeModalTwo.addEventListener("click", modalExit);
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  modal.insertAdjacentHTML("beforeend", modalMedicalBoard);
+  const closeModalTwo = document.getElementById("close-modal-two");
+  closeModalTwo.addEventListener("click", modalExit);
+});
+
+openModalPablo.addEventListener("click", e => {
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  modal.insertAdjacentHTML("beforeend", modalUs);
 });
 
 logoHomeMobile.addEventListener("click", e => {
-    e.preventDefault();
-    modalExit();
+  e.preventDefault();
+  modalExit();
 });
