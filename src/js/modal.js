@@ -53,6 +53,10 @@ function closingModal() {
     modal.classList.add('innactive');
 }
 
+function scrollingTop() {
+    modal.scrollTo(0, 0)
+}
+
 function modalEntrance() {
     const tl = new TimelineMax();
     tl.to(modal, 0.1, {
@@ -82,6 +86,7 @@ function modalExit() {
             },
         )
         .to(modal, 0.1, {
+                onStart: scrollingTop,
                 onComplete: closingModal
             },
             '=+0.1')
