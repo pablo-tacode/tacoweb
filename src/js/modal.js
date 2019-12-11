@@ -149,12 +149,12 @@ const modalUs = obj => {
   let modalContent = `
     <div class="modal-content-us">
         <a class="close-modal" id="close-modal-us-${obj.num}"><img src="./src/assets/images/close_bttn.svg" alt="Boton para cerrar modal"></a>
-        <div class="us-modal-img-container">
+        <div class="us-img-container">
             <img class="us-modal-img" src="${obj.img}" alt="${obj.cargo}">
             <p class="position">${obj.cargo}</p>
         </div>
         <div class="quote">
-            <p>${obj.frase}</p>
+            <p>"${obj.frase}"</p>
         </div>
         <div class="modal-us-info-container">
             <p>${obj.parrafo1}</p>
