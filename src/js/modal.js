@@ -2,6 +2,108 @@ const openModal = document.getElementById("open-modal-one");
 const openModalTwo = document.getElementById("open-modal-two");
 const modal = document.querySelector(".modal");
 const logoHomeMobile = document.getElementById("logo-mobile");
+const openModalPablo = document.getElementById("open-modal-pablo");
+const openModalIvan = document.getElementById("open-modal-ivan");
+const openModalAriadna = document.getElementById("open-modal-ariadna");
+const openModalAnalhi = document.getElementById("open-modal-analhi");
+const openModalIrving = document.getElementById("open-modal-irving");
+const openModalKaren = document.getElementById("open-modal-karen");
+const openModalOlga = document.getElementById("open-modal-olga");
+const openModalMision = document.getElementById("open-icon-mision");
+
+const usObj = {
+  pablo: {
+    id: "open-modal-pablo",
+    num: "one",
+    img: "./src/assets/images/retrato_pablo.png",
+    cargo: "Founder & CEO",
+    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    parrafo1:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo3:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  ivan: {
+    id: "open-modal-ivan",
+    num: "two",
+    img: "./src/assets/images/retrato_estandar.png",
+    cargo: "Ingeniero de Software",
+    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    parrafo1:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo3:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  ariadna: {
+    id: "open-modal-ariadna",
+    num: "three",
+    img: "./src/assets/images/retrato_estandar.png",
+    cargo: "Diseñadora UX",
+    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    parrafo1:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo3:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  irving: {
+    id: "open-modal-irving",
+    num: "four",
+    img: "./src/assets/images/retrato_estandar.png",
+    cargo: "Marketing Digital",
+    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    parrafo1:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo3:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  analhi: {
+    id: "open-modal-analhi",
+    num: "five",
+    img: "./src/assets/images/retrato_estandar.png",
+    cargo: "Diseñadora UI",
+    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    parrafo1:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo3:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  karen: {
+    id: "open-modal-karen",
+    num: "six",
+    img: "./src/assets/images/retrato_estandar.png",
+    cargo: "Desarolladora Fullstack",
+    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    parrafo1:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo3:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  olga: {
+    id: "open-modal-olga",
+    num: "seven",
+    img: "./src/assets/images/retrato_estandar.png",
+    cargo: "Desarolladora Fullstack",
+    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    parrafo1:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    parrafo3:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  }
+};
 
 const modalPuerquiAhorro = `
             <div class="modal-content" id="modal-one">
@@ -43,74 +145,191 @@ const modalMedicalBoard = `
             </div>
 `;
 
+const modalUs = obj => {
+  let modalContent = `
+    <div class="modal-content-us">
+        <a class="close-modal" id="close-modal-us-${obj.num}"><img src="./src/assets/images/close_bttn.svg" alt="Boton para cerrar modal"></a>
+        <div class="us-img-container">
+            <img class="us-modal-img" src="${obj.img}" alt="${obj.cargo}">
+            <p class="position">${obj.cargo}</p>
+        </div>
+        <div class="quote">
+            <p>"${obj.frase}"</p>
+        </div>
+        <div class="modal-us-info-container">
+            <p>${obj.parrafo1}</p>
+            <p>${obj.parrafo2}</p>
+            <p>${obj.parrafo3}</p>
+        </div>
+    </div>
+    `;
+  modal.insertAdjacentHTML("beforeend", modalContent);
+};
+
+const modalMisionVision = `
+            <div class="modal-content-mision">
+                <a class="close-modal" id="close-modal-mision"><img src="./src/assets/images/close_bttn.svg" alt="Boton para cerrar modal"></a>
+                <div class="us-modal-img-container">
+                    <img class="us-modal-img" src="./src/assets/images/mision_vision_2.svg" alt="Mision y vision segunda parte">
+                </div>
+            </div>
+            `;
+
 function openingModal() {
-    modal.classList.remove('innactive');
-    modal.classList.add('active');
+  modal.classList.remove("innactive");
+  modal.classList.add("active");
 }
 
 function closingModal() {
-    modal.classList.remove('active');
-    modal.classList.add('innactive');
+  modal.classList.remove("active");
+  modal.classList.add("innactive");
 }
 
 function scrollingTop() {
-    modal.scrollTo(0, 0)
+  modal.scrollTo(0, 0);
+}
+
+function paintModalData(bttnId) {
+  for (let person in usObj) {
+    let personObj = usObj[person];
+    if (bttnId === personObj.id) {
+      modalUs(personObj);
+    }
+  }
 }
 
 function modalEntrance() {
-    const tl = new TimelineMax();
-    tl.to(modal, 0.1, {
-            onStart: openingModal
-        })
-        .fromTo(
-            modal,
-            0.5, {
-                yPercent: 100
-            }, {
-                yPercent: 0,
-                zIndex: 3
-            },
-            '=+0.1'
-        )
+  const tl = new TimelineMax();
+  tl.to(modal, 0.1, {
+    onStart: openingModal
+  }).fromTo(
+    modal,
+    0.5,
+    {
+      yPercent: 100
+    },
+    {
+      yPercent: 0,
+      zIndex: 3
+    },
+    "=+0.1"
+  );
 }
 
 function modalExit() {
-    const tl = new TimelineMax();
-    tl.fromTo(
-            modal,
-            0.8, {
-                yPercent: 0
-            }, {
-                yPercent: 100,
-                zIndex: 3
-            },
-        )
-        .to(modal, 0.1, {
-                onStart: scrollingTop,
-                onComplete: closingModal
-            },
-            '=+0.1')
+  const tl = new TimelineMax();
+  tl.fromTo(
+    modal,
+    0.8,
+    {
+      yPercent: 0
+    },
+    {
+      yPercent: 100,
+      zIndex: 3
+    }
+  ).to(
+    modal,
+    0.1,
+    {
+      onStart: scrollingTop,
+      onComplete: closingModal
+    },
+    "=+0.1"
+  );
 }
 
 openModal.addEventListener("click", e => {
-    e.preventDefault();
-    modalEntrance();
-    modal.innerHTML = "";
-    modal.insertAdjacentHTML("beforeend", modalPuerquiAhorro);
-    const closeModal = document.getElementById("close-modal-one");
-    closeModal.addEventListener("click", modalExit);
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  modal.insertAdjacentHTML("beforeend", modalPuerquiAhorro);
+  const closeModal = document.getElementById("close-modal-one");
+  closeModal.addEventListener("click", modalExit);
 });
 
 openModalTwo.addEventListener("click", e => {
-    e.preventDefault();
-    modalEntrance();
-    modal.innerHTML = "";
-    modal.insertAdjacentHTML("beforeend", modalMedicalBoard);
-    const closeModalTwo = document.getElementById("close-modal-two");
-    closeModalTwo.addEventListener("click", modalExit);
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  modal.insertAdjacentHTML("beforeend", modalMedicalBoard);
+  const closeModalTwo = document.getElementById("close-modal-two");
+  closeModalTwo.addEventListener("click", modalExit);
 });
 
-logoMobile.addEventListener('click', (e) => {
-    e.preventDefault();
-    modalExit();
-})
+openModalPablo.addEventListener("click", e => {
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  paintModalData(e.target.id);
+  const closeModalUsOne = document.getElementById("close-modal-us-one");
+  closeModalUsOne.addEventListener("click", modalExit);
+});
+
+openModalIvan.addEventListener("click", e => {
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  paintModalData(e.target.id);
+  const closeModalUsTwo = document.getElementById("close-modal-us-two");
+  closeModalUsTwo.addEventListener("click", modalExit);
+});
+
+openModalAriadna.addEventListener("click", e => {
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  paintModalData(e.target.id);
+  const closeModalUsThree = document.getElementById("close-modal-us-three");
+  closeModalUsThree.addEventListener("click", modalExit);
+});
+
+openModalAnalhi.addEventListener("click", e => {
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  paintModalData(e.target.id);
+  const closeModalUsFive = document.getElementById("close-modal-us-five");
+  closeModalUsFive.addEventListener("click", modalExit);
+});
+
+openModalIrving.addEventListener("click", e => {
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  paintModalData(e.target.id);
+  const closeModalUsFour = document.getElementById("close-modal-us-four");
+  closeModalUsFour.addEventListener("click", modalExit);
+});
+
+openModalKaren.addEventListener("click", e => {
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  paintModalData(e.target.id);
+  const closeModalUsSix = document.getElementById("close-modal-us-six");
+  closeModalUsSix.addEventListener("click", modalExit);
+});
+
+openModalOlga.addEventListener("click", e => {
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  paintModalData(e.target.id);
+  const closeModalUsSeven = document.getElementById("close-modal-us-seven");
+  closeModalUsSeven.addEventListener("click", modalExit);
+});
+
+logoHomeMobile.addEventListener("click", e => {
+  e.preventDefault();
+  modalExit();
+});
+
+openModalMision.addEventListener("click", e => {
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  modal.insertAdjacentHTML("beforeend", modalMisionVision);
+  const closeModalMision = document.getElementById("close-modal-mision");
+  closeModalMision.addEventListener("click", modalExit);
+});

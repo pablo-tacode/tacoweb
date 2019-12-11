@@ -37,13 +37,15 @@ const tagline = document.getElementById("tagline");
 const servicesSection = document.getElementById("service");
 const servicesIcon = document.getElementById("service-icon");
 const servicesLink = document.getElementById("services-link");
-const slides = document.querySelectorAll(".carousel-img");
 const nextArrow = document.getElementById("next");
-let slideIndex = 1;
+/* let slideIndex = 1; */
 
 /* Projects elements */
-const slidesProjects = document.querySelectorAll(".carousel-img-projects");
 const nextPArrow = document.getElementById("next-projects");
+
+/* Us elements */
+const nextUArrow = document.getElementById("next-us");
+const prevUArrow = document.getElementById("prev-us");
 
 /* General Functions */
 function changePage(link) {
@@ -58,12 +60,20 @@ function changePage(link) {
       } else if (section.id === "service") {
         homeBackgroundExit();
         if (1024 <= targetWidth) {
-          showSlides(slideIndex, slides)
+          /* showSlides(slideIndex, slides); */
+          showSlides(1, 0)
         }
       } else if (section.id === "project") {
         homeBackgroundExit();
         if (1024 <= targetWidth) {
-          showSlides(slideIndex, slidesProjects)
+          /* showSlides(slideIndex, slidesProjects); */
+          showSlides(1, 1);
+        }
+      } else if (section.id === "us") {
+        homeBackgroundExit();
+        if (1024 <= targetWidth) {
+          /* showSlides(slideIndex, slidesUs); */
+          showSlides(1, 2);
         }
       } else {
         homeBackgroundExit();
@@ -109,22 +119,33 @@ const hideEs = (spanish, english) => {
   english.classList.remove("hide");
 };*/
 
-function showSlides(n, arr) {
-  if (n > arr.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = arr.length;
-  }
-  for (i = 0; i < arr.length; i++) {
-    bye(arr[i]);
-  }
-  arr[slideIndex - 1].style.display = "grid";
-  entranceFromRight(arr[slideIndex - 1]);
+let slideIndex = [1, 1, 1];
+let slideId = [".slides-services", ".slides-projects", ".slides-us"]
+
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no, n);
 }
 
-function addingSlides(n, slides) {
-  showSlides((slideIndex += n), slides);
+function showSlides(n, no, originalValue) {
+  let i;
+  let x = document.querySelectorAll(slideId[no]);
+  if (n > x.length) {
+    slideIndex[no] = 1
+  }
+  if (n < 1) {
+    slideIndex[no] = x.length
+  }
+  for (i = 0; i < x.length; i++) {
+    if (originalValue === -1) {
+      byeLeft(x[i]);
+      entranceFromLeft(x[slideIndex[no] - 1]);
+    } else {
+      bye(x[i]);
+      entranceFromRight(x[slideIndex[no] - 1]);
+    }
+  }
+  x[slideIndex[no] - 1].style.display = "grid";
 }
 
 function isHomeActiveMobile() {
@@ -205,9 +226,32 @@ function entranceFromRight(elementOne) {
   );
 }
 
+function entranceFromLeft(elementOne) {
+  TweenMax.fromTo(
+    elementOne,
+    1, {
+      xPercent: 200,
+      width: 0,
+      opacity: 0
+    }, {
+      xPercent: 0,
+      width: "80%",
+      opacity: 1
+    }
+  );
+}
+
 function bye(element) {
   TweenMax.to(element, 1, {
     xPercent: 200,
+    width: 0,
+    opacity: 0
+  });
+}
+
+function byeLeft(element) {
+  TweenMax.to(element, 1, {
+    xPercent: -200,
     width: 0,
     opacity: 0
   });
@@ -406,12 +450,22 @@ esMobile.addEventListener("click", e => {
 
 nextArrow.addEventListener("click", e => {
   e.preventDefault();
-  addingSlides(1, slides);
+  plusSlides(1, 0)
 });
 
 nextPArrow.addEventListener("click", e => {
   e.preventDefault();
-  addingSlides(1, slidesProjects);
+  plusSlides(1, 1)
+});
+
+nextUArrow.addEventListener("click", e => {
+  e.preventDefault();
+  plusSlides(1, 2);
+});
+
+prevUArrow.addEventListener("click", e => {
+  e.preventDefault();
+  plusSlides(-1, 2);
 });
 
 document.addEventListener("gesturestart", function (e) {
