@@ -989,6 +989,10 @@ main>h1 {
     height: 100%;
   }
 
+  .open-icon>svg {
+    z-index: -1;
+  }
+
   #project.active {
     width: 100%;
     height: 100vh;
