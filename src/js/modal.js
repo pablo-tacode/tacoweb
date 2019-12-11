@@ -271,6 +271,8 @@ openModalIvan.addEventListener("click", e => {
   modalEntrance();
   modal.innerHTML = "";
   paintModalData(e.target.id);
+  const closeModalUsTwo = document.getElementById("close-modal-us-two");
+  closeModalUsTwo.addEventListener("click", modalExit);
 });
 
 openModalAriadna.addEventListener("click", e => {
@@ -278,6 +280,8 @@ openModalAriadna.addEventListener("click", e => {
   modalEntrance();
   modal.innerHTML = "";
   paintModalData(e.target.id);
+  const closeModalUsThree = document.getElementById("close-modal-us-three");
+  closeModalUsThree.addEventListener("click", modalExit);
 });
 
 openModalAnalhi.addEventListener("click", e => {
@@ -285,6 +289,8 @@ openModalAnalhi.addEventListener("click", e => {
   modalEntrance();
   modal.innerHTML = "";
   paintModalData(e.target.id);
+  const closeModalUsFive = document.getElementById("close-modal-us-five");
+  closeModalUsFive.addEventListener("click", modalExit);
 });
 
 openModalIrving.addEventListener("click", e => {
@@ -292,6 +298,8 @@ openModalIrving.addEventListener("click", e => {
   modalEntrance();
   modal.innerHTML = "";
   paintModalData(e.target.id);
+  const closeModalUsFour = document.getElementById("close-modal-us-four");
+  closeModalUsFour.addEventListener("click", modalExit);
 });
 
 openModalKaren.addEventListener("click", e => {
@@ -299,6 +307,8 @@ openModalKaren.addEventListener("click", e => {
   modalEntrance();
   modal.innerHTML = "";
   paintModalData(e.target.id);
+  const closeModalUsSix = document.getElementById("close-modal-us-six");
+  closeModalUsSix.addEventListener("click", modalExit);
 });
 
 openModalOlga.addEventListener("click", e => {
@@ -306,6 +316,8 @@ openModalOlga.addEventListener("click", e => {
   modalEntrance();
   modal.innerHTML = "";
   paintModalData(e.target.id);
+  const closeModalUsSeven = document.getElementById("close-modal-us-seven");
+  closeModalUsSeven.addEventListener("click", modalExit);
 });
 
 logoHomeMobile.addEventListener("click", e => {
