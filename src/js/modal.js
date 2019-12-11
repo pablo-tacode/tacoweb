@@ -28,7 +28,7 @@ const usObj = {
   ivan: {
     id: "open-modal-ivan",
     num: "two",
-    img: "./src/assets/images/retrato_estandar.svg",
+    img: "./src/assets/images/retrato_estandar.png",
     cargo: "Ingeniero de Software",
     frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     parrafo1:
@@ -41,7 +41,7 @@ const usObj = {
   ariadna: {
     id: "open-modal-ariadna",
     num: "three",
-    img: "./src/assets/images/retrato_estandar.svg",
+    img: "./src/assets/images/retrato_estandar.png",
     cargo: "Diseñadora UX",
     frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     parrafo1:
@@ -54,7 +54,7 @@ const usObj = {
   irving: {
     id: "open-modal-irving",
     num: "four",
-    img: "./src/assets/images/retrato_estandar.svg",
+    img: "./src/assets/images/retrato_estandar.png",
     cargo: "Marketing Digital",
     frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     parrafo1:
@@ -67,7 +67,7 @@ const usObj = {
   analhi: {
     id: "open-modal-analhi",
     num: "five",
-    img: "./src/assets/images/retrato_estandar.svg",
+    img: "./src/assets/images/retrato_estandar.png",
     cargo: "Diseñadora UI",
     frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     parrafo1:
@@ -80,7 +80,7 @@ const usObj = {
   karen: {
     id: "open-modal-karen",
     num: "six",
-    img: "./src/assets/images/retrato_estandar.svg",
+    img: "./src/assets/images/retrato_estandar.png",
     cargo: "Desarolladora Fullstack",
     frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     parrafo1:
@@ -93,7 +93,7 @@ const usObj = {
   olga: {
     id: "open-modal-olga",
     num: "seven",
-    img: "./src/assets/images/retrato_estandar.svg",
+    img: "./src/assets/images/retrato_estandar.png",
     cargo: "Desarolladora Fullstack",
     frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     parrafo1:
