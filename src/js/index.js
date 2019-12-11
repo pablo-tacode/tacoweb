@@ -47,7 +47,8 @@ const nextPArrow = document.getElementById("next-projects");
 
 /* Us elements */
 const slidesUs = document.querySelectorAll(".carousel-img-us");
-/* const nextUArrow = document.getElementById("next-projects"); */
+const nextUArrow = document.getElementById("next-us");
+const prevUArrow = document.getElementById("prev-us");
 
 /* General Functions */
 function changePage(link) {
@@ -62,17 +63,17 @@ function changePage(link) {
       } else if (section.id === "service") {
         homeBackgroundExit();
         if (1024 <= targetWidth) {
-          showSlides(slideIndex, slides)
+          showSlides(slideIndex, slides);
         }
       } else if (section.id === "project") {
         homeBackgroundExit();
         if (1024 <= targetWidth) {
-          showSlides(slideIndex, slidesProjects)
+          showSlides(slideIndex, slidesProjects);
         }
       } else if (section.id === "us") {
         homeBackgroundExit();
         if (1024 <= targetWidth) {
-          showSlides(slideIndex, slidesUs)
+          showSlides(slideIndex, slidesUs);
         }
       } else {
         homeBackgroundExit();
@@ -421,6 +422,16 @@ nextArrow.addEventListener("click", e => {
 nextPArrow.addEventListener("click", e => {
   e.preventDefault();
   addingSlides(1, slidesProjects);
+});
+
+nextUArrow.addEventListener("click", e => {
+  e.preventDefault();
+  addingSlides(1, slidesUs);
+});
+
+prevUArrow.addEventListener("click", e => {
+  e.preventDefault();
+  addingSlides(-1, slidesUs);
 });
 
 document.addEventListener("gesturestart", function (e) {

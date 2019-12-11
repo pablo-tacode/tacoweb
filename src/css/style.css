@@ -953,19 +953,18 @@ main>h1 {
     height: 80%;
   }
 
-  .carousel-img,
-  .carousel-img-us {
+  .carousel-img {
     height: 80%;
     width: 70%;
     align-self: flex-start;
     margin: 0;
   }
 
-  .carousel-img-projects {
+ /*  .carousel-img-projects {
     height: 83%;
     width: 70%;
     align-self: flex-start;
-  }
+  } */
 
   .project-img {
     width: 50%;
@@ -974,8 +973,9 @@ main>h1 {
   .carousel-img-projects {
     grid-row: 2/3;
     display: grid;
-    height: 80%;
-    width: 100%;
+    height: 83%;
+    width: 70%;
+    align-self: flex-start;
     grid-template-columns: 100%;
     grid-template-rows: 30% 55% 15%;
   }
@@ -995,6 +995,16 @@ main>h1 {
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     z-index: 1;
+  }
+
+  .carousel-img-us {
+    grid-row: 2/3;
+    display: grid;
+    height: 83%;
+    width: 70%;
+    align-self: flex-start;
+    grid-template-columns: 100%;
+    grid-template-rows: 85% 15%;
   }
 
   .modal {
