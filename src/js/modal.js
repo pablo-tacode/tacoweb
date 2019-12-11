@@ -132,7 +132,7 @@ const modalMedicalBoard = `
 
 const modalUs = `
             <div class="modal-content-us">
-                <a class="close-modal" id="close-modal-one"><img src="./src/assets/images/close_bttn.svg" alt="Boton para cerrar modal"></a>
+                <a class="close-modal" id="close-modal-us"><img src="./src/assets/images/close_bttn.svg" alt="Boton para cerrar modal"></a>
                 <div class="us-modal-img-container">
                     <img class="us-modal-img" src="" alt="">
                     <p class="position"></p>
@@ -144,6 +144,15 @@ const modalUs = `
                     <p></p>
                     <p></p>
                     <p></p>
+                </div>
+            </div>
+            `;
+
+const modalMisionVision = `
+            <div class="modal-content-mision">
+                <a class="close-modal" id="close-modal-mision"><img src="./src/assets/images/close_bttn.svg" alt="Boton para cerrar modal"></a>
+                <div class="us-modal-img-container">
+                    <img class="us-modal-img" src="./src/assets/images/mision_vision_2.svg" alt="Mision y vision segunda parte">
                 </div>
             </div>
             `;
@@ -231,4 +240,13 @@ openModalPablo.addEventListener("click", e => {
 logoHomeMobile.addEventListener("click", e => {
   e.preventDefault();
   modalExit();
+});
+
+openModalMision.addEventListener("click", e => {
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  modal.insertAdjacentHTML("beforeend", modalMisionVision);
+  const closeModalMision = document.getElementById("close-modal-mision");
+  closeModalMision.addEventListener("click", modalExit);
 });
