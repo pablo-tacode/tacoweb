@@ -1058,6 +1058,10 @@ main>h1 {
     height: 100%;
   }
 
+  .contact-title>img {
+    width: 50%;
+  }
+
   .contact-content-container {
     grid-column: 1/2;
     grid-row: 3/4;
@@ -1065,7 +1069,7 @@ main>h1 {
     height: 100%;
     display: grid;
     grid-template-columns: 15% 70% 15%;
-    grid-template-rows: 5% 20% 50% 14% 11%;
+    grid-template-rows: 5% 20% 50% 13% 12%;
   }
 
   .contact-zepellin {
@@ -1073,6 +1077,7 @@ main>h1 {
     grid-row: 2/4;
     height: 100%;
     width: 100%;
+    align-self: flex-start;
   }
 
   .social-media-container {
@@ -1081,7 +1086,7 @@ main>h1 {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 10% 80% 10%;
+    grid-template-columns: 15% 70% 15%;
     grid-template-rows: 50% 20% 20% 10%;
     align-items: center;
     justify-items: center;
@@ -1096,8 +1101,8 @@ main>h1 {
 
   .contact-links {
     text-decoration: none;
-    font-family: Avenir-Heavy;
-    font-size: 1.2em;
+    font-family: Avenir-Black;
+    font-size: 1em;
     color: #49034C;
     letter-spacing: 0.67px;
     text-align: center;
@@ -1288,6 +1293,54 @@ main>h1 {
     padding: 5% 8% 5% 8%;
   }
 
+  .modal-content-contact {
+    background-color: #49034C;
+    display: grid;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 13% 7% 55% 25%;
+  }
+
+  .address {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .address>h2 {
+    font-family: Avenir-Black;
+    font-size: 25px;
+    color: #FBB420;
+    letter-spacing: 0.8px;
+    text-align: center;
+    margin-bottom: 10%;
+    /* margin-top: 15%; */
+  }
+
+  .address>p {
+    font-family: Avenir-Black;
+    font-size: 1.5em;
+    color: #FFFFFF;
+    letter-spacing: 0.7px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(77, 4, 4, 0.50);
+    margin-bottom: 10%;
+    line-height: 1.7em;
+    padding: 0 5% 0 5%;
+  }
+
+  .contact-city{
+    grid-column: 1/2;
+    grid-row: 4/5;
+    width: 100%;
+    height: 100%;
+    background: url("../assets/images/cities.png") no-repeat 40% bottom;
+    background-size: cover;
+  }
 
   .tab-bar {
     bottom: 0;
