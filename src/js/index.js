@@ -61,7 +61,7 @@ function changePage(link) {
         homeBackgroundExit();
         if (1024 <= targetWidth) {
           /* showSlides(slideIndex, slides); */
-          showSlides(1, 0)
+          showSlides(1, 0);
         }
       } else if (section.id === "project") {
         homeBackgroundExit();
@@ -94,8 +94,8 @@ function removeClass(element) {
 
 function changeBackgroundColor(link) {
   backgroundIcons.forEach(icon => {
-    let arr = icon.id.split('-');
-    let x = arr.shift()
+    let arr = icon.id.split("-");
+    let x = arr.shift();
     if (link.classList.contains(x)) {
       icon.classList.add("active");
     }
@@ -120,21 +120,20 @@ const hideEs = (spanish, english) => {
 };*/
 
 let slideIndex = [1, 1, 1];
-let slideId = [".slides-services", ".slides-projects", ".slides-us"]
-
+let slideId = [".slides-services", ".slides-projects", ".slides-us"];
 
 function plusSlides(n, no) {
-  showSlides(slideIndex[no] += n, no, n);
+  showSlides((slideIndex[no] += n), no, n);
 }
 
 function showSlides(n, no, originalValue) {
   let i;
   let x = document.querySelectorAll(slideId[no]);
   if (n > x.length) {
-    slideIndex[no] = 1
+    slideIndex[no] = 1;
   }
   if (n < 1) {
-    slideIndex[no] = x.length
+    slideIndex[no] = x.length;
   }
   for (i = 0; i < x.length; i++) {
     if (originalValue === -1) {
@@ -169,9 +168,17 @@ function listenToScreenWidth(w) {
   if (w <= targetWidth) {
     isHomeActiveMobile();
   } else {
-    TweenMax.set(["#slide-two", "#slide-one", "#slide-one-projects", "#slide-two-projects"], {
-      clearProps: "all"
-    });
+    TweenMax.set(
+      [
+        "#slide-two",
+        "#slide-one",
+        "#slide-one-projects",
+        "#slide-two-projects"
+      ],
+      {
+        clearProps: "all"
+      }
+    );
     isHomeActiveDesktop();
   }
 }
@@ -181,44 +188,52 @@ function listenToScreenWidth(w) {
 function fadeIn(section) {
   const tl = new TimelineMax();
   tl.fromTo(
-      section,
-      1.5, {
-        xPercent: -100
-      }, {
-        xPercent: 0,
-        zIndex: 1
-      },
-      0.1
-    )
+    section,
+    1.5,
+    {
+      xPercent: -100
+    },
+    {
+      xPercent: 0,
+      zIndex: 1
+    },
+    0.1
+  )
     .fromTo(
       ".arrows",
-      1, {
+      1,
+      {
         opacity: 0
-      }, {
+      },
+      {
         opacity: 1
       },
       1.3
     )
     .fromTo(
       ".section-title",
-      1, {
+      1,
+      {
         opacity: 0
-      }, {
+      },
+      {
         opacity: 1,
         ease: "power2.out"
       },
       1.3
-    )
+    );
 }
 
 function entranceFromRight(elementOne) {
   TweenMax.fromTo(
     elementOne,
-    1, {
+    1,
+    {
       xPercent: -200,
       width: 0,
       opacity: 0
-    }, {
+    },
+    {
       xPercent: 0,
       width: "80%",
       opacity: 1
@@ -229,11 +244,13 @@ function entranceFromRight(elementOne) {
 function entranceFromLeft(elementOne) {
   TweenMax.fromTo(
     elementOne,
-    1, {
+    1,
+    {
       xPercent: 200,
       width: 0,
       opacity: 0
-    }, {
+    },
+    {
       xPercent: 0,
       width: "80%",
       opacity: 1
@@ -268,83 +285,105 @@ const zeppelinFloating = TweenMax.to(zeppelin, 2, {
 function homeBackgroundExit() {
   const tl = new TimelineMax();
   tl.to(
-      mountainOne,
-      1.5, {
-        onStart: focusAnchor(mountainOne)
-      },
-      0.1
-    )
+    mountainOne,
+    1.5,
+    {
+      onStart: focusAnchor(mountainOne)
+    },
+    0.1
+  )
     .to(
       mountainTwo,
-      1, {
+      1,
+      {
         onStart: focusAnchor(mountainTwo)
       },
       0.1
     )
     .to(
       cities,
-      1, {
+      1,
+      {
         opacity: 0
       },
       "-0.1"
     )
     .to(
       tagline,
-      0.3, {
+      0.3,
+      {
         opacity: 0
       },
       0.1
     )
-    .to(logoWLetters,
-      0.5, {
-        fill: '#ffffff',
+    .to(
+      logoWLetters,
+      0.5,
+      {
+        fill: "#ffffff",
         ease: "sine.out"
       },
       0.1
     )
     .to(
       logoMobile,
-      1, {
+      1,
+      {
         onStart: focusAnchor(logoMobile)
       },
       0.1
     )
-    .to(logoSvg, 1, {
-      onStart: focusAnchor(logoSvg)
-    }, 0.1)
-    .to('.web-studio', 0.5, {
-      fill: 'transparent'
-    }, 0.1)
+    .to(
+      logoSvg,
+      1,
+      {
+        onStart: focusAnchor(logoSvg)
+      },
+      0.1
+    )
+    .to(
+      ".web-studio",
+      0.5,
+      {
+        fill: "transparent"
+      },
+      0.1
+    );
 }
 
 function homeBackgroundEntrance() {
   const tl = new TimelineMax();
   tl.to(
-      mountainOne,
-      1.5, {
-        onStart: removeClass(mountainOne)
-      },
-      0.1
-    )
+    mountainOne,
+    1.5,
+    {
+      onStart: removeClass(mountainOne)
+    },
+    0.1
+  )
     .to(
       mountainTwo,
-      1, {
+      1,
+      {
         onStart: removeClass(mountainTwo)
       },
       0.1
     )
     .to(
       cities,
-      1, {
+      1,
+      {
         opacity: 1
       },
       0.7
     )
     .fromTo(
       home,
-      1.5, {
+      1.5,
+      {
         xPercent: -100
-      }, {
+      },
+      {
         xPercent: 0,
         zIndex: 1
       },
@@ -352,48 +391,61 @@ function homeBackgroundEntrance() {
     )
     .to(
       tagline,
-      1, {
+      1,
+      {
         opacity: 1
       },
       0.7
     )
     .to(
-      logoWLetters, 0.1, {
+      logoWLetters,
+      0.1,
+      {
         clearProps: "all"
       },
-      '-0.5'
+      "-0.5"
     )
     .fromTo(
-      logoMobile, 1.5, {
+      logoMobile,
+      1.5,
+      {
         opacity: 0
-      }, {
+      },
+      {
         opacity: 1
       },
       0.5
     )
     .to(
       logoMobile,
-      1.5, {
+      1.5,
+      {
         onStart: removeClass(logoMobile)
       },
       0.1
     )
     .to(
       logoSvg,
-      1, {
+      1,
+      {
         onStart: removeClass(logoSvg)
       },
       0.1
     )
-    .to('.web-studio', 1.5, {
-      fill: '#000000'
-    }, 0.5)
+    .to(
+      ".web-studio",
+      1.5,
+      {
+        fill: "#000000"
+      },
+      0.5
+    );
 }
 
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
 
 menuLinks.forEach(link =>
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     removeActiveClass(sections);
     removeActiveClass(headerLinksToFocus);
@@ -403,28 +455,28 @@ menuLinks.forEach(link =>
 );
 
 headerLinksToFocus.forEach(link => {
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     focusAnchor(link);
   });
 });
 
 tabLinks.forEach(link => {
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     changeBackgroundColor(link);
   });
 });
 
 sideIcons.forEach(link => {
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     removeActiveClass(sideIconsImages);
     focusAnchor(link.firstChild);
   });
 });
 
-zeppelin.addEventListener("click", function (e) {
+zeppelin.addEventListener("click", function(e) {
   e.preventDefault();
   servicesIcon.classList.add("active");
   servicesLink.classList.add("active");
@@ -450,12 +502,12 @@ esMobile.addEventListener("click", e => {
 
 nextArrow.addEventListener("click", e => {
   e.preventDefault();
-  plusSlides(1, 0)
+  plusSlides(1, 0);
 });
 
 nextPArrow.addEventListener("click", e => {
   e.preventDefault();
-  plusSlides(1, 1)
+  plusSlides(1, 1);
 });
 
 nextUArrow.addEventListener("click", e => {
@@ -468,17 +520,17 @@ prevUArrow.addEventListener("click", e => {
   plusSlides(-1, 2);
 });
 
-document.addEventListener("gesturestart", function (e) {
+document.addEventListener("gesturestart", function(e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
 
-document.addEventListener("gesturechange", function (e) {
+document.addEventListener("gesturechange", function(e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
 
-document.addEventListener("gestureend", function (e) {
+document.addEventListener("gestureend", function(e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
