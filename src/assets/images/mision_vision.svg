@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="289px" height="483px" viewBox="0 0 289 483" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
-    <title>Group 2</title>
+    <title>mision_vision</title>
     <desc>Created with Sketch.</desc>
     <defs>
         <filter x="-5.7%" y="-11.5%" width="111.6%" height="123.1%" filterUnits="objectBoundingBox" id="filter-1">
@@ -37,8 +37,8 @@
         </filter>
     </defs>
     <g id="nosotros" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Iphone11Pro_375x812_001" transform="translate(-43.000000, -229.000000)">
-            <g id="Group-2" transform="translate(45.000000, 232.000000)">
+        <g id="mision_vision" transform="translate(2.000000, 3.000000)">
+            <g id="Group-2">
                 <g id="PAQUETE_WEB" transform="translate(20.000000, 0.000000)">
                     <g id="Zepelin-1" transform="translate(0.350000, 0.000000)">
                         <g id="zeppelin-copy-6" transform="translate(15.797015, 0.000000)">
@@ -73,17 +73,6 @@
                             <use fill="black" fill-opacity="1" filter="url(#filter-7)" xlink:href="#path-6"></use>
                             <use fill="url(#linearGradient-5)" fill-rule="evenodd" xlink:href="#path-6"></use>
                         </g>
-                        <text id="Nuestra-MISIÓN-se-di" font-family="Avenir-Black, Avenir" font-size="16.2792" font-weight="700" letter-spacing="0.519791979" fill="#5F0263">
-                            <tspan x="25" y="89">Nuestra MISIÓN se divide en </tspan>
-                            <tspan x="25" y="115.02696">dos:</tspan>
-                            <tspan x="25" y="141.05392"></tspan>
-                            <tspan x="25" y="167.08088" font-family="Avenir-Heavy, Avenir" font-weight="600">1. I</tspan>
-                            <tspan x="50.8793583" y="167.08088" font-family="Avenir-Medium, Avenir" font-weight="400">mpulsar el talento </tspan>
-                            <tspan x="25" y="193.10784" font-family="Avenir-Medium, Avenir" font-weight="400">emergente mexicano a los más</tspan>
-                            <tspan x="25" y="219.134801" font-family="Avenir-Medium, Avenir" font-weight="400">altos estándares del mundo </tspan>
-                            <tspan x="25" y="245.161761" font-family="Avenir-Medium, Avenir" font-weight="400">tech a nivel internacional. </tspan>
-                            <tspan x="231.046405" y="245.161761"></tspan>
-                        </text>
                     </g>
                     <line x1="17.5" y1="5" x2="17.5" y2="1" id="Path-14" stroke="#8D6939" stroke-width="1.463616" stroke-linecap="round"></line>
                     <line x1="45.5" y1="5" x2="45.5" y2="1" id="Path-14-Copy" stroke="#8D6939" stroke-width="1.463616" stroke-linecap="round"></line>
@@ -109,6 +98,20 @@
                     <line x1="7" y1="55.7439107" x2="20.8887538" y2="1" id="Path-4" transform="translate(13.944377, 28.371955) rotate(165.764187) translate(-13.944377, -28.371955) "></line>
                 </g>
             </g>
+            <text id="1.-Impulsar-el-talen" font-family="Avenir-Medium, Avenir" font-size="17" font-weight="400" letter-spacing="0.542806995" fill="#5F0263">
+                <tspan x="50" y="257">1. Impulsar el talento </tspan>
+                <tspan x="50" y="280">emergente mexicano a </tspan>
+                <tspan x="50" y="303">los más altos </tspan>
+                <tspan x="50" y="326">estándares del mundo  </tspan>
+                <tspan x="50" y="349">tech a nivel </tspan>
+                <tspan x="50" y="372">internacional.</tspan>
+                <tspan x="160.891298" y="372" font-size="18" letter-spacing="0.574736818"> </tspan>
+                <tspan x="166.470035" y="372" font-size="16.2792" letter-spacing="0.519791979">  </tspan>
+            </text>
+            <text id="Nuestra-MISIÓN-se-di" font-family="Avenir-Black, Avenir" font-size="16.2792" font-weight="700" letter-spacing="0.519791979" fill="#5F0263">
+                <tspan x="35" y="190">Nuestra MISIÓN se divide </tspan>
+                <tspan x="35" y="212">en dos:</tspan>
+            </text>
         </g>
     </g>
 </svg>
