@@ -19,6 +19,11 @@
   src: url("../assets/fonts/avenir-next-lt-pro-cufonfonts/AvenirNextLTPro-Bold.otf");
 }
 
+@font-face {
+  font-family: Avenir-Heavy;
+  src: url("../assets/fonts/avenir-next-lt-pro-cufonfonts/AvenirNextLTPro-HeavyCn.otf");
+}
+
 .iphone {
   width: 100%;
   overflow: hidden;
@@ -1033,6 +1038,91 @@ main>h1 {
     height: 100%;
   }
 
+  #contact.active {
+    width: 100%;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    z-index: 1;
+    grid-template-rows: 15% 10% 75%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-title {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .contact-title>img {
+    width: 50%;
+  }
+
+  .contact-content-container {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: 5% 20% 50% 13% 12%;
+  }
+
+  .contact-zepellin {
+    grid-column: 2/3;
+    grid-row: 2/4;
+    height: 100%;
+    width: 100%;
+    align-self: flex-start;
+  }
+
+  .social-media-container {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: 50% 20% 20% 10%;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .social-media-container>img {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 80%;
+    height: 80%;
+  }
+
+  .contact-links {
+    text-decoration: none;
+    font-family: Avenir-Black;
+    font-size: 1em;
+    color: #49034C;
+    letter-spacing: 0.67px;
+    text-align: center;
+  }
+
+  #mail-link {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  #phone-link {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+
+  #open-icon-contact {
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+
   .modal {
     display: none;
     height: auto;
@@ -1199,10 +1289,58 @@ main>h1 {
     letter-spacing: 0.45px;
   }
 
-  .modal-us-info-container>p{
+  .modal-us-info-container>p {
     padding: 5% 8% 5% 8%;
   }
 
+  .modal-content-contact {
+    background-color: #49034C;
+    display: grid;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 13% 7% 55% 25%;
+  }
+
+  .address {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .address>h2 {
+    font-family: Avenir-Black;
+    font-size: 25px;
+    color: #FBB420;
+    letter-spacing: 0.8px;
+    text-align: center;
+    margin-bottom: 10%;
+    /* margin-top: 15%; */
+  }
+
+  .address>p {
+    font-family: Avenir-Black;
+    font-size: 1.5em;
+    color: #FFFFFF;
+    letter-spacing: 0.7px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(77, 4, 4, 0.50);
+    margin-bottom: 10%;
+    line-height: 1.7em;
+    padding: 0 5% 0 5%;
+  }
+
+  .contact-city{
+    grid-column: 1/2;
+    grid-row: 4/5;
+    width: 100%;
+    height: 100%;
+    background: url("../assets/images/cities.png") no-repeat 40% bottom;
+    background-size: cover;
+  }
 
   .tab-bar {
     bottom: 0;

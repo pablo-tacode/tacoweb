@@ -10,6 +10,7 @@ const openModalIrving = document.getElementById("open-modal-irving");
 const openModalKaren = document.getElementById("open-modal-karen");
 const openModalOlga = document.getElementById("open-modal-olga");
 const openModalMision = document.getElementById("open-icon-mision");
+const openModalContact = document.getElementById("open-icon-contact");
 
 const usObj = {
   pablo: {
@@ -175,6 +176,18 @@ const modalMisionVision = `
             </div>
             `;
 
+const modalContact = `
+        <div class="modal-content-contact">
+            <a class="close-modal" id="close-modal-contact"><img src="./src/assets/images/close_bttn.svg" alt="Boton para cerrar modal"></a>
+            <div class="address">
+                <h2>DÓNDE ESTAMOS</h2>
+                <p>Gral. Salvador Alvarado 72, Escandon I Secc, 11800 CDMX </p>
+                <a id="open-map-bttn" href="https://www.google.com/maps/place/Gral.+Salvador+Alvarado+72,+Escand%C3%B3n+I+Secc,+Miguel+Hidalgo,+11800+Ciudad+de+M%C3%A9xico,+CDMX/@19.4045022,-99.1820195,17z/data=!3m1!4b1!4m5!3m4!1s0x85d1ff663325880f:0x6a28b0ae4755f260!8m2!3d19.4045022!4d-99.1798254"><img src="./src/assets/images/ver-mapa-botón.svg" alt="Botón para ver la ubicación en el mapa de Goggle maps"></a>
+            </div>
+            <div class="contact-city"></div>
+        </div>
+`;
+
 function openingModal() {
   modal.classList.remove("innactive");
   modal.classList.add("active");
@@ -332,4 +345,13 @@ openModalMision.addEventListener("click", e => {
   modal.insertAdjacentHTML("beforeend", modalMisionVision);
   const closeModalMision = document.getElementById("close-modal-mision");
   closeModalMision.addEventListener("click", modalExit);
+});
+
+openModalContact.addEventListener("click", e => {
+  e.preventDefault();
+  modalEntrance();
+  modal.innerHTML = "";
+  modal.insertAdjacentHTML("beforeend", modalContact);
+  const closeModalContact = document.getElementById("close-modal-contact");
+  closeModalContact.addEventListener("click", modalExit);
 });
