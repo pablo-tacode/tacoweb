@@ -60,19 +60,16 @@ function changePage(link) {
       } else if (section.id === "service") {
         homeBackgroundExit();
         if (1024 <= targetWidth) {
-          /* showSlides(slideIndex, slides); */
           showSlides(1, 0);
         }
       } else if (section.id === "project") {
         homeBackgroundExit();
         if (1024 <= targetWidth) {
-          /* showSlides(slideIndex, slidesProjects); */
           showSlides(1, 1);
         }
       } else if (section.id === "us") {
         homeBackgroundExit();
         if (1024 <= targetWidth) {
-          /* showSlides(slideIndex, slidesUs); */
           showSlides(1, 2);
         }
       } else {
@@ -147,26 +144,19 @@ function showSlides(n, no, originalValue) {
   x[slideIndex[no] - 1].style.display = "grid";
 }
 
-function isHomeActiveMobile() {
-  if (home.classList.contains("active")) {
-    console.log("Home is active");
-  } else {
-    mountainOne.style.transform = "matrix(1, 0, 0, 1, 0, 0)";
-  }
-}
-
-function isHomeActiveDesktop() {
-  if (home.classList.contains("active")) {
-    console.log("Home is active");
-  } else {
-    mountainOne.style.transform = "translate(23%, 0%) matrix(3, 0, 0, 1, 0, 0)";
-  }
-}
-
 function listenToScreenWidth(w) {
-  console.log("listen to screen width");
   if (w <= targetWidth) {
-    isHomeActiveMobile();
+    sections.forEach(section => {
+      if (section.classList.contains("active")) {
+        if (section.id === "service") {
+          showSlides(1, 0);
+        } else if (section.id === "project") {
+          showSlides(1, 1);
+        } else if (section.id === "us") {
+          showSlides(1, 2);
+        }
+      }
+    });
   } else {
     TweenMax.set(
       [
@@ -174,12 +164,10 @@ function listenToScreenWidth(w) {
         "#slide-one",
         "#slide-one-projects",
         "#slide-two-projects"
-      ],
-      {
+      ], {
         clearProps: "all"
       }
     );
-    isHomeActiveDesktop();
   }
 }
 
@@ -188,35 +176,29 @@ function listenToScreenWidth(w) {
 function fadeIn(section) {
   const tl = new TimelineMax();
   tl.fromTo(
-    section,
-    1.5,
-    {
-      xPercent: -100
-    },
-    {
-      xPercent: 0,
-      zIndex: 1
-    },
-    0.1
-  )
+      section,
+      1.5, {
+        xPercent: -100
+      }, {
+        xPercent: 0,
+        zIndex: 1
+      },
+      0.1
+    )
     .fromTo(
       ".arrows",
-      1,
-      {
+      1, {
         opacity: 0
-      },
-      {
+      }, {
         opacity: 1
       },
       1.3
     )
     .fromTo(
       ".section-title",
-      1,
-      {
+      1, {
         opacity: 0
-      },
-      {
+      }, {
         opacity: 1,
         ease: "power2.out"
       },
@@ -227,13 +209,11 @@ function fadeIn(section) {
 function entranceFromRight(elementOne) {
   TweenMax.fromTo(
     elementOne,
-    1,
-    {
+    1, {
       xPercent: -200,
       width: 0,
       opacity: 0
-    },
-    {
+    }, {
       xPercent: 0,
       width: "80%",
       opacity: 1
@@ -244,13 +224,11 @@ function entranceFromRight(elementOne) {
 function entranceFromLeft(elementOne) {
   TweenMax.fromTo(
     elementOne,
-    1,
-    {
+    1, {
       xPercent: 200,
       width: 0,
       opacity: 0
-    },
-    {
+    }, {
       xPercent: 0,
       width: "80%",
       opacity: 1
@@ -285,41 +263,36 @@ const zeppelinFloating = TweenMax.to(zeppelin, 2, {
 function homeBackgroundExit() {
   const tl = new TimelineMax();
   tl.to(
-    mountainOne,
-    1.5,
-    {
-      onStart: focusAnchor(mountainOne)
-    },
-    0.1
-  )
+      mountainOne,
+      1.5, {
+        onStart: focusAnchor(mountainOne)
+      },
+      0.1
+    )
     .to(
       mountainTwo,
-      1,
-      {
+      1, {
         onStart: focusAnchor(mountainTwo)
       },
       0.1
     )
     .to(
       cities,
-      1,
-      {
+      1, {
         opacity: 0
       },
       "-0.1"
     )
     .to(
       tagline,
-      0.3,
-      {
+      0.3, {
         opacity: 0
       },
       0.1
     )
     .to(
       logoWLetters,
-      0.5,
-      {
+      0.5, {
         fill: "#ffffff",
         ease: "sine.out"
       },
@@ -327,24 +300,21 @@ function homeBackgroundExit() {
     )
     .to(
       logoMobile,
-      1,
-      {
+      1, {
         onStart: focusAnchor(logoMobile)
       },
       0.1
     )
     .to(
       logoSvg,
-      1,
-      {
+      1, {
         onStart: focusAnchor(logoSvg)
       },
       0.1
     )
     .to(
       ".web-studio",
-      0.5,
-      {
+      0.5, {
         fill: "transparent"
       },
       0.1
@@ -354,36 +324,31 @@ function homeBackgroundExit() {
 function homeBackgroundEntrance() {
   const tl = new TimelineMax();
   tl.to(
-    mountainOne,
-    1.5,
-    {
-      onStart: removeClass(mountainOne)
-    },
-    0.1
-  )
+      mountainOne,
+      1.5, {
+        onStart: removeClass(mountainOne)
+      },
+      0.1
+    )
     .to(
       mountainTwo,
-      1,
-      {
+      1, {
         onStart: removeClass(mountainTwo)
       },
       0.1
     )
     .to(
       cities,
-      1,
-      {
+      1, {
         opacity: 1
       },
       0.7
     )
     .fromTo(
       home,
-      1.5,
-      {
+      1.5, {
         xPercent: -100
-      },
-      {
+      }, {
         xPercent: 0,
         zIndex: 1
       },
@@ -391,51 +356,44 @@ function homeBackgroundEntrance() {
     )
     .to(
       tagline,
-      1,
-      {
+      1, {
         opacity: 1
       },
       0.7
     )
     .to(
       logoWLetters,
-      0.1,
-      {
+      0.1, {
         clearProps: "all"
       },
       "-0.5"
     )
     .fromTo(
       logoMobile,
-      1.5,
-      {
+      1.5, {
         opacity: 0
-      },
-      {
+      }, {
         opacity: 1
       },
       0.5
     )
     .to(
       logoMobile,
-      1.5,
-      {
+      1.5, {
         onStart: removeClass(logoMobile)
       },
       0.1
     )
     .to(
       logoSvg,
-      1,
-      {
+      1, {
         onStart: removeClass(logoSvg)
       },
       0.1
     )
     .to(
       ".web-studio",
-      1.5,
-      {
+      1.5, {
         fill: "#000000"
       },
       0.5
@@ -445,7 +403,7 @@ function homeBackgroundEntrance() {
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
 
 menuLinks.forEach(link =>
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     removeActiveClass(sections);
     removeActiveClass(headerLinksToFocus);
@@ -455,28 +413,28 @@ menuLinks.forEach(link =>
 );
 
 headerLinksToFocus.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     focusAnchor(link);
   });
 });
 
 tabLinks.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     changeBackgroundColor(link);
   });
 });
 
 sideIcons.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     removeActiveClass(sideIconsImages);
     focusAnchor(link.firstChild);
   });
 });
 
-zeppelin.addEventListener("click", function(e) {
+zeppelin.addEventListener("click", function (e) {
   e.preventDefault();
   servicesIcon.classList.add("active");
   servicesLink.classList.add("active");
@@ -520,17 +478,17 @@ prevUArrow.addEventListener("click", e => {
   plusSlides(-1, 2);
 });
 
-document.addEventListener("gesturestart", function(e) {
+document.addEventListener("gesturestart", function (e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
 
-document.addEventListener("gesturechange", function(e) {
+document.addEventListener("gesturechange", function (e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
 
-document.addEventListener("gestureend", function(e) {
+document.addEventListener("gestureend", function (e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
@@ -554,8 +512,7 @@ window.addEventListener(
   () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
-    console.log(vh);
-    let w =
+    w =
       document.documentElement.clientWidth ||
       document.body.clientWidth ||
       window.innerWidth;
