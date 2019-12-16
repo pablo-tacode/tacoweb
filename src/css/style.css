@@ -7,6 +7,7 @@
   width: 100%;
   overflow: hidden;
   height: 100vh;
+  touch-action: none !important;
 }
 
 @font-face {
@@ -378,6 +379,7 @@ main > h1 {
   grid-template-rows: 10% 90%;
   align-items: center;
   justify-items: center;
+  touch-action: manipulation !important;
 }
 
 .services-title {
@@ -1126,14 +1128,14 @@ main > h1 {
 
   .modal {
     display: none;
-    height: auto;
+    height: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     z-index: 3;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
   }
 
   .modal.innactive {
@@ -1149,7 +1151,8 @@ main > h1 {
     height: auto;
     width: 100%;
     grid-template-columns: 100%;
-    grid-template-rows: 0.6fr 0.3fr 2fr repeat(3, 3fr);
+    grid-template-rows: 13vh 8vh 50vh repeat(3, 70vh);
+    overflow-y: scroll;
   }
 
   #modal-one {
@@ -1191,6 +1194,7 @@ main > h1 {
     font-family: Avenir-Black;
     text-shadow: 1px 1px 4px rgba(7, 7, 7, 0.5);
     padding: 6%;
+    width: 100%;
   }
 
   .modal-text > ul > li {
@@ -1203,6 +1207,7 @@ main > h1 {
     grid-row: 4/5;
     align-self: center;
     justify-self: center;
+    height: 80%;
   }
 
   .modal-img-two {
@@ -1210,6 +1215,7 @@ main > h1 {
     grid-row: 5/6;
     align-self: center;
     justify-self: center;
+    height: 80%;
   }
 
   .modal-img-three {
@@ -1217,6 +1223,7 @@ main > h1 {
     grid-row: 6/7;
     align-self: center;
     justify-self: center;
+    height: 80%;
   }
 
   .modal-content-mision {
@@ -1247,7 +1254,9 @@ main > h1 {
     height: auto;
     width: 100%;
     grid-template-columns: 100%;
-    grid-template-rows: 0.6fr 0.3fr 2fr 0.5fr 3fr;
+    grid-template-rows: 12vh 7vh 45vh 10vh 70vh;
+    overflow-y: scroll;
+    align-items: center;
   }
 
   .us-img-container {
@@ -1259,11 +1268,10 @@ main > h1 {
     align-items: center;
     justify-content: center;
     font-family: Avenir-Black;
-    font-size: 17.91px;
+    font-size: 1.1em;
     color: #5f0263;
     letter-spacing: 0.57px;
     text-align: center;
-    line-height: 16.63px;
   }
 
   .us-img-container > img {
@@ -1275,19 +1283,24 @@ main > h1 {
     grid-column: 1/2;
     grid-row: 4/5;
     font-family: Avenir-HeavyOblique;
-    font-size: 16.28px;
+    font-size: 1em;
     color: #5f0263;
     letter-spacing: 0.52px;
     text-align: center;
+    margin-top: 5%;
+    padding: 0 10% 0 10%;
   }
 
   .modal-us-info-container {
     grid-column: 1/2;
     grid-row: 5/6;
     font-family: Avenir-Roman;
-    font-size: 14px;
+    font-size: 0.9em;
     color: #5f0263;
+    display: grid;
+    align-items: center;
     letter-spacing: 0.45px;
+    height: 100%;
   }
 
   .modal-us-info-container > p {
