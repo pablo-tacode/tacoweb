@@ -3,13 +3,6 @@
   margin: 0;
 }
 
-.iphone {
-  width: 100%;
-  overflow: hidden;
-  height: 100vh;
-  touch-action: none !important;
-}
-
 @font-face {
   font-family: Avenir-Light;
   src: url("../assets/fonts/avenir-next-lt-pro-cufonfonts/AvenirNextLTPro-Regular.otf");
