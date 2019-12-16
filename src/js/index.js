@@ -556,16 +556,6 @@ if (/iPhone/i.test(navigator.userAgent)) {
   document.querySelector("html").classList.add("iphone");
 }
 
-document.addEventListener(
-  "touchmove",
-  function(event) {
-    if (event.scale !== 1) {
-      event.preventDefault();
-    }
-  },
-  false
-);
-
 let lastTouchEnd = 0;
 document.addEventListener(
   "touchend",
