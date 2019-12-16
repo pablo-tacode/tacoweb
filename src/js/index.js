@@ -566,13 +566,13 @@ document.addEventListener(
   false
 );
 
-const lastTouchEnd = 0;
+let lastTouchEnd = 0;
 document.addEventListener(
   "touchend",
-  function(event) {
-    const now = new Date().getTime();
+  function(e) {
+    let now = new Date().getTime();
     if (now - lastTouchEnd <= 300) {
-      event.preventDefault();
+      e.preventDefault();
     }
     lastTouchEnd = now;
   },
