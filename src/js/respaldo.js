@@ -4,6 +4,7 @@ const targetWidth = 1024;
 const logoWLetters = document.querySelectorAll(".logo-w-letters");
 const logoMobile = document.getElementById("logo-mobile");
 const logoSvg = document.getElementById("logo-svg");
+const sectionTitles = document.querySelectorAll(".section-title");
 
 /* Background elements */
 const mountainOne = document.getElementById("mountain-001");
@@ -30,32 +31,48 @@ const esMobile = document.getElementById("es-mobile");
 
 /* Home elements */
 const home = document.querySelector(".home");
-/* const zeppelin = document.getElementById("zeppelin"); */
+const zeppelin = document.getElementById("zeppelin");
 const tagline = document.getElementById("tagline");
 
 /* Services elements */
-const servicesIcon = document.getElementById("service");
+const servicesSection = document.getElementById("service");
+const servicesIcon = document.getElementById("service-icon");
 const servicesLink = document.getElementById("services-link");
-const slides = document.querySelectorAll(".carousel-img");
 const nextArrow = document.getElementById("next");
-let slideIndex = 1;
+const slideServices = document.getElementById("slide-one");
+/* let slideIndex = 1; */
+
+/* Projects elements */
+const nextPArrow = document.getElementById("next-projects");
+const slideProjects = document.getElementById("slide-two-projects");
+
+/* Us elements */
+const nextUArrow = document.getElementById("next-us");
+const prevUArrow = document.getElementById("prev-us");
 
 /* General Functions */
 function changePage(link) {
   zeppelinFloating.pause();
   sections.forEach(section => {
     if (link.classList.contains(`${section.id}`)) {
+      section.classList.add("active");
       if (section.id === "homes") {
-        zeppelinFloating.play();
         homeBackgroundEntrance();
-        section.classList.add("active");
       } else {
-        fadeIn(section);
-        section.classList.add("active");
         homeBackgroundExit();
+        listenToScreenWidth(w);
+        selectingTitle(section, section.id);
       }
     }
   });
+}
+
+function selectingTitle (section, sectionId) {
+  sectionTitles.forEach(title => {
+    if(title.classList.contains(sectionId)){
+      fadeIn(section, title)
+    }
+  })
 }
 
 function focusAnchor(link) {
@@ -70,7 +87,9 @@ function removeClass(element) {
 
 function changeBackgroundColor(link) {
   backgroundIcons.forEach(icon => {
-    if (link.classList.contains(`${icon.id}`)) {
+    let arr = icon.id.split("-");
+    let x = arr.shift();
+    if (link.classList.contains(x)) {
       icon.classList.add("active");
     }
   });
@@ -93,56 +112,56 @@ const hideEs = (spanish, english) => {
   english.classList.remove("hide");
 };*/
 
-function showSlides(n) {
-  if (n > slides.length) {
-    slideIndex = 1;
+let slideIndex = [1, 1, 1];
+let slideId = [".slides-services", ".slides-projects", ".slides-us"];
+
+function plusSlides(n, no) {
+  showSlides((slideIndex[no] += n), no, n);
+}
+
+function showSlides(n, no, originalValue) {
+  let i;
+  let x = document.querySelectorAll(slideId[no]);
+  if (n > x.length) {
+    slideIndex[no] = 1;
   }
   if (n < 1) {
-    slideIndex = slides.length;
+    slideIndex[no] = x.length;
   }
-  for (i = 0; i < slides.length; i++) {
-    bye(slides[i]);
+  for (i = 0; i < x.length; i++) {
+    if (originalValue === -1) {
+      byeLeft(x[i]);
+      entranceFromLeft(x[slideIndex[no] - 1]);
+    } else {
+      bye(x[i]);
+      entranceFromRight(x[slideIndex[no] - 1]);
+    }
   }
-  slides[slideIndex - 1].style.display = "flex";
-  entranceFromRight(slides[slideIndex - 1]);
-}
-
-function addingSlides(n) {
-  showSlides((slideIndex += n));
-}
-
-function isHomeActiveMobile() {
-  if (home.classList.contains("active")) {
-    console.log("Home is active");
-  } else {
-    mountainOne.style.transform = "matrix(1, 0, 0, 1, 0, 0)";
-  }
-}
-
-function isHomeActiveDesktop() {
-  if (home.classList.contains("active")) {
-    console.log("Home is active");
-  } else {
-    mountainOne.style.transform = "translate(23%, 0%) matrix(3, 0, 0, 1, 0, 0)";
-  }
+  x[slideIndex[no] - 1].style.display = "grid";
 }
 
 function listenToScreenWidth(w) {
-  console.log("listen to screen width");
   if (w <= targetWidth) {
-    showSlides(slideIndex);
-    isHomeActiveMobile();
-  } else {
-    TweenMax.set(["#slide-two", "#slide-one"], {
-      clearProps: "all"
+    sections.forEach(section => {
+      if (section.classList.contains("active")) {
+        if (section.id === "service") {
+          showSlides(1, 0);
+        } else if (section.id === "project") {
+          showSlides(1, 1);
+        } else if (section.id === "us") {
+          showSlides(1, 2);
+        }
+      }
     });
-    isHomeActiveDesktop();
+  } else {
+    slideServices.removeAttribute('style');
+    slideProjects.removeAttribute('style');
   }
 }
 
 /* ------------------------------------- GSAP Animation functions ------------------------------------- */
 
-function fadeIn(section) {
+function fadeIn(section, sectionTitle) {
   const tl = new TimelineMax();
   tl.fromTo(
       section,
@@ -164,7 +183,7 @@ function fadeIn(section) {
       1.3
     )
     .fromTo(
-      ".services-title",
+      sectionTitle,
       1, {
         opacity: 0
       }, {
@@ -172,7 +191,7 @@ function fadeIn(section) {
         ease: "power2.out"
       },
       1.3
-    )
+    );
 }
 
 function entranceFromRight(elementOne) {
@@ -180,6 +199,21 @@ function entranceFromRight(elementOne) {
     elementOne,
     1, {
       xPercent: -200,
+      width: 0,
+      opacity: 0
+    }, {
+      xPercent: 0,
+      width: "80%",
+      opacity: 1
+    }
+  );
+}
+
+function entranceFromLeft(elementOne) {
+  TweenMax.fromTo(
+    elementOne,
+    1, {
+      xPercent: 200,
       width: 0,
       opacity: 0
     }, {
@@ -198,6 +232,14 @@ function bye(element) {
   });
 }
 
+function byeLeft(element) {
+  TweenMax.to(element, 1, {
+    xPercent: -200,
+    width: 0,
+    opacity: 0
+  });
+}
+
 const zeppelinFloating = TweenMax.to(zeppelin, 2, {
   y: "-=15px",
   yoyo: true,
@@ -205,6 +247,10 @@ const zeppelinFloating = TweenMax.to(zeppelin, 2, {
   ease: Power0.easeNone,
   paused: false
 });
+
+function playZeppelin () {
+  zeppelinFloating.play();
+}
 
 function homeBackgroundExit() {
   const tl = new TimelineMax();
@@ -236,9 +282,10 @@ function homeBackgroundExit() {
       },
       0.1
     )
-    .to(logoWLetters,
+    .to(
+      logoWLetters,
       0.5, {
-        fill: '#ffffff',
+        fill: "#ffffff",
         ease: "sine.out"
       },
       0.1
@@ -250,12 +297,20 @@ function homeBackgroundExit() {
       },
       0.1
     )
-    .to(logoSvg, 1, {
-      onStart: focusAnchor(logoSvg)
-    }, 0.1)
-    .to('.web-studio', 0.5, {
-      fill: 'transparent'
-    }, 0.1)
+    .to(
+      logoSvg,
+      1, {
+        onStart: focusAnchor(logoSvg)
+      },
+      0.1
+    )
+    .to(
+      ".web-studio",
+      0.5, {
+        fill: "transparent"
+      },
+      0.1
+    );
 }
 
 function homeBackgroundEntrance() {
@@ -263,7 +318,8 @@ function homeBackgroundEntrance() {
   tl.to(
       mountainOne,
       1.5, {
-        onStart: removeClass(mountainOne)
+        onStart: removeClass(mountainOne),
+        onComplete: playZeppelin()
       },
       0.1
     )
@@ -299,13 +355,15 @@ function homeBackgroundEntrance() {
       0.7
     )
     .to(
-      logoWLetters, 0.1, {
+      logoWLetters,
+      0.1, {
         clearProps: "all"
       },
-      '-0.5'
+      "-0.5"
     )
     .fromTo(
-      logoMobile, 1.5, {
+      logoMobile,
+      1.5, {
         opacity: 0
       }, {
         opacity: 1
@@ -326,9 +384,13 @@ function homeBackgroundEntrance() {
       },
       0.1
     )
-    .to('.web-studio', 1.5, {
-      fill: '#000000'
-    }, 0.5)
+    .to(
+      ".web-studio",
+      1.5, {
+        fill: "#000000"
+      },
+      0.5
+    );
 }
 
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
@@ -391,7 +453,22 @@ esMobile.addEventListener("click", e => {
 
 nextArrow.addEventListener("click", e => {
   e.preventDefault();
-  addingSlides(1);
+  plusSlides(1, 0);
+});
+
+nextPArrow.addEventListener("click", e => {
+  e.preventDefault();
+  plusSlides(1, 1);
+});
+
+nextUArrow.addEventListener("click", e => {
+  e.preventDefault();
+  plusSlides(1, 2);
+});
+
+prevUArrow.addEventListener("click", e => {
+  e.preventDefault();
+  plusSlides(-1, 2);
 });
 
 document.addEventListener("gesturestart", function (e) {
@@ -428,8 +505,7 @@ window.addEventListener(
   () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
-    console.log(vh);
-    let w =
+    w =
       document.documentElement.clientWidth ||
       document.body.clientWidth ||
       window.innerWidth;
@@ -442,23 +518,15 @@ if (/iPhone/i.test(navigator.userAgent)) {
   document.querySelector("html").classList.add("iphone");
 }
 
-
-let slideIndex = [1,1];
-let slideId = ["slides-services", "slides-projects"]
-showSlides(1, 0);
-showSlides(1, 1);
-
-function plusSlides(n, no) {
-  showSlides(slideIndex[no] += n, no);
-}
-
-function showSlides(n, no) {
-  let i;
-  let x = document.querySelectorAll(slideId[no]);
-  if (n > x.length) {slideIndex[no] = 1}    
-  if (n < 1) {slideIndex[no] = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex[no]-1].style.display = "block";  
-}
+let lastTouchEnd = 0;
+document.addEventListener(
+  "touchend",
+  function (e) {
+    let now = new Date().getTime();
+    if (now - lastTouchEnd <= 300) {
+      e.preventDefault();
+    }
+    lastTouchEnd = now;
+  },
+  false
+);

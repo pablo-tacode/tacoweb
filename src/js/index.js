@@ -4,6 +4,7 @@ const targetWidth = 1024;
 const logoWLetters = document.querySelectorAll(".logo-w-letters");
 const logoMobile = document.getElementById("logo-mobile");
 const logoSvg = document.getElementById("logo-svg");
+const sectionTitles = document.querySelectorAll(".section-title");
 
 /* Background elements */
 const mountainOne = document.getElementById("mountain-001");
@@ -38,45 +39,42 @@ const servicesSection = document.getElementById("service");
 const servicesIcon = document.getElementById("service-icon");
 const servicesLink = document.getElementById("services-link");
 const nextArrow = document.getElementById("next");
+const slideServices = document.getElementById("slide-one");
 /* let slideIndex = 1; */
 
 /* Projects elements */
 const nextPArrow = document.getElementById("next-projects");
+const slideProjects = document.getElementById("slide-two-projects");
 
 /* Us elements */
 const nextUArrow = document.getElementById("next-us");
 const prevUArrow = document.getElementById("prev-us");
 
+
 /* General Functions */
+
 function changePage(link) {
   zeppelinFloating.pause();
   sections.forEach(section => {
     if (link.classList.contains(`${section.id}`)) {
-      fadeIn(section);
       section.classList.add("active");
       if (section.id === "homes") {
-        /* zeppelinFloating.play(); */
         homeBackgroundEntrance();
-      } else if (section.id === "service") {
-        homeBackgroundExit();
-        if (1024 <= targetWidth) {
-          showSlides(1, 0);
-        }
-      } else if (section.id === "project") {
-        homeBackgroundExit();
-        if (1024 <= targetWidth) {
-          showSlides(1, 1);
-        }
-      } else if (section.id === "us") {
-        homeBackgroundExit();
-        if (1024 <= targetWidth) {
-          showSlides(1, 2);
-        }
       } else {
         homeBackgroundExit();
+        listenToScreenWidth(w);
+        selectingTitle(section, section.id);
       }
     }
   });
+}
+
+function selectingTitle (section, sectionId) {
+  sectionTitles.forEach(title => {
+    if(title.classList.contains(sectionId)){
+      fadeIn(section, title)
+    }
+  })
 }
 
 function focusAnchor(link) {
@@ -158,22 +156,14 @@ function listenToScreenWidth(w) {
       }
     });
   } else {
-    TweenMax.set(
-      [
-        "#slide-two",
-        "#slide-one",
-        "#slide-one-projects",
-        "#slide-two-projects"
-      ], {
-        clearProps: "all"
-      }
-    );
+    slideServices.removeAttribute('style');
+    slideProjects.removeAttribute('style');
   }
 }
 
 /* ------------------------------------- GSAP Animation functions ------------------------------------- */
 
-function fadeIn(section) {
+function fadeIn(section, sectionTitle) {
   const tl = new TimelineMax();
   tl.fromTo(
       section,
@@ -195,7 +185,7 @@ function fadeIn(section) {
       1.3
     )
     .fromTo(
-      ".section-title",
+      sectionTitle,
       1, {
         opacity: 0
       }, {
@@ -259,6 +249,10 @@ const zeppelinFloating = TweenMax.to(zeppelin, 2, {
   ease: Power0.easeNone,
   paused: false
 });
+
+function playZeppelin () {
+  zeppelinFloating.play();
+}
 
 function homeBackgroundExit() {
   const tl = new TimelineMax();
@@ -326,7 +320,8 @@ function homeBackgroundEntrance() {
   tl.to(
       mountainOne,
       1.5, {
-        onStart: removeClass(mountainOne)
+        onStart: removeClass(mountainOne),
+        onComplete: playZeppelin()
       },
       0.1
     )
@@ -340,8 +335,7 @@ function homeBackgroundEntrance() {
     .to(
       cities,
       1, {
-        opacity: 1,
-        onComplete: zeppelinFloating.play()
+        opacity: 1
       },
       0.7
     )

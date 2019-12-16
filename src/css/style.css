@@ -54,6 +54,10 @@ main {
   background: #ffffff;
 }
 
+.section-title {
+  opacity: 0;
+}
+
 /* ------------------------------------------------ Header ------------------------------------------------ */
 
 header {
@@ -1218,6 +1222,7 @@ main > h1 {
     align-self: center;
     justify-self: center;
     height: 80%;
+    margin-bottom: 15%;
   }
 
   .modal-content-mision {
