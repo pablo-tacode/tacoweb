@@ -3,12 +3,6 @@
   margin: 0;
 }
 
-.iphone {
-  width: 100%;
-  overflow: hidden;
-  height: 100vh;
-}
-
 @font-face {
   font-family: Avenir-Light;
   src: url("../assets/fonts/avenir-next-lt-pro-cufonfonts/AvenirNextLTPro-Regular.otf");
@@ -1344,7 +1338,7 @@ main>h1 {
     padding: 0 5% 0 5%;
   }
 
-  .contact-city{
+  .contact-city {
     grid-column: 1/2;
     grid-row: 4/5;
     width: 100%;
