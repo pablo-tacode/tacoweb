@@ -59,7 +59,7 @@ let w =
 const carouselServices = `
               <div class="carousel">
                 <h1 class="services-title section-title service" id="services-title">
-                    <img src="./src/assets/images/Servicios-title.svg" alt="">
+                    <img src="http://duqwc0tf73olm.cloudfront.net/Servicios-title.svg" alt="">
                 </h1>
                 <div id="slide-two"  class="carousel-img slides-services">
                     <svg width="229px" height="433px" viewBox="0 0 229 433" version="1.1"
@@ -497,7 +497,7 @@ const carouselServices = `
                         </g>
                     </svg>
                 </div>
-                <a id="next-service" class="arrows" href=""><img src="./src/assets/images/next_arrow.svg"
+                <a id="next-service" class="arrows" href=""><img src="http://duqwc0tf73olm.cloudfront.net/next_arrow.svg"
                         alt="Flecha para cambio de imagen en el carrusel"></a>
             </div>`
 
