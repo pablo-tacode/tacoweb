@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="144px" height="30px" viewBox="0 0 144 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="contacto" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Modal001_Iphone11Pro_375x812" transform="translate(-116.000000, -490.000000)">
+            <g id="Group" transform="translate(116.000000, 490.000000)">
+                <text id="VER-MAPA" font-family="Avenir-Roman, Avenir" font-size="22" font-weight="normal" letter-spacing="0.702456111" fill="#FFFFFF">
+                    <tspan x="14.4931756" y="22">VER MAPA</tspan>
+                </text>
+                <rect id="Rectangle" stroke="#FFFFFF" stroke-width="2" x="1" y="1" width="142" height="28" rx="4"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
