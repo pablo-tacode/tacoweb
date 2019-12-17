@@ -625,7 +625,7 @@ main > h1 {
     opacity: 0;
   }
 
-  #next {
+  #next-service {
     grid-column: 1/2;
     grid-row: 2/3;
     align-self: center;
@@ -753,7 +753,6 @@ main > h1 {
   }
 
   .arrows {
-    display: block;
     color: #ffffff;
     width: 10%;
     height: 10%;
@@ -770,9 +769,9 @@ main > h1 {
     margin-left: -20%;
   }
 
-  #next,
+  #next-service,
   #next-us,
-  #next-projects {
+  #next-project {
     grid-column: 1/2;
     grid-row: 2/3;
     align-self: center;
