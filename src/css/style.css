@@ -1028,9 +1028,10 @@ main > h1 {
   .carousel-img-us > img {
     grid-column: 1/2;
     grid-row: 1/2;
-    width: 100%;
+    width: auto;
     height: 90%;
     align-self: flex-end;
+    justify-self: center;
   }
 
   .carousel-img-us > a {
