@@ -979,7 +979,7 @@ main > h1 {
 
   .carousel-img-projects {
     grid-row: 2/3;
-    display: grid;
+    display: none;
     height: 83%;
     width: 70%;
     align-self: flex-start;
@@ -1017,7 +1017,7 @@ main > h1 {
 
   .carousel-img-us {
     grid-row: 2/3;
-    display: grid;
+    display: none;
     height: 83%;
     width: 70%;
     align-self: flex-start;
