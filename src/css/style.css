@@ -1422,7 +1422,7 @@ main > h1 {
 
     .background-elements > .img-container:nth-child(3) {
       grid-row: 4/10;
-      background: url("../assets/images/.png") no-repeat 40% bottom;
+      background: url("http://duqwc0tf73olm.cloudfront.net/cities.png") no-repeat 40% bottom;
       background-size: cover;
     }
   }
