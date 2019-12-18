@@ -54,6 +54,10 @@ main {
   background: #ffffff;
 }
 
+.section-title {
+  opacity: 0;
+}
+
 /* ------------------------------------------------ Header ------------------------------------------------ */
 
 header {
@@ -200,7 +204,8 @@ nav > ul > li,
   z-index: 0;
   grid-column: 1/2;
   grid-row: 5/11;
-  background: url("../assets/images/cities_this.png") no-repeat center bottom;
+  background: url("http://duqwc0tf73olm.cloudfront.net/cities_this.png")
+    no-repeat center bottom;
   background-size: contain;
 }
 
@@ -621,7 +626,7 @@ main > h1 {
     opacity: 0;
   }
 
-  #next {
+  #next-service {
     grid-column: 1/2;
     grid-row: 2/3;
     align-self: center;
@@ -675,7 +680,8 @@ main > h1 {
 
   .background-elements > .img-container:nth-child(3) {
     grid-row: 5/11;
-    background: url("../assets/images/cities.png") no-repeat 40% bottom;
+    background: url("http://duqwc0tf73olm.cloudfront.net/cities.png") no-repeat
+      40% bottom;
     background-size: cover;
   }
 
@@ -749,7 +755,6 @@ main > h1 {
   }
 
   .arrows {
-    display: block;
     color: #ffffff;
     width: 10%;
     height: 10%;
@@ -766,8 +771,9 @@ main > h1 {
     margin-left: -20%;
   }
 
-  #next,
-  #next-us {
+  #next-service,
+  #next-us,
+  #next-project {
     grid-column: 1/2;
     grid-row: 2/3;
     align-self: center;
@@ -783,14 +789,14 @@ main > h1 {
     margin-left: 5%;
   }
 
-  #next-projects {
+  /*   #next-projects {
     grid-column: 1/2;
     grid-row: 2/3;
     align-self: flex-start;
     justify-self: right;
     margin-right: 5%;
     margin-top: 15%;
-  }
+  } */
 }
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
@@ -870,7 +876,8 @@ main > h1 {
 
   .background-elements > .img-container:nth-child(3) {
     grid-row: 4/10;
-    background: url("../assets/images/cities.png") no-repeat 40% bottom;
+    background: url("http://duqwc0tf73olm.cloudfront.net/cities.png") no-repeat
+      40% bottom;
     background-size: cover;
   }
 
@@ -972,7 +979,7 @@ main > h1 {
 
   .carousel-img-projects {
     grid-row: 2/3;
-    display: grid;
+    display: none;
     height: 83%;
     width: 70%;
     align-self: flex-start;
@@ -1010,7 +1017,7 @@ main > h1 {
 
   .carousel-img-us {
     grid-row: 2/3;
-    display: grid;
+    display: none;
     height: 83%;
     width: 70%;
     align-self: flex-start;
@@ -1021,9 +1028,10 @@ main > h1 {
   .carousel-img-us > img {
     grid-column: 1/2;
     grid-row: 1/2;
-    width: 100%;
+    width: auto;
     height: 90%;
     align-self: flex-end;
+    justify-self: center;
   }
 
   .carousel-img-us > a {
@@ -1192,7 +1200,7 @@ main > h1 {
 
   .modal-text > ul > li {
     margin-bottom: 3%;
-    list-style-image: url("../assets/images/bullet.svg");
+    list-style-image: url("http://duqwc0tf73olm.cloudfront.net/bullet.svg");
   }
 
   .modal-img-one {
@@ -1217,6 +1225,7 @@ main > h1 {
     align-self: center;
     justify-self: center;
     height: 80%;
+    margin-bottom: 15%;
   }
 
   .modal-content-mision {
@@ -1345,7 +1354,8 @@ main > h1 {
     grid-row: 4/5;
     width: 100%;
     height: 100%;
-    background: url("../assets/images/cities.png") no-repeat 40% bottom;
+    background: url("http://duqwc0tf73olm.cloudfront.net/cities.png") no-repeat
+      40% bottom;
     background-size: cover;
   }
 
@@ -1412,7 +1422,7 @@ main > h1 {
 
     .background-elements > .img-container:nth-child(3) {
       grid-row: 4/10;
-      background: url("../assets/images/cities.png") no-repeat 40% bottom;
+      background: url("../assets/images/.png") no-repeat 40% bottom;
       background-size: cover;
     }
   }
