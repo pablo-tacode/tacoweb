@@ -16,7 +16,7 @@ const usObj = {
   pablo: {
     id: "open-modal-pablo",
     num: "one",
-    img: "http://duqwc0tf73olm.cloudfront.net/portrait_pablo.png",
+    img: "https://duqwc0tf73olm.cloudfront.net/portrait_pablo.png",
     cargo: "Founder & CEO",
     frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     autor: "",
@@ -27,7 +27,7 @@ const usObj = {
   ivan: {
     id: "open-modal-ivan",
     num: "two",
-    img: "http://duqwc0tf73olm.cloudfront.net/portrait_ivan.png",
+    img: "https://duqwc0tf73olm.cloudfront.net/portrait_ivan.png",
     cargo: "Ingeniero de Software",
     frase: "Solo aquellos que intentan lo absurdo pueden lograr lo imposible.",
     autor: "-Albert Einstein-",
@@ -38,7 +38,7 @@ const usObj = {
   ariadna: {
     id: "open-modal-ariadna",
     num: "three",
-    img: "http://duqwc0tf73olm.cloudfront.net/portrait_ariadna.png",
+    img: "https://duqwc0tf73olm.cloudfront.net/portrait_ariadna.png",
     cargo: "Diseñadora UX",
     frase: "El propósito de la vida es vivirla, saborear las experiencias al máximo y buscar con entusiasmo y sin temor nuevas experiencias que nos enriquezcan.",
     autor: "-Eleonor Roosevelt-",
@@ -49,7 +49,7 @@ const usObj = {
   irving: {
     id: "open-modal-irving",
     num: "four",
-    img: "http://duqwc0tf73olm.cloudfront.net/portrait_irving.png",
+    img: "https://duqwc0tf73olm.cloudfront.net/portrait_irving.png",
     cargo: "Marketing Digital",
     frase: "Nada es verdad, todo está permitido",
     autor: "",
@@ -60,7 +60,7 @@ const usObj = {
   analhi: {
     id: "open-modal-analhi",
     num: "five",
-    img: "http://duqwc0tf73olm.cloudfront.net/portrait_analhi.png",
+    img: "https://duqwc0tf73olm.cloudfront.net/portrait_analhi.png",
     cargo: "Diseñadora UI",
     frase: "La mayoría de la gente cree que el diseño es algo decorativo. Para mí, nada es más importante en el futuro que el diseño. El diseño es el alma de todo lo creado por el hombre.",
     autor: "-Steve Jobs-",
@@ -71,7 +71,7 @@ const usObj = {
   karen: {
     id: "open-modal-karen",
     num: "six",
-    img: "http://duqwc0tf73olm.cloudfront.net/portrait_karen.png",
+    img: "https://duqwc0tf73olm.cloudfront.net/portrait_karen.png",
     cargo: "Desarolladora Fullstack",
     frase: "Hazlo con pasión, si no, no lo hagas",
     autor: "",
@@ -82,7 +82,7 @@ const usObj = {
   olga: {
     id: "open-modal-olga",
     num: "seven",
-    img: "http://duqwc0tf73olm.cloudfront.net/portrait_olga.png",
+    img: "https://duqwc0tf73olm.cloudfront.net/portrait_olga.png",
     cargo: "Desarolladora Fullstack",
     frase: "Cualquier tecnología suficientemente avanzada es indistinguible de la magia.",
     autor: "-Arthur C. Clarke-",
@@ -94,7 +94,7 @@ const usObj = {
 
 const modalPuerquiAhorro = `
             <div class="modal-content" id="modal-one">
-                <a class="close-modal" id="close-modal-one"><img src="http://duqwc0tf73olm.cloudfront.net/close_bttn.svg" alt="Boton para cerrar modal"></a>
+                <a class="close-modal" id="close-modal-one"><img src="https://duqwc0tf73olm.cloudfront.net/close_bttn.svg" alt="Boton para cerrar modal"></a>
                 <div class="modal-text">
                     <h3>PUERQUI AHORRO</h3>
                     <ul>
@@ -106,15 +106,15 @@ const modalPuerquiAhorro = `
                         <li>Simulador de caja de ahorro</li>
                     </ul>
                 </div>
-                <img class="modal-img-one" src="http://duqwc0tf73olm.cloudfront.net/PuerquiAhorro_001.png" alt="Primera pantalla de la aplicacion puerqui ahorro">
-                <img class="modal-img-two" src="http://duqwc0tf73olm.cloudfront.net/PuerquiAhorro_002.png" alt="Segunda pantalla de la aplicacion puerqui ahorro">
-                <img class="modal-img-three" src="http://duqwc0tf73olm.cloudfront.net/PuerquiAhorro_003.png" alt="Tercera pantalla de la aplicacion puerqui ahorro">
+                <img class="modal-img-one" src="https://duqwc0tf73olm.cloudfront.net/PuerquiAhorro_001.png" alt="Primera pantalla de la aplicacion puerqui ahorro">
+                <img class="modal-img-two" src="https://duqwc0tf73olm.cloudfront.net/PuerquiAhorro_002.png" alt="Segunda pantalla de la aplicacion puerqui ahorro">
+                <img class="modal-img-three" src="https://duqwc0tf73olm.cloudfront.net/PuerquiAhorro_003.png" alt="Tercera pantalla de la aplicacion puerqui ahorro">
             </div>
 `;
 
 const modalMedicalBoard = `
             <div class="modal-content" id="modal-two">
-                <a class="close-modal" id="close-modal-two"><img src="http://duqwc0tf73olm.cloudfront.net/close_bttn.svg" alt="Boton para cerrar modal"></a>
+                <a class="close-modal" id="close-modal-two"><img src="https://duqwc0tf73olm.cloudfront.net/close_bttn.svg" alt="Boton para cerrar modal"></a>
                 <div class="modal-text">
                     <h3>MEDICAL BOARD</h3>
                     <ul>
@@ -126,16 +126,16 @@ const modalMedicalBoard = `
                         <li>Seguimiento de tratamientos</li>
                     </ul>
                 </div>
-                <img class="modal-img-one" src="http://duqwc0tf73olm.cloudfront.net/medicalBoard_001.png" alt="Primera pantalla de la aplicacion medical board">
-                <img class="modal-img-two" src="http://duqwc0tf73olm.cloudfront.net/medicalBoard_002.png" alt="Segunda pantalla de la aplicacion medical board">
-                <img class="modal-img-three" src="http://duqwc0tf73olm.cloudfront.net/medicalBoard_003.png" alt="Tercera pantalla de la aplicacion medical board">
+                <img class="modal-img-one" src="https://duqwc0tf73olm.cloudfront.net/medicalBoard_001.png" alt="Primera pantalla de la aplicacion medical board">
+                <img class="modal-img-two" src="https://duqwc0tf73olm.cloudfront.net/medicalBoard_002.png" alt="Segunda pantalla de la aplicacion medical board">
+                <img class="modal-img-three" src="https://duqwc0tf73olm.cloudfront.net/medicalBoard_003.png" alt="Tercera pantalla de la aplicacion medical board">
             </div>
 `;
 
 const modalUs = obj => {
   let modalContent = `
     <div class="modal-content-us">
-        <a class="close-modal" id="close-modal-us-${obj.num}"><img src="http://duqwc0tf73olm.cloudfront.net/close_bttn.svg" alt="Boton para cerrar modal"></a>
+        <a class="close-modal" id="close-modal-us-${obj.num}"><img src="https://duqwc0tf73olm.cloudfront.net/close_bttn.svg" alt="Boton para cerrar modal"></a>
         <div class="us-img-container">
             <img class="us-modal-img" src="${obj.img}" alt="${obj.cargo}">
             <p class="position">${obj.cargo}</p>
@@ -156,20 +156,20 @@ const modalUs = obj => {
 
 const modalMisionVision = `
             <div class="modal-content-mision">
-                <a class="close-modal" id="close-modal-mision"><img src="http://duqwc0tf73olm.cloudfront.net/close_bttn.svg" alt="Boton para cerrar modal"></a>
+                <a class="close-modal" id="close-modal-mision"><img src="https://duqwc0tf73olm.cloudfront.net/close_bttn.svg" alt="Boton para cerrar modal"></a>
                 <div class="us-modal-img-container">
-                    <img class="us-modal-img" src="http://duqwc0tf73olm.cloudfront.net/mision_vision_2.svg" alt="Mision y vision segunda parte">
+                    <img class="us-modal-img" src="https://duqwc0tf73olm.cloudfront.net/mision_vision_2.svg" alt="Mision y vision segunda parte">
                 </div>
             </div>
             `;
 
 const modalContact = `
         <div class="modal-content-contact">
-            <a class="close-modal" id="close-modal-contact"><img src="http://duqwc0tf73olm.cloudfront.net/close_bttn.svg" alt="Boton para cerrar modal"></a>
+            <a class="close-modal" id="close-modal-contact"><img src="https://duqwc0tf73olm.cloudfront.net/close_bttn.svg" alt="Boton para cerrar modal"></a>
             <div class="address">
                 <h2>DÓNDE ESTAMOS</h2>
                 <p>Gral. Salvador Alvarado 72, Escandón I Secc, 11800 CDMX </p>
-                <a id="open-map-bttn" target="_blank" href="https://www.google.com/maps/place/Gral.+Salvador+Alvarado+72,+Escand%C3%B3n+I+Secc,+Miguel+Hidalgo,+11800+Ciudad+de+M%C3%A9xico,+CDMX/@19.4045022,-99.1820195,17z/data=!3m1!4b1!4m5!3m4!1s0x85d1ff663325880f:0x6a28b0ae4755f260!8m2!3d19.4045022!4d-99.1798254"><img src="http://duqwc0tf73olm.cloudfront.net/ver-mapa-boton.svg" alt="Botón para ver la ubicación en el mapa de Goggle maps"></a>
+                <a id="open-map-bttn" target="_blank" href="httpss://www.google.com/maps/place/Gral.+Salvador+Alvarado+72,+Escand%C3%B3n+I+Secc,+Miguel+Hidalgo,+11800+Ciudad+de+M%C3%A9xico,+CDMX/@19.4045022,-99.1820195,17z/data=!3m1!4b1!4m5!3m4!1s0x85d1ff663325880f:0x6a28b0ae4755f260!8m2!3d19.4045022!4d-99.1798254"><img src="https://duqwc0tf73olm.cloudfront.net/ver-mapa-boton.svg" alt="Botón para ver la ubicación en el mapa de Goggle maps"></a>
             </div>
             <div class="contact-city"></div>
         </div>
@@ -204,11 +204,9 @@ function modalEntrance() {
     onStart: openingModal
   }).fromTo(
     modal,
-    0.5,
-    {
+    0.5, {
       yPercent: 100
-    },
-    {
+    }, {
       yPercent: 0,
       zIndex: 3
     },
@@ -220,18 +218,15 @@ function modalExit() {
   const tl = new TimelineMax();
   tl.fromTo(
     modal,
-    0.8,
-    {
+    0.8, {
       yPercent: 0
-    },
-    {
+    }, {
       yPercent: 100,
       zIndex: 3
     }
   ).to(
     modal,
-    0.1,
-    {
+    0.1, {
       onStart: scrollingTop,
       onComplete: closingModal
     },

@@ -50,7 +50,6 @@ const slideProjects = document.getElementById("slide-two-projects");
 const nextUArrow = document.getElementById("next-us");
 const prevUArrow = document.getElementById("prev-us");
 
-
 let w =
   document.documentElement.clientWidth ||
   document.body.clientWidth ||
@@ -59,7 +58,7 @@ let w =
 const carouselServices = `
               <div class="carousel">
                 <h1 class="services-title section-title service" id="services-title">
-                    <img src="http://duqwc0tf73olm.cloudfront.net/Servicios-title.svg" alt="">
+                    <img src="https://duqwc0tf73olm.cloudfront.net/Servicios-title.svg" alt="">
                 </h1>
                 <div id="slide-two"  class="carousel-img slides-services">
                     <svg width="229px" height="433px" viewBox="0 0 229 433" version="1.1"
@@ -497,9 +496,9 @@ const carouselServices = `
                         </g>
                     </svg>
                 </div>
-                <a id="next-service" class="arrows" href=""><img src="http://duqwc0tf73olm.cloudfront.net/next_arrow.svg"
+                <a id="next-service" class="arrows" href=""><img src="https://duqwc0tf73olm.cloudfront.net/next_arrow.svg"
                         alt="Flecha para cambio de imagen en el carrusel"></a>
-            </div>`
+            </div>`;
 
 /* General Functions */
 
@@ -522,9 +521,9 @@ function changePage(link) {
 function selectingTitle(section, sectionId) {
   sectionTitles.forEach(title => {
     if (title.classList.contains(sectionId)) {
-      fadeIn(section, title)
+      fadeIn(section, title);
     }
-  })
+  });
 }
 
 function focusAnchor(link) {
@@ -597,7 +596,7 @@ function listenToScreenWidth(w) {
     sections.forEach(section => {
       if (section.classList.contains("active")) {
         if (section.id === "service") {
-          printServices(section)
+          printServices(section);
         } else if (section.id === "project") {
           showSlides(1, 1);
         } else if (section.id === "us") {
@@ -609,27 +608,27 @@ function listenToScreenWidth(w) {
     sections.forEach(section => {
       if (section.classList.contains("active")) {
         if (section.id === "service") {
-          servicesSection.innerHTML = ''
-          servicesSection.insertAdjacentHTML('beforeend', carouselServices)
-          fadeIn(section, document.getElementById("services-title"))
+          servicesSection.innerHTML = "";
+          servicesSection.insertAdjacentHTML("beforeend", carouselServices);
+          fadeIn(section, document.getElementById("services-title"));
         }
       }
-    })
+    });
   }
 }
 
 async function printServices(section) {
-  let promise = new Promise(function (resolve) {
-    servicesSection.innerHTML = ''
-    resolve(servicesSection.insertAdjacentHTML('beforeend', carouselServices))
-  })
-  await promise
+  let promise = new Promise(function(resolve) {
+    servicesSection.innerHTML = "";
+    resolve(servicesSection.insertAdjacentHTML("beforeend", carouselServices));
+  });
+  await promise;
   fadeIn(section, document.getElementById("services-title"));
-  showSlides(1, 0)
+  showSlides(1, 0);
   document.getElementById("next-service").addEventListener("click", e => {
     e.preventDefault();
     plusSlides(1, 0);
-  })
+  });
 }
 
 /* ------------------------------------- GSAP Animation functions ------------------------------------- */
@@ -637,29 +636,35 @@ async function printServices(section) {
 function fadeIn(section, sectionTitle) {
   const tl = new TimelineMax();
   tl.fromTo(
-      section,
-      1.5, {
-        xPercent: -100
-      }, {
-        xPercent: 0,
-        zIndex: 1
-      },
-      0.1
-    )
+    section,
+    1.5,
+    {
+      xPercent: -100
+    },
+    {
+      xPercent: 0,
+      zIndex: 1
+    },
+    0.1
+  )
     .fromTo(
       ".arrows",
-      1, {
+      1,
+      {
         opacity: 0
-      }, {
+      },
+      {
         opacity: 1
       },
       1.3
     )
     .fromTo(
       sectionTitle,
-      1, {
+      1,
+      {
         opacity: 0
-      }, {
+      },
+      {
         opacity: 1,
         ease: "power2.out"
       },
@@ -670,11 +675,13 @@ function fadeIn(section, sectionTitle) {
 function entranceFromRight(elementOne) {
   TweenMax.fromTo(
     elementOne,
-    1, {
+    1,
+    {
       xPercent: -200,
       width: 0,
       opacity: 0
-    }, {
+    },
+    {
       xPercent: 0,
       width: "80%",
       opacity: 1
@@ -685,11 +692,13 @@ function entranceFromRight(elementOne) {
 function entranceFromLeft(elementOne) {
   TweenMax.fromTo(
     elementOne,
-    1, {
+    1,
+    {
       xPercent: 200,
       width: 0,
       opacity: 0
-    }, {
+    },
+    {
       xPercent: 0,
       width: "80%",
       opacity: 1
@@ -728,36 +737,41 @@ function playZeppelin() {
 function homeBackgroundExit() {
   const tl = new TimelineMax();
   tl.to(
-      mountainOne,
-      1.5, {
-        onStart: focusAnchor(mountainOne)
-      },
-      0.1
-    )
+    mountainOne,
+    1.5,
+    {
+      onStart: focusAnchor(mountainOne)
+    },
+    0.1
+  )
     .to(
       mountainTwo,
-      1, {
+      1,
+      {
         onStart: focusAnchor(mountainTwo)
       },
       0.1
     )
     .to(
       cities,
-      1, {
+      1,
+      {
         opacity: 0
       },
       "-0.1"
     )
     .to(
       tagline,
-      0.3, {
+      0.3,
+      {
         opacity: 0
       },
       0.1
     )
     .to(
       logoWLetters,
-      0.5, {
+      0.5,
+      {
         fill: "#ffffff",
         ease: "sine.out"
       },
@@ -765,21 +779,24 @@ function homeBackgroundExit() {
     )
     .to(
       logoMobile,
-      1, {
+      1,
+      {
         onStart: focusAnchor(logoMobile)
       },
       0.1
     )
     .to(
       logoSvg,
-      1, {
+      1,
+      {
         onStart: focusAnchor(logoSvg)
       },
       0.1
     )
     .to(
       ".web-studio",
-      0.5, {
+      0.5,
+      {
         fill: "transparent"
       },
       0.1
@@ -789,32 +806,37 @@ function homeBackgroundExit() {
 function homeBackgroundEntrance() {
   const tl = new TimelineMax();
   tl.to(
-      mountainOne,
-      1.5, {
-        onStart: removeClass(mountainOne),
-        onComplete: playZeppelin()
-      },
-      0.1
-    )
+    mountainOne,
+    1.5,
+    {
+      onStart: removeClass(mountainOne),
+      onComplete: playZeppelin()
+    },
+    0.1
+  )
     .to(
       mountainTwo,
-      1, {
+      1,
+      {
         onStart: removeClass(mountainTwo)
       },
       0.1
     )
     .to(
       cities,
-      1, {
+      1,
+      {
         opacity: 1
       },
       0.7
     )
     .fromTo(
       home,
-      1.5, {
+      1.5,
+      {
         xPercent: -100
-      }, {
+      },
+      {
         xPercent: 0,
         zIndex: 1
       },
@@ -822,44 +844,51 @@ function homeBackgroundEntrance() {
     )
     .to(
       tagline,
-      1, {
+      1,
+      {
         opacity: 1
       },
       0.7
     )
     .to(
       logoWLetters,
-      0.1, {
+      0.1,
+      {
         clearProps: "all"
       },
       "-0.5"
     )
     .fromTo(
       logoMobile,
-      1.5, {
+      1.5,
+      {
         opacity: 0
-      }, {
+      },
+      {
         opacity: 1
       },
       0.5
     )
     .to(
       logoMobile,
-      1.5, {
+      1.5,
+      {
         onStart: removeClass(logoMobile)
       },
       0.1
     )
     .to(
       logoSvg,
-      1, {
+      1,
+      {
         onStart: removeClass(logoSvg)
       },
       0.1
     )
     .to(
       ".web-studio",
-      1.5, {
+      1.5,
+      {
         fill: "#000000"
       },
       0.5
@@ -869,7 +898,7 @@ function homeBackgroundEntrance() {
 /* ------------------------------------- DOM EVENTS ------------------------------------- */
 
 menuLinks.forEach(link =>
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     removeActiveClass(sections);
     removeActiveClass(headerLinksToFocus);
@@ -879,28 +908,28 @@ menuLinks.forEach(link =>
 );
 
 headerLinksToFocus.forEach(link => {
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     focusAnchor(link);
   });
 });
 
 tabLinks.forEach(link => {
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     changeBackgroundColor(link);
   });
 });
 
 sideIcons.forEach(link => {
-  link.addEventListener("click", function (e) {
+  link.addEventListener("click", function(e) {
     e.preventDefault();
     removeActiveClass(sideIconsImages);
     focusAnchor(link.firstChild);
   });
 });
 
-zeppelin.addEventListener("click", function (e) {
+zeppelin.addEventListener("click", function(e) {
   e.preventDefault();
   servicesIcon.classList.add("active");
   servicesLink.classList.add("active");
@@ -944,17 +973,17 @@ prevUArrow.addEventListener("click", e => {
   plusSlides(-1, 2);
 });
 
-document.addEventListener("gesturestart", function (e) {
+document.addEventListener("gesturestart", function(e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
 
-document.addEventListener("gesturechange", function (e) {
+document.addEventListener("gesturechange", function(e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
 
-document.addEventListener("gestureend", function (e) {
+document.addEventListener("gestureend", function(e) {
   e.preventDefault();
   document.body.style.zoom = 0.99;
 });
@@ -991,7 +1020,7 @@ if (/iPhone/i.test(navigator.userAgent)) {
 let lastTouchEnd = 0;
 document.addEventListener(
   "touchend",
-  function (e) {
+  function(e) {
     let now = new Date().getTime();
     if (now - lastTouchEnd <= 300) {
       e.preventDefault();
