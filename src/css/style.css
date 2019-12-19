@@ -1256,7 +1256,7 @@ main > h1 {
     height: auto;
     width: 100%;
     grid-template-columns: 100%;
-    grid-template-rows: 12vh 7vh 45vh 10vh 70vh;
+    grid-template-rows: 12vh 7vh 45vh auto auto;
     overflow-y: scroll;
     align-items: center;
   }
@@ -1270,7 +1270,7 @@ main > h1 {
     align-items: center;
     justify-content: center;
     font-family: Avenir-Black;
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #5f0263;
     letter-spacing: 0.57px;
     text-align: center;
@@ -1289,15 +1289,19 @@ main > h1 {
     color: #5f0263;
     letter-spacing: 0.52px;
     text-align: center;
-    margin-top: 5%;
     padding: 0 10% 0 10%;
+  }
+
+  #author{
+    font-family: Avenir-Light;
+    margin-top: 3%;
   }
 
   .modal-us-info-container {
     grid-column: 1/2;
     grid-row: 5/6;
     font-family: Avenir-Roman;
-    font-size: 0.9em;
+    font-size: 1em;
     color: #5f0263;
     display: grid;
     align-items: center;
