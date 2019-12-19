@@ -192,7 +192,7 @@ const modalContact = `
             <div class="address">
                 <h2>DÓNDE ESTAMOS</h2>
                 <p>Gral. Salvador Alvarado 72, Escandón I Secc, 11800 CDMX </p>
-                <a id="open-map-bttn" target="_blank" href="httpss://www.google.com/maps/place/Gral.+Salvador+Alvarado+72,+Escand%C3%B3n+I+Secc,+Miguel+Hidalgo,+11800+Ciudad+de+M%C3%A9xico,+CDMX/@19.4045022,-99.1820195,17z/data=!3m1!4b1!4m5!3m4!1s0x85d1ff663325880f:0x6a28b0ae4755f260!8m2!3d19.4045022!4d-99.1798254"><img src="https://duqwc0tf73olm.cloudfront.net/ver-mapa-boton.svg" alt="Botón para ver la ubicación en el mapa de Goggle maps"></a>
+                <a id="open-map-bttn" target="_blank" href="https://www.google.com/maps/place/Gral.+Salvador+Alvarado+72,+Escand%C3%B3n+I+Secc,+Miguel+Hidalgo,+11800+Ciudad+de+M%C3%A9xico,+CDMX/@19.4045022,-99.1820195,17z/data=!3m1!4b1!4m5!3m4!1s0x85d1ff663325880f:0x6a28b0ae4755f260!8m2!3d19.4045022!4d-99.1798254"><img src="https://duqwc0tf73olm.cloudfront.net/ver-mapa-boton.svg" alt="Botón para ver la ubicación en el mapa de Goggle maps"></a>
             </div>
             <div class="contact-city"></div>
         </div>
