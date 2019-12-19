@@ -20,10 +20,8 @@ const usObj = {
     cargo: "Founder & CEO",
     frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     autor: "",
-    parrafo1:
-      "Pablo nació y creció en la Ciudad de México. Estudió Ingeniería en Comunicaciones y Electrónica con especialización en Acústica en la Escuela Superior de Ingeniería Mecánica y Eléctrica del Insituto Politécnico Nacional.",
-    parrafo2:
-      "Realizó una maestría en Music, Science and Technology en la Universidad de Stanford en California.  Posteriormente fue reclutado para desarrollar una app de música para iOS. Continuó haciendo consultorías para proyectos de iOS mientras vivió en San Francisco por 3 años. Regresó a la Ciudad de México a consolidar TACODE en 2019.",
+    parrafo1: "Pablo nació y creció en la Ciudad de México. Estudió Ingeniería en Comunicaciones y Electrónica con especialización en Acústica en la Escuela Superior de Ingeniería Mecánica y Eléctrica del Insituto Politécnico Nacional.",
+    parrafo2: "Realizó una maestría en Music, Science and Technology en la Universidad de Stanford en California.  Posteriormente fue reclutado para desarrollar una app de música para iOS. Continuó haciendo consultorías para proyectos de iOS mientras vivió en San Francisco por 3 años. Regresó a la Ciudad de México a consolidar TACODE en 2019.",
     parrafo3: "A Pablo le gusta tocar la guitarra, nadar y practicar yoga."
   },
   ivan: {
@@ -33,27 +31,20 @@ const usObj = {
     cargo: "Ingeniero de Software",
     frase: "Solo aquellos que intentan lo absurdo pueden lograr lo imposible.",
     autor: "-Albert Einstein-",
-    parrafo1:
-      "Mi gusto por la producción audiovisual me llevó a estudiar una carrera en tecnología en el IPN.",
-    parrafo2:
-      "Mi meta era trabajar en un proyecto que mezclara el desarrollo de software con la música. Así llegué a laborar en TACODE como Ingeniero de Software en el desarrollo de una app móvil sobre notación musical y manipulación de audio. De esta forma entré al mundo de la tecnología Apple estando involucrado en cada etapa, como diseño, desarrollo y mantenimiento.",
-    parrafo3:
-      "Invierto parte de mi tiempo libre en aprender cosas nuevas sobre diversos temas, pues considero que es la mejor forma de crecer personal y profesionalmente. También disfruto jugar volleyball, el cine, la música y el universo."
+    parrafo1: "Mi gusto por la producción audiovisual me llevó a estudiar una carrera en tecnología en el IPN.",
+    parrafo2: "Mi meta era trabajar en un proyecto que mezclara el desarrollo de software con la música. Así llegué a laborar en TACODE como Ingeniero de Software en el desarrollo de una app móvil sobre notación musical y manipulación de audio. De esta forma entré al mundo de la tecnología Apple estando involucrado en cada etapa, como diseño, desarrollo y mantenimiento.",
+    parrafo3: "Invierto parte de mi tiempo libre en aprender cosas nuevas sobre diversos temas, pues considero que es la mejor forma de crecer personal y profesionalmente. También disfruto jugar volleyball, el cine, la música y el universo."
   },
   ariadna: {
     id: "open-modal-ariadna",
     num: "three",
     img: "https://duqwc0tf73olm.cloudfront.net/portrait_ariadna.png",
     cargo: "Diseñadora UX",
-    frase:
-      "El propósito de la vida es vivirla, saborear las experiencias al máximo y buscar con entusiasmo y sin temor nuevas experiencias que nos enriquezcan.",
+    frase: "El propósito de la vida es vivirla, saborear las experiencias al máximo y buscar con entusiasmo y sin temor nuevas experiencias que nos enriquezcan.",
     autor: "-Eleonor Roosevelt-",
-    parrafo1:
-      "Soy UX Designer en TACODE. Creo firmemente que las experiencias van más allá de satisfacer las necesidades y requerimientos del cliente, sino que engloban a un todo.",
-    parrafo2:
-      "Mi trabajo en TACODE es unificar las emociones, los juicios, patrones, contextos, navegación y funcionamiento de un producto o servicio para que las personas se enamoren de nuestras creaciones digitales.",
-    parrafo3:
-      "Las metodologías ágiles que aprendí en Laboratoria y mi background en Administración me impulsaron a ser estratégica y plantearme diversos escenarios que me ayuden a alcanzar a los objetivos tanto personales como profesionales."
+    parrafo1: "Soy UX Designer en TACODE. Creo firmemente que las experiencias van más allá de satisfacer las necesidades y requerimientos del cliente, sino que engloban a un todo.",
+    parrafo2: "Mi trabajo en TACODE es unificar las emociones, los juicios, patrones, contextos, navegación y funcionamiento de un producto o servicio para que las personas se enamoren de nuestras creaciones digitales.",
+    parrafo3: "Las metodologías ágiles que aprendí en Laboratoria y mi background en Administración me impulsaron a ser estratégica y plantearme diversos escenarios que me ayuden a alcanzar a los objetivos tanto personales como profesionales."
   },
   irving: {
     id: "open-modal-irving",
@@ -62,27 +53,20 @@ const usObj = {
     cargo: "Marketing Digital",
     frase: "Nada es verdad, todo está permitido",
     autor: "",
-    parrafo1:
-      "Estudié la licenciatura en mercadotecnia. Mi misión en TACODE es crear las campañas, estrategias y todo lo referente a marketing digital.",
-    parrafo2:
-      "Me gusta mucho la fotografía y el marketing, me encanta salir a pasear a bosques, playas, montañas, lugares históricos y llevar equipo para tomar fotografías.",
-    parrafo3:
-      "Cuando algo nuevo se me presenta soy muy curioso e indago para saber más sobre ello."
+    parrafo1: "Estudié la licenciatura en mercadotecnia. Mi misión en TACODE es crear las campañas, estrategias y todo lo referente a marketing digital.",
+    parrafo2: "Me gusta mucho la fotografía y el marketing, me encanta salir a pasear a bosques, playas, montañas, lugares históricos y llevar equipo para tomar fotografías.",
+    parrafo3: "Cuando algo nuevo se me presenta soy muy curioso e indago para saber más sobre ello."
   },
   analhi: {
     id: "open-modal-analhi",
     num: "five",
     img: "https://duqwc0tf73olm.cloudfront.net/portrait_analhi.png",
     cargo: "Diseñadora UI",
-    frase:
-      "La mayoría de la gente cree que el diseño es algo decorativo. Para mí, nada es más importante en el futuro que el diseño. El diseño es el alma de todo lo creado por el hombre.",
+    frase: "La mayoría de la gente cree que el diseño es algo decorativo. Para mí, nada es más importante en el futuro que el diseño. El diseño es el alma de todo lo creado por el hombre.",
     autor: "-Steve Jobs-",
-    parrafo1:
-      "Estudié diseño y comunicación visual. Lo que más me apasiona del diseño es transformar un concepto en algo visual, usable y funcional.",
-    parrafo2:
-      "Mi interés en la tecnología, la animación y el diseño web me llevó a aprender a programar y a sumergirme en el diseño de interfaces. En TACODE me encargo de crear la interfaz de los sitios web.",
-    parrafo3:
-      "En mi tiempo libre me gusta tocar el piano, leer, ir al cine y tomar fotografías."
+    parrafo1: "Estudié diseño y comunicación visual. Lo que más me apasiona del diseño es transformar un concepto en algo visual, usable y funcional.",
+    parrafo2: "Mi interés en la tecnología, la animación y el diseño web me llevó a aprender a programar y a sumergirme en el diseño de interfaces. En TACODE me encargo de crear la interfaz de los sitios web.",
+    parrafo3: "En mi tiempo libre me gusta tocar el piano, leer, ir al cine y tomar fotografías."
   },
   karen: {
     id: "open-modal-karen",
@@ -91,27 +75,20 @@ const usObj = {
     cargo: "Desarolladora Fullstack",
     frase: "Hazlo con pasión, si no, no lo hagas",
     autor: "",
-    parrafo1:
-      "Soy una apasionada del desarrollo web. En Tacode me he especializado en animaciones y desarrollo frontend, aunque también atiendo cuestiones backend.",
-    parrafo2:
-      "Considero que tres piezas clave en mi trabajo son la paciencia, determinación y atención a los detalles.",
-    parrafo3:
-      "En mis tiempos libres soy bailarina, ando en bici, leo novelas y poesía, hago pesas y juego con mi gata, entre otras cosas."
+    parrafo1: "Soy una apasionada del desarrollo web. En Tacode me he especializado en animaciones y desarrollo frontend, aunque también atiendo cuestiones backend.",
+    parrafo2: "Considero que tres piezas clave en mi trabajo son la paciencia, determinación y atención a los detalles.",
+    parrafo3: "En mis tiempos libres soy bailarina, ando en bici, leo novelas y poesía, hago pesas y juego con mi gata, entre otras cosas."
   },
   olga: {
     id: "open-modal-olga",
     num: "seven",
     img: "https://duqwc0tf73olm.cloudfront.net/portrait_olga.png",
     cargo: "Desarolladora Fullstack",
-    frase:
-      "Cualquier tecnología suficientemente avanzada es indistinguible de la magia.",
+    frase: "Cualquier tecnología suficientemente avanzada es indistinguible de la magia.",
     autor: "-Arthur C. Clarke-",
-    parrafo1:
-      "Considero que con dedicación, esfuerzo y determinación no hay meta imposible de alcanzar. Siempre me ha apasionado la ciencia y la tecnología, por lo que estudié la carrera técnica en armado y mantenimiento de computadoras, posteriormente ingrese a la carrera de Medicina.",
-    parrafo2:
-      "Sin embargo, el mundo de la tecnología me llamó de nuevo llevándome a especializarme en el desarrollo Web. Actualmente realizo funciones de Fullstack Developer y Cloud Computing.",
-    parrafo3:
-      "En mi tiempo libre me gusta ir al cine, escuchar musica y realizar actividades acuáticas."
+    parrafo1: "Considero que con dedicación, esfuerzo y determinación no hay meta imposible de alcanzar. Siempre me ha apasionado la ciencia y la tecnología, por lo que estudié la carrera técnica en armado y mantenimiento de computadoras, posteriormente ingrese a la carrera de Medicina.",
+    parrafo2: "Sin embargo, el mundo de la tecnología me llamó de nuevo llevándome a especializarme en el desarrollo Web. Actualmente realizo funciones de Fullstack Developer y Cloud Computing.",
+    parrafo3: "En mi tiempo libre me gusta ir al cine, escuchar musica y realizar actividades acuáticas."
   }
 };
 
@@ -227,11 +204,9 @@ function modalEntrance() {
     onStart: openingModal
   }).fromTo(
     modal,
-    0.5,
-    {
+    0.5, {
       yPercent: 100
-    },
-    {
+    }, {
       yPercent: 0,
       zIndex: 3
     },
@@ -243,18 +218,15 @@ function modalExit() {
   const tl = new TimelineMax();
   tl.fromTo(
     modal,
-    0.8,
-    {
+    0.8, {
       yPercent: 0
-    },
-    {
+    }, {
       yPercent: 100,
       zIndex: 3
     }
   ).to(
     modal,
-    0.1,
-    {
+    0.1, {
       onStart: scrollingTop,
       onComplete: closingModal
     },
