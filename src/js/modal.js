@@ -16,7 +16,7 @@ const usObj = {
   pablo: {
     id: "open-modal-pablo",
     num: "one",
-    img: "../src/assets/images/portrait_pablo.png",
+    img: "http://duqwc0tf73olm.cloudfront.net/portrait_pablo.png",
     cargo: "Founder & CEO",
     frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     autor: "",
@@ -27,7 +27,7 @@ const usObj = {
   ivan: {
     id: "open-modal-ivan",
     num: "two",
-    img: "../src/assets/images/portrait_ivan.png",
+    img: "http://duqwc0tf73olm.cloudfront.net/portrait_ivan.png",
     cargo: "Ingeniero de Software",
     frase: "Solo aquellos que intentan lo absurdo pueden lograr lo imposible.",
     autor: "-Albert Einstein-",
@@ -38,7 +38,7 @@ const usObj = {
   ariadna: {
     id: "open-modal-ariadna",
     num: "three",
-    img: "../src/assets/images/portrait_ariadna.png",
+    img: "http://duqwc0tf73olm.cloudfront.net/portrait_ariadna.png",
     cargo: "Diseñadora UX",
     frase: "El propósito de la vida es vivirla, saborear las experiencias al máximo y buscar con entusiasmo y sin temor nuevas experiencias que nos enriquezcan.",
     autor: "-Eleonor Roosevelt-",
@@ -49,7 +49,7 @@ const usObj = {
   irving: {
     id: "open-modal-irving",
     num: "four",
-    img: "../src/assets/images/portrait_irving.png",
+    img: "http://duqwc0tf73olm.cloudfront.net/portrait_irving.png",
     cargo: "Marketing Digital",
     frase: "Nada es verdad, todo está permitido",
     autor: "",
@@ -60,7 +60,7 @@ const usObj = {
   analhi: {
     id: "open-modal-analhi",
     num: "five",
-    img: "../src/assets/images/portrait_analhi.png",
+    img: "http://duqwc0tf73olm.cloudfront.net/portrait_analhi.png",
     cargo: "Diseñadora UI",
     frase: "La mayoría de la gente cree que el diseño es algo decorativo. Para mí, nada es más importante en el futuro que el diseño. El diseño es el alma de todo lo creado por el hombre.",
     autor: "-Steve Jobs-",
@@ -71,7 +71,7 @@ const usObj = {
   karen: {
     id: "open-modal-karen",
     num: "six",
-    img: "../src/assets/images/portrait_karen.png",
+    img: "http://duqwc0tf73olm.cloudfront.net/portrait_karen.png",
     cargo: "Desarolladora Fullstack",
     frase: "Hazlo con pasión, si no, no lo hagas",
     autor: "",
@@ -82,7 +82,7 @@ const usObj = {
   olga: {
     id: "open-modal-olga",
     num: "seven",
-    img: "../src/assets/images/portrait_olga.png",
+    img: "http://duqwc0tf73olm.cloudfront.net/portrait_olga.png",
     cargo: "Desarolladora Fullstack",
     frase: "Cualquier tecnología suficientemente avanzada es indistinguible de la magia.",
     autor: "-Arthur C. Clarke-",
@@ -204,9 +204,11 @@ function modalEntrance() {
     onStart: openingModal
   }).fromTo(
     modal,
-    0.5, {
+    0.5,
+    {
       yPercent: 100
-    }, {
+    },
+    {
       yPercent: 0,
       zIndex: 3
     },
@@ -218,15 +220,18 @@ function modalExit() {
   const tl = new TimelineMax();
   tl.fromTo(
     modal,
-    0.8, {
+    0.8,
+    {
       yPercent: 0
-    }, {
+    },
+    {
       yPercent: 100,
       zIndex: 3
     }
   ).to(
     modal,
-    0.1, {
+    0.1,
+    {
       onStart: scrollingTop,
       onComplete: closingModal
     },
