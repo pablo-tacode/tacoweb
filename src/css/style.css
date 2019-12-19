@@ -54,6 +54,10 @@ main {
   background: #ffffff;
 }
 
+img {
+  pointer-events: none;
+}
+
 .section-title {
   opacity: 0;
 }
