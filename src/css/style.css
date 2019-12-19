@@ -511,9 +511,9 @@ main > h1 {
   justify-self: center;
 }
 
-.open-icon > svg {
+/* .open-icon > svg {
   height: 100%;
-}
+} */
 
 .arrows {
   display: none;
