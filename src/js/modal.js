@@ -18,7 +18,7 @@ const usObj = {
     num: "one",
     img: "https://duqwc0tf73olm.cloudfront.net/portrait_pablo.png",
     cargo: "Founder & CEO",
-    frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    frase: "El trabajo hay que hacerlo bien.",
     autor: "",
     parrafo1: "Pablo nació y creció en la Ciudad de México. Estudió Ingeniería en Comunicaciones y Electrónica con especialización en Acústica en la Escuela Superior de Ingeniería Mecánica y Eléctrica del Insituto Politécnico Nacional.",
     parrafo2: "Realizó una maestría en Music, Science and Technology en la Universidad de Stanford en California.  Posteriormente fue reclutado para desarrollar una app de música para iOS. Continuó haciendo consultorías para proyectos de iOS mientras vivió en San Francisco por 3 años. Regresó a la Ciudad de México a consolidar TACODE en 2019.",
