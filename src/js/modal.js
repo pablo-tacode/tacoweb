@@ -18,7 +18,7 @@ const usObj = {
     num: "one",
     img: "https://duqwc0tf73olm.cloudfront.net/portrait_pablo.png",
     cargo: "Founder & CEO",
-    frase: "El trabajo hay que hacerlo bien.",
+    frase: "El trabajo hay que hacerlo bien",
     autor: "",
     parrafo1: "Pablo nació y creció en la Ciudad de México. Estudió Ingeniería en Comunicaciones y Electrónica con especialización en Acústica en la Escuela Superior de Ingeniería Mecánica y Eléctrica del Insituto Politécnico Nacional.",
     parrafo2: "Realizó una maestría en Music, Science and Technology en la Universidad de Stanford en California.  Posteriormente fue reclutado para desarrollar una app de música para iOS. Continuó haciendo consultorías para proyectos de iOS mientras vivió en San Francisco por 3 años. Regresó a la Ciudad de México a consolidar TACODE en 2019.",
@@ -29,7 +29,7 @@ const usObj = {
     num: "two",
     img: "https://duqwc0tf73olm.cloudfront.net/portrait_ivan.png",
     cargo: "Ingeniero de Software",
-    frase: "Solo aquellos que intentan lo absurdo pueden lograr lo imposible.",
+    frase: "Solo aquellos que intentan lo absurdo pueden lograr lo imposible",
     autor: "-Albert Einstein-",
     parrafo1: "Mi gusto por la producción audiovisual me llevó a estudiar una carrera en tecnología en el IPN.",
     parrafo2: "Mi meta era trabajar en un proyecto que mezclara el desarrollo de software con la música. Así llegué a laborar en TACODE como Ingeniero de Software en el desarrollo de una app móvil sobre notación musical y manipulación de audio. De esta forma entré al mundo de la tecnología Apple estando involucrado en cada etapa, como diseño, desarrollo y mantenimiento.",
@@ -40,7 +40,7 @@ const usObj = {
     num: "three",
     img: "https://duqwc0tf73olm.cloudfront.net/portrait_ariadna.png",
     cargo: "Diseñadora UX",
-    frase: "El propósito de la vida es vivirla, saborear las experiencias al máximo y buscar con entusiasmo y sin temor nuevas experiencias que nos enriquezcan.",
+    frase: "El propósito de la vida es vivirla, saborear las experiencias al máximo y buscar con entusiasmo y sin temor nuevas experiencias que nos enriquezcan",
     autor: "-Eleonor Roosevelt-",
     parrafo1: "Soy UX Designer en TACODE. Creo firmemente que las experiencias van más allá de satisfacer las necesidades y requerimientos del cliente, sino que engloban a un todo.",
     parrafo2: "Mi trabajo en TACODE es unificar las emociones, los juicios, patrones, contextos, navegación y funcionamiento de un producto o servicio para que las personas se enamoren de nuestras creaciones digitales.",
@@ -62,7 +62,7 @@ const usObj = {
     num: "five",
     img: "https://duqwc0tf73olm.cloudfront.net/portrait_analhi.png",
     cargo: "Diseñadora UI",
-    frase: "La mayoría de la gente cree que el diseño es algo decorativo. Para mí, nada es más importante en el futuro que el diseño. El diseño es el alma de todo lo creado por el hombre.",
+    frase: "La mayoría de la gente cree que el diseño es algo decorativo. Para mí, nada es más importante en el futuro que el diseño. El diseño es el alma de todo lo creado por el hombre",
     autor: "-Steve Jobs-",
     parrafo1: "Estudié diseño y comunicación visual. Lo que más me apasiona del diseño es transformar un concepto en algo visual, usable y funcional.",
     parrafo2: "Mi interés en la tecnología, la animación y el diseño web me llevó a aprender a programar y a sumergirme en el diseño de interfaces. En TACODE me encargo de crear la interfaz de los sitios web.",
@@ -84,7 +84,7 @@ const usObj = {
     num: "seven",
     img: "https://duqwc0tf73olm.cloudfront.net/portrait_olga.png",
     cargo: "Desarolladora Fullstack",
-    frase: "Cualquier tecnología suficientemente avanzada es indistinguible de la magia.",
+    frase: "Cualquier tecnología suficientemente avanzada es indistinguible de la magia",
     autor: "-Arthur C. Clarke-",
     parrafo1: "Considero que con dedicación, esfuerzo y determinación no hay meta imposible de alcanzar. Siempre me ha apasionado la ciencia y la tecnología, por lo que estudié la carrera técnica en armado y mantenimiento de computadoras, posteriormente ingrese a la carrera de Medicina.",
     parrafo2: "Sin embargo, el mundo de la tecnología me llamó de nuevo llevándome a especializarme en el desarrollo Web. Actualmente realizo funciones de Fullstack Developer y Cloud Computing.",
@@ -141,7 +141,7 @@ const modalUs = obj => {
             <p class="position">${obj.cargo}</p>
         </div>
         <div class="quote">
-            <p>"${obj.frase}"</p>
+            <p>"${obj.frase}".</p>
             <p id="author">${obj.autor}</p>
         </div>
         <div class="modal-us-info-container">
